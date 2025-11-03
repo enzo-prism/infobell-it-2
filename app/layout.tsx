@@ -8,9 +8,13 @@ const inter = Inter({ subsets: ["latin"] })
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Infobell IT - Modern IT Solutions & Services",
-  description: "Professional IT services and technology solutions for modern businesses",
-  generator: "v0.app",
+  metadataBase: new URL("https://www.infobellit.com"),
+  title: {
+    default: "Infobell IT Solutions",
+    template: "%s | Infobell IT Solutions",
+  },
+  description:
+    "Infobell IT Solutions delivers enterprise AI, high-performance computing, cloud modernization, and sustainability engineering for global innovators.",
 }
 
 export default function RootLayout({
@@ -19,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`font-sans antialiased`}>
+    <html lang="en">
+      <body className={`${inter.className} bg-background font-sans text-foreground antialiased`}>
         {children}
         <Analytics />
       </body>
