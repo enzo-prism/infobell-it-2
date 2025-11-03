@@ -14,7 +14,7 @@ Detailed decisions made during the redesign are recorded in [`docs/redesign-plan
 
 ## Getting Started
 
-```bash
+\`\`\`bash
 # install dependencies
 pnpm install
 
@@ -27,13 +27,13 @@ pnpm build
 
 # linting (needs eslint installed/configured if you enable it locally)
 pnpm lint
-```
+\`\`\`
 
 > **Note:** the repository ships without an `eslint` binary. Run `pnpm add -D eslint` and configure it if you want `pnpm lint` to succeed locally.
 
 ## Project Layout
 
-```
+\`\`\`
 app/
   (site)/           # All marketing routes (home, ai, clients, careers, etc.)
     layout.tsx      # wraps pages with the new header & footer
@@ -46,7 +46,7 @@ lib/content/        # typed content sources consumed by pages
 public/images/      # exported imagery from the legacy site
 public/media/       # hero video (≈79 MB)
 site-rebuild/       # raw HTML, assets, and sitemap from the original site
-```
+\`\`\`
 
 ### Content Sources
 
