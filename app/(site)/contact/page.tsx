@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Suspense } from "react"
 import { CORPORATE_OFFICE } from "@/lib/content/site"
-import { PRODUCT_CONTACT_SUBJECTS, CONTACT_COPY, CONTACT_FIELDS } from "@/lib/content/contact"
+import { CONTACT_COPY, CONTACT_FIELDS } from "@/lib/content/contact"
 import { ContactForm } from "./contact-form"
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function ContactPage() {
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[1.1fr,0.9fr]">
           <Suspense fallback={<div className="rounded-3xl border border-border bg-card/80 p-8 shadow-sm">Loading…</div>}>
-            <ContactForm fields={CONTACT_FIELDS} productSubjects={PRODUCT_CONTACT_SUBJECTS} />
+            <ContactForm fields={CONTACT_FIELDS} />
           </Suspense>
           <aside className="space-y-10 rounded-3xl border border-border bg-muted/30 p-8">
             <section>

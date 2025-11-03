@@ -8,21 +8,6 @@ export const CONTACT_COPY = {
     "It’s our central hub for operations, where creativity thrives and collaborative efforts culminate, nurturing an environment that propels technology forward.",
 }
 
-export type ContactField = {
-  name: string
-  label: string
-  type: "text" | "email" | "tel" | "textarea"
-  required?: boolean
-}
-
-export const CONTACT_FIELDS: ContactField[] = [
-  { name: "name", label: "Name", type: "text", required: true },
-  { name: "email", label: "Email", type: "email", required: true },
-  { name: "phone", label: "Phone Number", type: "tel" },
-  { name: "subject", label: "Subject", type: "text", required: true },
-  { name: "description", label: "Description", type: "textarea", required: true },
-]
-
 export const PRODUCT_CONTACT_SUBJECTS = [
   "ConvoGene",
   "Transcribe",
@@ -33,4 +18,26 @@ export const PRODUCT_CONTACT_SUBJECTS = [
   "DocPrep for RAG",
   "VAST",
   "SmartE",
+]
+
+export type ContactField = {
+  name: string
+  label: string
+  type: "text" | "email" | "tel" | "textarea" | "select"
+  required?: boolean
+  options?: string[]
+}
+
+export const CONTACT_FIELDS: ContactField[] = [
+  { name: "name", label: "Name", type: "text", required: true },
+  { name: "email", label: "Email", type: "email", required: true },
+  { name: "phone", label: "Phone Number", type: "tel" },
+  {
+    name: "subject",
+    label: "Subject",
+    type: "select",
+    required: true,
+    options: PRODUCT_CONTACT_SUBJECTS,
+  },
+  { name: "description", label: "Description", type: "textarea", required: true },
 ]

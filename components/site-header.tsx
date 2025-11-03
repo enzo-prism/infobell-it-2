@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { ChevronDown, Menu, X } from "lucide-react"
 import { NAV_PRIMARY, type NavGroup, type NavItem } from "@/lib/content/site"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 type NavEntry = NavItem | NavGroup
 
@@ -18,7 +19,10 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-4 md:h-24">
-        <Link href="/" className="flex items-center gap-3">
+        <Link
+          href="/"
+          className="flex items-center gap-3 rounded-xl border border-border bg-white px-3 py-2 shadow-sm transition hover:border-primary/50 dark:border-border/40"
+        >
           <Image
             src="/images/logos/infobellLogo.png"
             alt="Infobell IT logo"
@@ -60,18 +64,24 @@ export function SiteHeader() {
             ),
           )}
         </nav>
-        <button
-          type="button"
-          className="inline-flex items-center justify-center rounded-md border border-border bg-background p-2 text-sm text-foreground lg:hidden"
-          onClick={() => setMobileOpen((prev) => !prev)}
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-nav"
-        >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-md border border-border bg-background p-2 text-sm text-foreground lg:hidden"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
       {mobileOpen ? (
         <nav id="mobile-nav" className="border-t border-border bg-background px-4 py-4 lg:hidden">
+          <div className="mb-4 flex justify-end">
+            <ThemeToggle />
+          </div>
           <ul className="flex flex-col gap-4 text-base font-medium">
             {NAV_PRIMARY.map((entry) =>
               isGroup(entry) ? (

@@ -2,15 +2,14 @@
 
 import { useEffect, useMemo, useState } from "react"
 import { useSearchParams } from "next/navigation"
-import { PRODUCT_CONTACT_SUBJECTS, type ContactField } from "@/lib/content/contact"
+import type { ContactField } from "@/lib/content/contact"
 import { APPLY_EMAIL } from "@/lib/content/careers"
 
 type ContactFormProps = {
   fields: ContactField[]
-  productSubjects: typeof PRODUCT_CONTACT_SUBJECTS
 }
 
-export function ContactForm({ fields, productSubjects }: ContactFormProps) {
+export function ContactForm({ fields }: ContactFormProps) {
   const searchParams = useSearchParams()
   const preselectedSubject = searchParams.get("subject")
   const [submitted, setSubmitted] = useState(false)
@@ -18,7 +17,13 @@ export function ContactForm({ fields, productSubjects }: ContactFormProps) {
   const initialValues = useMemo(
     () =>
       fields.reduce<Record<string, string>>((acc, field) => {
-        acc[field.name] = field.name === "subject" && preselectedSubject ? preselectedSubject : ""
+        if (field.type === "select") {
+          const allowedOptions = field.options ?? []
+          acc[field.name] =
+            preselectedSubject && allowedOptions.includes(preselectedSubject) ? preselectedSubject : ""
+          return acc
+        }
+        acc[field.name] = ""
         return acc
       }, {}),
     [fields, preselectedSubject],
@@ -78,7 +83,7 @@ export function ContactForm({ fields, productSubjects }: ContactFormProps) {
               "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
           }
 
-          if (field.name === "subject") {
+          if (field.type === "select") {
             return (
               <div key={field.name}>
                 <label htmlFor={field.name} className="text-sm font-medium text-foreground">
@@ -86,7 +91,7 @@ export function ContactForm({ fields, productSubjects }: ContactFormProps) {
                 </label>
                 <select {...commonProps}>
                   <option value="">Select a subject</option>
-                  {productSubjects.map((subject) => (
+                  {(field.options ?? []).map((subject) => (
                     <option key={subject} value={subject}>
                       {subject}
                     </option>
