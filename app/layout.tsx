@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   },
   description:
     "Infobell IT Solutions delivers enterprise AI, high-performance computing, cloud modernization, and sustainability engineering for global innovators.",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
