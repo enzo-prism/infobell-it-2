@@ -9,7 +9,7 @@ export const HERO_CONTENT = {
     href: "/press-releases/prease-release-amd-2025",
   },
   video: {
-    src: "/media/Infobell-at-AMD-AI-Day-2025.mp4",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_RZ2IuXf5KJySpZYoJ79PRYLLui8A/7yZSHesO25omcOT0E7bwkb/public/media/Infobell-at-AMD-AI-Day-2025.mp4",
     title: "Infobell IT at AMD Advancing AI 2025",
     caption: "Infobell IT AI Solutions",
   },

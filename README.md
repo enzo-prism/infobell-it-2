@@ -96,3 +96,10 @@ Consult this folder when validating copy fidelity or retrieving additional media
 4. Submit a PR referencing the page or copy you updated
 
 For questions about the redesign scope, start with [`docs/redesign-plan.md`](docs/redesign-plan.md) or the legacy snapshot in `site-rebuild/`.
+
+## v0 Sync Workflow
+
+1. Create and modify your project using [v0.app](https://v0.app).
+2. Deploy your chats from the v0 interface.
+3. Changes are automatically pushed to this repository.
+4. Vercel deploys the latest version from this repository.
