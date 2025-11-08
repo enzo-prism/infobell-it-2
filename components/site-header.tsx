@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useRef, useState, type FocusEvent } from "react"
 import { ChevronDown, Menu, X } from "lucide-react"
 import { NAV_PRIMARY, type NavGroup, type NavItem } from "@/lib/content/site"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -15,6 +15,39 @@ function isGroup(entry: NavEntry): entry is NavGroup {
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [desktopGroup, setDesktopGroup] = useState<string | null>(null)
+  const closeTimeout = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeout.current) {
+        clearTimeout(closeTimeout.current)
+      }
+    }
+  }, [])
+
+  const openDesktopGroup = (label: string) => {
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current)
+    }
+    setDesktopGroup(label)
+  }
+
+  const scheduleDesktopClose = (label: string) => {
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current)
+    }
+    closeTimeout.current = setTimeout(() => {
+      setDesktopGroup((prev) => (prev === label ? null : prev))
+    }, 150)
+  }
+
+  const handleDesktopBlur = (event: FocusEvent<HTMLDivElement>, label: string) => {
+    const nextFocus = event.relatedTarget as Node | null
+    if (!nextFocus || !event.currentTarget.contains(nextFocus)) {
+      setDesktopGroup((prev) => (prev === label ? null : prev))
+    }
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
@@ -36,23 +69,47 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-6 text-sm font-medium lg:flex">
           {NAV_PRIMARY.map((entry) =>
             isGroup(entry) ? (
-              <details key={entry.label} className="group relative">
-                <summary className="flex cursor-pointer list-none items-center gap-1 rounded-md px-2 py-1 text-foreground transition hover:text-primary [&::-webkit-details-marker]:hidden">
+              <div
+                key={entry.label}
+                className="group relative"
+                onMouseEnter={() => openDesktopGroup(entry.label)}
+                onMouseLeave={() => scheduleDesktopClose(entry.label)}
+                onFocus={() => openDesktopGroup(entry.label)}
+                onBlur={(event) => handleDesktopBlur(event, entry.label)}
+              >
+                <button
+                  type="button"
+                  className="flex cursor-pointer items-center gap-1 rounded-md px-2 py-1 text-foreground transition hover:text-primary"
+                  aria-expanded={desktopGroup === entry.label}
+                  aria-haspopup="true"
+                  onClick={() =>
+                    setDesktopGroup((prev) => (prev === entry.label ? null : entry.label))
+                  }
+                >
                   {entry.label}
-                  <ChevronDown className="h-4 w-4 transition-transform duration-200 group-open:rotate-180" />
-                </summary>
-                <div className="absolute left-0 top-full mt-2 w-56 rounded-lg border border-border bg-background p-2 shadow-lg">
-                  {entry.items.map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      className="block rounded-md px-2 py-1 text-sm transition hover:bg-muted"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </details>
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-200 ${desktopGroup === entry.label ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {desktopGroup === entry.label ? (
+                  <div
+                    className="absolute left-0 top-full mt-2 w-56 rounded-lg border border-border bg-background p-2 shadow-lg"
+                    onMouseEnter={() => openDesktopGroup(entry.label)}
+                    onMouseLeave={() => scheduleDesktopClose(entry.label)}
+                  >
+                    {entry.items.map((item) => (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        className="block rounded-md px-2 py-1 text-sm transition hover:bg-muted"
+                        onClick={() => setDesktopGroup(null)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
             ) : (
               <Link
                 key={entry.label}

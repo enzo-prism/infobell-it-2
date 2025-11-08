@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { CORPORATE_LOCATIONS } from "@/lib/content/company"
 import { GLOBAL_PRESENCE } from "@/lib/content/site"
 
@@ -21,13 +22,25 @@ export default function LocationsPage() {
 
         <section className="mt-16 space-y-10">
           {CORPORATE_LOCATIONS.map((location) => (
-            <article
-              key={location.title}
-              className="rounded-2xl border border-border bg-card/70 p-8 shadow-sm"
-            >
-              <h2 className="text-2xl font-semibold text-foreground">{location.title}</h2>
-              <p className="mt-4 text-sm leading-6 text-muted-foreground">{location.description}</p>
-              <p className="mt-2 text-sm font-medium text-primary">{location.contact}</p>
+            <article key={location.title} className="rounded-2xl border border-border bg-card/70 p-8 shadow-sm">
+              <div className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+                <div>
+                  <h2 className="text-2xl font-semibold text-foreground">{location.title}</h2>
+                  <p className="mt-4 text-sm leading-6 text-muted-foreground whitespace-pre-line">
+                    {location.description}
+                  </p>
+                  <p className="mt-2 text-sm font-medium text-primary">{location.contact}</p>
+                </div>
+                <div className="relative h-56 w-full overflow-hidden rounded-2xl border border-border bg-muted">
+                  <Image
+                    src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1762617079/infobellitbuilding_eawzmk.webp"
+                    alt="Infobell corporate headquarters exterior"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </article>
           ))}
         </section>

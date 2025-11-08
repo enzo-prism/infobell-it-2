@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import {
   IFX_SECTIONS,
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
   description:
     "Discover IFX — Infobell’s open, high-performance LLM inference framework optimized for AMD Instinct GPUs and EPYC CPUs.",
 }
+
+const IFX_DIAGRAM_SRC =
+  "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1762614447/ifx-diagram_gflz6d.webp"
 
 export default function IfxPage() {
   return (
@@ -42,6 +46,21 @@ export default function IfxPage() {
                     <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
+              ) : null}
+              {section.heading === "Why IFX?" ? (
+                <figure className="mt-6 rounded-2xl border border-border bg-muted/30 p-3">
+                  <Image
+                    src={IFX_DIAGRAM_SRC}
+                    alt="Diagram showing the modular IFX inference stack"
+                    width={1920}
+                    height={1080}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+                    className="h-auto w-full rounded-xl"
+                  />
+                  <figcaption className="mt-3 text-center text-xs text-muted-foreground">
+                    IFX architecture overview spanning orchestration, runtime, and observability layers.
+                  </figcaption>
+                </figure>
               ) : null}
             </section>
           ))}

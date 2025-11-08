@@ -23,45 +23,57 @@ export const IFX_HIGHLIGHT = {
   href: "/ai/ifx",
 }
 
-export type ExpertiseItem = {
+type BaseContentItem = {
   title: string
   description: string
+}
+
+export type ExpertiseIcon = "brain" | "cpu" | "leaf" | "gauge" | "cloud" | "shield"
+
+export type ExpertiseItem = BaseContentItem & {
+  icon: ExpertiseIcon
 }
 
 export const CORE_EXPERTISE: ExpertiseItem[] = [
   {
     title: "Artificial Intelligence",
+    icon: "brain",
     description:
       "Identifying use cases and deploying AI and ML solutions for enterprises; evaluating CPU and GPU technologies, creating Gen AI model applications and chatbots for sectors like IT operations, retail, healthcare, and real estate; overseeing data lifecycle management; conducting performance characterization for LLM systems; developing scalable tools and frameworks for natural language processing and image classification; partnering with industry leaders such as NVIDIA, AMD, and Intel.",
   },
   {
     title: "High Performance Computing",
+    icon: "cpu",
     description:
       "Conducting rigorous performance benchmarking across bare-metal and cloud environments; fine-tuning compile time and runtime for applications; proficiency in porting and optimizing software; comprehensive support for designing and managing cluster infrastructure; specializing in computational fluid dynamics, finite element analysis, and tailored vertical solutions to meet diverse computational challenges.",
   },
   {
     title: "Carbon Footprint and Sustainability",
+    icon: "leaf",
     description:
       "Leveraging innovative technologies for energy-efficient infrastructure and sustainable practices; monitoring and reducing carbon footprints through automation and continuous monitoring for improved performance and energy efficiency in cloud environments; integration with cloud cost analysis and lifecycle management tools; experience in energy efficiency standard benchmarks with a commitment to driving change toward a greener future.",
   },
   {
     title: "Performance Engineering",
+    icon: "gauge",
     description:
       "Application performance analysis and characterization in on-premise and cloud environments; publishing industry-standard benchmarks (TPC, SPEC, MLPerf, etc.); fine-tuning workloads like databases, big data, high performance computing, and artificial intelligence for end customers; extensive experience in evaluating CPU, GPU, and system performance; automation framework for provisioning, management, and continuous monitoring; experience in root-cause analysis and multi-party resolution.",
   },
   {
     title: "Cloud Native Development",
+    icon: "cloud",
     description:
       "Designing and deploying full-stack cloud native applications; migrating and modernizing legacy applications; experience in compliance and implementing high availability and business continuity strategies; specializing in cloud cost monitoring and optimization; tooling and end-to-end automation from deployment to lifecycle management; extensive expertise in Red Hat OpenShift Container Platform, VMware, and Nutanix HCI solutions.",
   },
   {
     title: "Compliance and Confidential Computing",
+    icon: "shield",
     description:
       "Assisting compliance teams in saving time and mitigating risks through automation and integrating digital compliance regulations into critical workflows; expertise across confidential computing technologies from industry leaders such as AMD, Intel, and ARM; employing specialized services to uphold the integrity of applications and workloads in cloud environments; experience in setting up controlled environments (sandboxes) for conducting performance evaluations of industry-vertical workloads.",
   },
 ]
 
-export type ProductOffering = ExpertiseItem & {
+export type ProductOffering = BaseContentItem & {
   image: string
   cta?: NavItem
 }
@@ -119,20 +131,25 @@ export const SERVICE_PRODUCTS: ProductOffering[] = [
   },
 ]
 
-export const TECH_STACK = [
-  "React JS",
-  "Angular JS",
-  "Vue JS",
-  "Node Js",
-  "Java",
-  "Golang",
-  "Python",
-  "C",
-  "Kubernetes",
-  "Tanzu Kubernetes",
-  "Docker",
-  "Big Data",
-  "Linux kernel",
-  "VMware",
-  "OpenShift",
+export type TechStackItem = {
+  label: string
+  logo: string
+}
+
+export const TECH_STACK: TechStackItem[] = [
+  { label: "React JS", logo: "/images/tech/react.png" },
+  { label: "Angular JS", logo: "/images/tech/angular.png" },
+  { label: "Vue JS", logo: "/images/tech/vuejs.png" },
+  { label: "Node Js", logo: "/images/tech/nodejs.png" },
+  { label: "Java", logo: "/images/tech/java.png" },
+  { label: "Golang", logo: "/images/tech/golang.png" },
+  { label: "Python", logo: "/images/tech/python.png" },
+  { label: "C", logo: "/images/tech/c.png" },
+  { label: "Kubernetes", logo: "/images/tech/kubernetes.png" },
+  { label: "Tanzu Kubernetes", logo: "/images/tech/tanzu.png" },
+  { label: "Docker", logo: "/images/tech/docker.png" },
+  { label: "Big Data", logo: "/images/tech/bigdata.png" },
+  { label: "Linux kernel", logo: "/images/tech/linux.png" },
+  { label: "VMware", logo: "/images/tech/vmware.png" },
+  { label: "OpenShift", logo: "/images/tech/openshift.png" },
 ]
