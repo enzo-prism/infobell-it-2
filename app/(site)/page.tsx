@@ -62,6 +62,9 @@ function HeroSection() {
               src={HERO_CONTENT.video.src}
               title={HERO_CONTENT.video.title}
               controls
+              autoPlay
+              muted
+              playsInline
               preload="metadata"
               className="h-auto w-full rounded-2xl"
             />
