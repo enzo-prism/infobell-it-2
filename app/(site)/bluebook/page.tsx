@@ -59,16 +59,20 @@ function BlueBookCard({ report }: BlueBookCardProps) {
         {supportingParagraphs.length ? (
           <div className="space-y-3 rounded-2xl bg-background/60 p-4 ring-1 ring-border/60">
             {supportingParagraphs.map((paragraph, index) => (
-              <div key={`${report.slug}-summary-${index}`} className="flex gap-3">
+              <div
+                key={`${report.slug}-summary-${index}`}
+                className="flex gap-3 text-muted-foreground transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-foreground"
+                style={{ transitionDelay: `${index * 80}ms` }}
+              >
                 <span className="mt-1.5 inline-flex h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
-                <p className="text-sm leading-6 text-muted-foreground">{paragraph}</p>
+                <p className="text-sm leading-6">{paragraph}</p>
               </div>
             ))}
           </div>
         ) : null}
       </div>
-      <div className="relative mt-6">
-        <GetItNowDialog reportName={report.subtitle} buttonClassName="w-full" />
+      <div className="relative mt-6 group/cta">
+        <GetItNowDialog reportName={report.subtitle} buttonClassName="w-full transition-transform duration-300 group-hover/cta:scale-[1.01]" />
       </div>
     </article>
   )

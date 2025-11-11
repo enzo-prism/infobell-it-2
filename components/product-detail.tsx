@@ -19,9 +19,9 @@ export function ProductDetailCard({ product }: { product: ProductDetail }) {
               </PrimaryCTA>
             </div>
           </div>
-          <div className="flex w-full items-center justify-center rounded-3xl border border-border bg-muted p-4">
+          <div className="card-glow flex w-full items-center justify-center rounded-3xl border border-border bg-muted p-4">
             {product.heroGradient ? (
-              <div className="relative h-72 w-full overflow-hidden rounded-2xl">
+              <div className="relative h-72 w-full overflow-hidden rounded-2xl motion-safe:animate-float">
                 <div className={clsx("absolute inset-0 bg-gradient-to-br", product.heroGradient)} />
                 <div className="pointer-events-none absolute -right-10 top-6 h-40 w-40 rounded-full bg-white/30 blur-3xl" />
                 <div className="pointer-events-none absolute -left-8 bottom-0 h-48 w-48 rounded-full bg-sky-200/70 blur-2xl" />
@@ -38,7 +38,7 @@ export function ProductDetailCard({ product }: { product: ProductDetail }) {
                 width={640}
                 height={400}
                 sizes="(max-width: 1024px) 100vw, 40vw"
-                className="h-auto w-full max-w-full object-contain"
+                className="h-auto w-full max-w-full object-contain transition-transform duration-500 ease-out"
               />
             )}
           </div>

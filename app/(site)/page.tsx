@@ -45,7 +45,7 @@ function HeroSection() {
           </div>
         </div>
         <div className="space-y-6">
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-4 shadow-lg">
+          <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-4 shadow-lg motion-safe:animate-float">
             <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-tr from-primary/20 via-transparent to-primary/10" />
             <video
               src={HERO_CONTENT.video.src}
@@ -65,13 +65,22 @@ function HeroSection() {
                 Powered by AMD
               </div>
               <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-muted-foreground">
-                <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-3 py-1 text-foreground">
+                <span
+                  className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-3 py-1 text-foreground motion-safe:animate-slide-up"
+                  style={{ animationDelay: "100ms" }}
+                >
                   400+ Engineers
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-3 py-1 text-foreground">
+                <span
+                  className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-3 py-1 text-foreground motion-safe:animate-slide-up"
+                  style={{ animationDelay: "200ms" }}
+                >
                   50+ Data Scientists
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-3 py-1 text-foreground">
+                <span
+                  className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-3 py-1 text-foreground motion-safe:animate-slide-up"
+                  style={{ animationDelay: "300ms" }}
+                >
                   Global Delivery
                 </span>
               </div>
@@ -154,20 +163,21 @@ function ProductSection() {
             <Link
               key={product.title}
               href={`/${product.slug}`}
-              className="group flex h-full flex-col rounded-2xl border border-border bg-card/70 p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg"
+              className="card-glow group flex h-full flex-col rounded-2xl border border-border bg-card/70 p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-300/70 hover:shadow-2xl"
             >
-              <div className="relative h-40 w-full overflow-hidden rounded-xl border border-border bg-muted">
+              <div className="relative h-40 w-full overflow-hidden rounded-xl border border-border bg-muted transition-all duration-500 ease-out group-hover:shadow-xl">
+                <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <Image
                   src={product.image}
                   alt={product.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                 />
               </div>
               <h3 className="mt-6 text-xl font-semibold text-foreground">{product.title}</h3>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">{product.description}</p>
-              <span className="mt-4 inline-flex w-fit items-center text-sm font-semibold text-primary underline-offset-4 group-hover:underline">
+              <span className="mt-4 inline-flex w-fit items-center text-sm font-semibold text-primary underline-offset-4 transition-all duration-300 group-hover:translate-x-1 group-hover:underline">
                 Learn more
               </span>
             </Link>
@@ -247,7 +257,7 @@ function ClientsSection() {
             <LogoTile
               key={logo.image}
               logo={logo}
-              className="flex h-20 items-center justify-center rounded-xl border border-border bg-card/60 p-4 transition hover:-translate-y-1 hover:shadow-lg"
+              className="card-glow flex h-20 items-center justify-center rounded-xl border border-border bg-card/60 p-4 transition hover:-translate-y-1 hover:shadow-lg"
               baseWidth={120}
               baseHeight={60}
               heightRem={3}
@@ -261,7 +271,7 @@ function ClientsSection() {
               <LogoTile
                 key={logo.image}
                 logo={logo}
-                className="flex h-20 w-44 items-center justify-center rounded-lg border border-border bg-card/80 p-3 transition hover:-translate-y-1 hover:shadow-lg"
+                className="card-glow flex h-20 w-44 items-center justify-center rounded-lg border border-border bg-card/80 p-3 transition hover:-translate-y-1 hover:shadow-lg"
                 baseWidth={160}
                 baseHeight={80}
                 heightRem={5}

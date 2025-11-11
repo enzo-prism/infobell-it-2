@@ -61,7 +61,7 @@ export function AutoHighlightLogoGrid({
         const isActive = hoveredIndex === index || activeIndex === index
         const isFading = prevIndex === index
         const baseClasses = clsx(
-          "group",
+          "group relative overflow-hidden",
           cardClassName,
           isActive && "border-sky-300 shadow-lg",
           isFading && !isActive && "border-sky-200",
@@ -87,6 +87,10 @@ export function AutoHighlightLogoGrid({
           />
         )
 
+        const sweepHighlight = isActive ? (
+          <span className="pointer-events-none absolute inset-y-0 w-1/2 animate-sweep bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-70" />
+        ) : null
+
         if (logo.href) {
           return (
             <a
@@ -99,6 +103,7 @@ export function AutoHighlightLogoGrid({
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
+              {sweepHighlight}
               {image}
             </a>
           )
@@ -113,6 +118,7 @@ export function AutoHighlightLogoGrid({
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
+            {sweepHighlight}
             {image}
           </div>
         )

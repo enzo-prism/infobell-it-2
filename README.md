@@ -64,6 +64,12 @@ Update these modules when copy or product offerings change; page components auto
 - Optimised images live beneath `public/images`. Each filename mirrors the corresponding asset from the legacy export.
 - The AMD day hero video (`public/media/Infobell-at-AMD-AI-Day-2025.mp4`) is ~79 MB. GitHub flags this as large – consider moving it to Git LFS or a CDN if repository size becomes a concern.
 
+### Motion & Interaction
+
+- Common animation helpers live in `styles/globals.css` under the `@layer utilities` block (`animate-float`, `animate-slide-up`, `card-glow`, etc.). Use these classes instead of ad-hoc keyframes so interactions stay consistent.
+- All utilities respect `prefers-reduced-motion`; avoid adding bespoke animations that bypass those safeguards.
+- Sections that need bespoke behaviour (e.g., `CoreExpertiseCarousel`, `AutoHighlightLogoGrid`) already expose predictable class hooks—extend those components instead of duplicating logic elsewhere.
+
 ## Routes & Behaviour
 
 - `/` – hero, core expertise, IFX promo, service products, leadership, and client preview

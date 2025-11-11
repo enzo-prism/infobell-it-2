@@ -123,3 +123,115 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes glow-ring {
+    0% {
+      box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.35);
+    }
+    70% {
+      box-shadow: 0 0 30px 6px rgba(14, 165, 233, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
+    }
+  }
+
+  @keyframes sweep {
+    from {
+      transform: translateX(-120%);
+    }
+    to {
+      transform: translateX(120%);
+    }
+  }
+
+  @keyframes tilt {
+    from {
+      transform: rotate3d(1, 1, 0, 0deg);
+    }
+    to {
+      transform: rotate3d(1, 1, 0, 1.5deg);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease forwards;
+  }
+
+  .animate-glow-ring {
+    animation: glow-ring 2.5s ease-in-out infinite;
+  }
+
+  .animate-sweep {
+    animation: sweep 3s linear infinite;
+  }
+
+  .hover-tilt {
+    transition: transform 300ms ease, box-shadow 300ms ease;
+  }
+
+  .hover-tilt:hover {
+    transform: translateY(-4px) rotate3d(1, 1, 0, 2deg);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+  }
+
+  .card-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-glow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 0%, rgba(14, 165, 233, 0.08) 40%, transparent 80%);
+    opacity: 0;
+    transition: opacity 300ms ease;
+    pointer-events: none;
+  }
+
+  .card-glow:hover::after {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-slide-up,
+    .animate-glow-ring,
+    .animate-sweep {
+      animation: none;
+    }
+    .hover-tilt,
+    .card-glow {
+      transition: none;
+    }
+  }
+}

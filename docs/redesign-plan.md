@@ -17,6 +17,7 @@ This document captures how to rebuild the infobellit.com marketing site inside t
   - Links: `Careers`, `Privacy Policy`.
   - Social link: LinkedIn (`https://www.linkedin.com/company/infobell-it/`).
 - **Brand elements**: animations (Swiper carousels), `Infobell-at-AMD-AI Day-2025.mp4`, hero gradient backgrounds, shared CSS (`main.css`, `responsive.css`).
+- **Motion system**: shared animation utilities live in `styles/globals.css` (`animate-float`, `card-glow`, `hover-tilt`, etc.) with `prefers-reduced-motion` fallbacks. Reuse these helpers instead of adding bespoke keyframes per component.
 - **Forms**: Contact form with fields `Name`, `Email`, `Phone Number`, `Subject`, `Description` and submit CTA `Send`.
   - Eight contact landing pages (`contactus.html?subject=...`) pre-set the “Subject” field for product inquiries.
 - **Call-to-action banners** used across careers/legal pages: `Let’s make your project our next success story.` / `Let’s build today’s and tomorrow’s IT. Together.`

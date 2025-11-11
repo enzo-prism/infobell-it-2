@@ -25,7 +25,8 @@ export default function TeamPage() {
           {LEADERSHIP_TEAM.map((member, index) => (
             <article
               key={member.slug}
-              className="flex flex-col rounded-3xl border border-border bg-card/80 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus-within:ring-2 focus-within:ring-primary/40"
+              className="card-glow flex flex-col rounded-3xl border border-border bg-card/80 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus-within:ring-2 focus-within:ring-primary/40 motion-safe:animate-slide-up"
+              style={{ animationDelay: `${index * 120}ms` }}
             >
               <div className="relative w-full overflow-hidden rounded-3xl border border-border bg-muted aspect-[4/5]">
                 <Image
@@ -69,7 +70,7 @@ function ConnectButton({ href }: { href: string }) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+      className="card-glow inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:-translate-y-0.5 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
     >
       <Linkedin className="h-4 w-4" />
       Connect on LinkedIn
