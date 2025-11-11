@@ -1,37 +1,53 @@
-type LogoEntry = {
+export type LogoEntry = {
   image: string
   alt: string
+  href?: string
+  multiplier?: number
 }
 
 export const CLIENT_LOGOS: LogoEntry[] = [
-  { image: "/images/clients/a.png", alt: "Client logo 1" },
-  { image: "/images/clients/i.png", alt: "Client logo 2" },
-  { image: "/images/clients/g.png", alt: "Client logo 3" },
-  { image: "/images/clients/in.png", alt: "Client logo 4" },
-  { image: "/images/clients/VISA.png", alt: "VISA logo" },
-  { image: "/images/clients/way-logo.png", alt: "Client logo 6" },
-  { image: "/images/clients/hpe.png", alt: "HPE logo" },
-  { image: "/images/clients/n.png", alt: "Client logo 8" },
-  { image: "/images/clients/nit.png", alt: "Client logo 9" },
-  { image: "/images/clients/m.png", alt: "Client logo 10" },
-  { image: "/images/clients/gs.png", alt: "Client logo 11" },
-  { image: "/images/clients/k.png", alt: "Client logo 12" },
-  { image: "/images/clients/z.png", alt: "Client logo 13" },
-  { image: "/images/clients/u.png", alt: "Client logo 14" },
-  { image: "/images/clients/aif.png", alt: "AIF logo" },
-  { image: "/images/clients/t.png", alt: "Client logo 16" },
-  { image: "/images/clients/h.png", alt: "Client logo 17" },
-  { image: "/images/clients/melbourne.png", alt: "Melbourne logo" },
-  { image: "/images/clients/mobily.png", alt: "Mobily logo" },
-  { image: "/images/clients/an.png", alt: "Client logo 20" },
+  { image: "/images/clients/a.png", alt: "Amazon", href: "https://www.amazon.com/" },
+  { image: "/images/clients/i.png", alt: "IBM", href: "https://www.ibm.com/" },
+  { image: "/images/clients/g.png", alt: "Google", href: "https://about.google/" },
+  { image: "/images/clients/in.png", alt: "Intel", href: "https://www.intel.com/" },
+  { image: "/images/clients/VISA.png", alt: "Visa", href: "https://www.visa.com/" },
+  { image: "/images/clients/way-logo.png", alt: "Way.com", href: "https://www.way.com/" },
+  { image: "/images/clients/hpe.png", alt: "Hewlett Packard Enterprise", href: "https://www.hpe.com/" },
+  { image: "/images/clients/n.png", alt: "NVIDIA", href: "https://www.nvidia.com/" },
+  { image: "/images/clients/nit.png", alt: "NIIT", href: "https://www.niit.com/" },
+  { image: "/images/clients/m.png", alt: "Microsoft", href: "https://www.microsoft.com/" },
+  { image: "/images/clients/gs.png", alt: "Goldman Sachs", href: "https://www.goldmansachs.com/" },
+  { image: "/images/clients/k.png", alt: "KPMG", href: "https://kpmg.com/" },
+  { image: "/images/clients/z.png", alt: "Zoom", href: "https://zoom.us/" },
+  { image: "/images/clients/u.png", alt: "Uber", href: "https://www.uber.com/" },
+  {
+    image: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1762809696/AIF_Metrics_vadpyv.webp",
+    alt: "AIF Metrics",
+    href: "https://www.aifmetrics.com/",
+    multiplier: 5,
+  },
+  { image: "/images/clients/t.png", alt: "Tata Communications", href: "https://www.tatacommunications.com/" },
+  { image: "/images/clients/h.png", alt: "HSBC", href: "https://www.hsbc.com/" },
+  { image: "/images/clients/melbourne.png", alt: "City of Melbourne", href: "https://www.melbourne.vic.gov.au/" },
+  { image: "/images/clients/mobily.png", alt: "Mobily", href: "https://www.mobily.com.sa/" },
+  { image: "/images/clients/an.png", alt: "ANZ", href: "https://www.anz.com/" },
 ]
 
 export const AFFILIATION_LOGOS: LogoEntry[] = [
-  { image: "/images/clients/SPEC.png", alt: "SPEC consortium logo" },
-  { image: "/images/clients/tpc.jpg", alt: "TPC Alliance logo" },
-  { image: "/images/clients/ni.jpeg", alt: "NI logo" },
-  { image: "/images/clients/ccc_consortium.png", alt: "Confidential Computing Consortium logo" },
-  { image: "/images/clients/aws-marketplace.png", alt: "AWS Marketplace logo" },
+  { image: "/images/clients/SPEC.png", alt: "SPEC Consortium", href: "https://www.spec.org/", multiplier: 0.5 },
+  { image: "/images/clients/tpc.jpg", alt: "TPC Council", href: "https://www.tpc.org/" },
+  { image: "/images/clients/ni.jpeg", alt: "NI (National Instruments)", href: "https://www.ni.com/" },
+  {
+    image: "/images/clients/ccc_consortium.png",
+    alt: "Confidential Computing Consortium",
+    href: "https://confidentialcomputing.io/",
+  },
+  {
+    image: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1762809697/AWS_marketplace_i7asqu.webp",
+    alt: "AWS Marketplace logo",
+    href: "https://aws.amazon.com/marketplace",
+    multiplier: 5,
+  },
 ]
 
 export const CORPORATE_LOCATIONS = [

@@ -1,6 +1,6 @@
 # Infobell IT Website Redesign Plan
 
-This document captures how to rebuild the infobellit.com marketing site inside the Next.js codebase while preserving every page and the original written content captured in `/site-rebuild/www.infobellit.com`.
+This document captures how to rebuild the infobellit.com marketing site inside the Next.js codebase while preserving every page and the original written content captured in the legacy export (`/site-rebuild/www.infobellit.com`, kept outside the repo for size). A curated copy of the Blue Book HTML lives in `legacy-bluebook/` so report data remains reproducible without checking in the entire site.
 
 ## Objectives
 - Mirror the legacy site’s information architecture, copy, assets, and CTAs so the redesigned site remains content-equivalent.
@@ -45,6 +45,10 @@ This document captures how to rebuild the infobellit.com marketing site inside t
   - Headings “Our Clients”, “Our Affiliations”, “Our Tech Stacks”.
   - Client logo grids (use assets from `assets/images/client/`).
   - Tech stack list identical to home footer section.
+- `/hpc`, `/sustainability`, `/performance`, `/cloud-native`, `/compliance`:
+  - Deep-dive capability pages linked from the home “Core Expertise” section.
+  - Each route includes a hero (title + tagline), overview copy, structured capability sections, sample use cases, and a consistent CTA pointing to `/contact`.
+  - Backgrounds currently use themed Tailwind gradients until bespoke imagery is provided.
 
 - `/team`:
   - Headline “Our Leadership”.
@@ -149,7 +153,7 @@ This document captures how to rebuild the infobellit.com marketing site inside t
   - Ensure download CTA text `Get it now` and descriptive paragraphs remain intact (consider storing full HTML/Markdown).
 
 ### Additional Assets
-- `robots.txt`, `sitemap.xml` under `/site-rebuild` for reference, replicate via Next.js static files.
+- Keep `robots.txt` / `sitemap.xml` from the legacy export (store locally under `site-rebuild/`), and replicate those behaviors via Next.js static files as needed.
 - Images under `assets/images`, `assets/imgs` (client logos, team photos, product artwork) to be copied into `public/`.
 - Video `assets/video/Infobell-at-AMD-AI Day-2025.mp4` for hero carousel.
 
@@ -208,4 +212,4 @@ This document captures how to rebuild the infobellit.com marketing site inside t
 3. Any backend integration for contact form submissions and press-release subscription CTA?
 4. Is there a desired CMS source, or will content stay hard-coded/MDX in repo?
 
-Use this plan as the master checklist while building each Next.js page to guarantee the redesigned site carries forward every page and piece of written content from `/site-rebuild/www.infobellit.com`.
+Use this plan as the master checklist while building each Next.js page to guarantee the redesigned site carries forward every page and piece of written content from the legacy snapshot (reference your local `site-rebuild/` mirror and the tracked `legacy-bluebook/` data).

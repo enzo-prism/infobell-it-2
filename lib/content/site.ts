@@ -11,34 +11,36 @@ export type NavGroup = {
 
 export const NAV_PRIMARY: Array<NavItem | NavGroup> = [
   { label: "Home", href: "/" },
+  { label: "Our Team", href: "/team" },
   {
     label: "Solutions",
     items: [
       { label: "Artificial Intelligence", href: "/ai" },
-      { label: "High Performance Computing", href: "/#expertise" },
-      { label: "Carbon Footprint and Sustainability", href: "/#expertise" },
-      { label: "Performance Engineering", href: "/#expertise" },
-      { label: "Cloud Native Development", href: "/#expertise" },
-      { label: "Compliance and Confidential Computing", href: "/#expertise" },
+      { label: "High Performance Computing", href: "/hpc" },
+      { label: "Carbon Footprint and Sustainability", href: "/sustainability" },
+      { label: "Performance Engineering", href: "/performance" },
+      { label: "Cloud Native Development", href: "/cloud-native" },
+      { label: "Compliance and Confidential Computing", href: "/compliance" },
     ],
   },
   {
     label: "Products",
     items: [
-      { label: "ConvoGene", href: "/#products" },
-      { label: "Transcribe", href: "/#products" },
-      { label: "Cloud Migration Advisor", href: "/#products" },
-      { label: "Carbon Calculator", href: "/#products" },
-      { label: "Cloud Control", href: "/#products" },
-      { label: "EchoSwift", href: "/#products" },
-      { label: "DocPrep for RAG", href: "/#products" },
+      { label: "ConvoGene", href: "/convogene" },
+      { label: "Transcribe", href: "/transcribe" },
+      { label: "Cloud Migration Advisor", href: "/cloud-migration-advisor" },
+      { label: "Carbon Calculator", href: "/carbon-calculator" },
+      { label: "Cloud Control", href: "/cloud-control" },
+      { label: "EchoSwift", href: "/echoswift" },
+      { label: "DocPrep for RAG", href: "/docprep-for-rag" },
+      { label: "VAST", href: "/vast" },
+      { label: "SmartE", href: "/smarte" },
       { label: "Blue Book Series", href: "/bluebook" },
     ],
   },
-  { label: "Our Team", href: "/team" },
   { label: "Our Clients", href: "/clients" },
   { label: "Our Locations", href: "/locations" },
-  { label: "Connect with us", href: "/contact" },
+  { label: "Contact", href: "/contact" },
 ]
 
 export const FOOTER_LINKS: NavItem[] = [

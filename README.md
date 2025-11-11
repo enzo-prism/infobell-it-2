@@ -1,6 +1,6 @@
 # Infobell IT Website
 
-Next.js implementation of the Infobell IT marketing site. The codebase mirrors the content, structure, and assets of the legacy site captured in `site-rebuild/` while modernising the implementation with typed content sources and reusable components.
+Next.js implementation of the Infobell IT marketing site. The codebase mirrors the content, structure, and assets of the legacy site (archived outside the repository for size) while modernising the implementation with typed content sources and reusable components. A curated export of the Blue Book section lives in `legacy-bluebook/` so report data can be regenerated locally.
 
 ## At a Glance
 
@@ -8,7 +8,7 @@ Next.js implementation of the Infobell IT marketing site. The codebase mirrors t
 - **Styling:** Tailwind CSS (via `app/globals.css`)  
 - **Package manager:** pnpm  
 - **Content model:** Static data modules in `lib/content/*.ts` feed page routes inside `app/(site)/…`  
-- **Reference data:** `site-rebuild/` retains the original HTML, imagery, and copy used during the rebuild
+- **Reference data:** `legacy-bluebook/` retains the exported Blue Book HTML used for data generation; keep the full legacy snapshot outside the repo (ignored via `site-rebuild/`).
 
 Detailed decisions made during the redesign are recorded in [`docs/redesign-plan.md`](docs/redesign-plan.md).
 
@@ -45,7 +45,7 @@ docs/
 lib/content/        # typed content sources consumed by pages
 public/images/      # exported imagery from the legacy site
 public/media/       # hero video (≈79 MB)
-site-rebuild/       # raw HTML, assets, and sitemap from the original site
+legacy-bluebook/    # exported HTML for Blue Book reports used by scripts/generate_bluebook_data.py
 \`\`\`
 
 ### Content Sources
@@ -61,7 +61,7 @@ Update these modules when copy or product offerings change; page components auto
 
 ### Assets
 
-- Optimised images live beneath `public/images`. Each filename matches the legacy asset used in `site-rebuild/`.
+- Optimised images live beneath `public/images`. Each filename mirrors the corresponding asset from the legacy export.
 - The AMD day hero video (`public/media/Infobell-at-AMD-AI-Day-2025.mp4`) is ~79 MB. GitHub flags this as large – consider moving it to Git LFS or a CDN if repository size becomes a concern.
 
 ## Routes & Behaviour
@@ -71,11 +71,11 @@ Update these modules when copy or product offerings change; page components auto
 - `/clients`, `/team`, `/locations`, `/privacy-policy`, `/press-releases/prease-release-amd-2025`
 - `/careers` with dynamic detail pages under `/careers/[slug]`  
 - `/bluebook` listing reports, with dynamic report summaries at `/bluebook/[slug]`
-- `/contact` – mailto-based contact form. A subject query parameter like `/contact?subject=ConvoGene` pre-fills the dropdown.
+- `/contact` – mailto-based contact form. A subject query parameter like `/contact?subject=ConvoGene` pre-fills the subject field.
 
 ## Reference Snapshot
 
-The original site export under `site-rebuild/` contains:
+The original site export (ignored via `site-rebuild/`) contains:
 
 - Raw HTML pages & assets (`www.infobellit.com/…`)
 - `sitemap.xml`, `robots.txt`
@@ -95,7 +95,7 @@ Consult this folder when validating copy fidelity or retrieving additional media
 3. Keep assets in `public/` optimised; prefer PNG/JPEG/WebP under 1 MB where possible
 4. Submit a PR referencing the page or copy you updated
 
-For questions about the redesign scope, start with [`docs/redesign-plan.md`](docs/redesign-plan.md) or the legacy snapshot in `site-rebuild/`.
+For questions about the redesign scope, start with [`docs/redesign-plan.md`](docs/redesign-plan.md) or the tracked Blue Book export in `legacy-bluebook/` (keep the full legacy snapshot locally under `site-rebuild/` if needed).
 
 ## v0 Sync Workflow
 

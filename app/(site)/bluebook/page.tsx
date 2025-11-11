@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { BLUEBOOK_CATEGORIES } from "@/lib/content/bluebook"
+import type { BlueBookReport } from "@/lib/content/bluebook"
+import { GetItNowDialog } from "@/components/get-it-now-dialog"
 
 export const metadata: Metadata = {
   title: "Blue Book Series | Infobell IT Solutions",
@@ -24,25 +25,9 @@ export default function BlueBookIndexPage() {
           {BLUEBOOK_CATEGORIES.map((category) => (
             <section key={category.name}>
               <h2 className="text-2xl font-semibold text-foreground">{category.name}</h2>
-              <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-8 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
                 {category.reports.map((report) => (
-                  <article key={report.slug} className="flex h-full flex-col rounded-2xl border border-border bg-card/80 p-6 shadow-sm">
-                    <div className="flex-1">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-                        {report.title}
-                      </p>
-                      <h3 className="mt-3 text-lg font-semibold text-foreground">{report.subtitle}</h3>
-                      {report.summary.length ? (
-                        <p className="mt-3 text-sm text-muted-foreground">{report.summary[0]}</p>
-                      ) : null}
-                    </div>
-                    <Link
-                      href={`/bluebook/${report.slug}`}
-                      className="mt-6 inline-flex items-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-                    >
-                      View report
-                    </Link>
-                  </article>
+                  <BlueBookCard key={report.slug} report={report} />
                 ))}
               </div>
             </section>
@@ -50,5 +35,41 @@ export default function BlueBookIndexPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+type BlueBookCardProps = {
+  report: BlueBookReport
+}
+
+function BlueBookCard({ report }: BlueBookCardProps) {
+  const [leadParagraph, ...supportingParagraphs] = report.summary
+
+  return (
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card/95 p-6 shadow-sm ring-1 ring-border/40 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-2xl">
+      <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="relative flex-1 space-y-5">
+        <div className="space-y-2">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground">{report.legacyId}</p>
+          <h3 className="text-xl font-semibold leading-tight text-foreground">{report.subtitle}</h3>
+        </div>
+        {leadParagraph ? (
+          <p className="text-sm leading-6 text-muted-foreground">{leadParagraph}</p>
+        ) : null}
+        {supportingParagraphs.length ? (
+          <div className="space-y-3 rounded-2xl bg-background/60 p-4 ring-1 ring-border/60">
+            {supportingParagraphs.map((paragraph, index) => (
+              <div key={`${report.slug}-summary-${index}`} className="flex gap-3">
+                <span className="mt-1.5 inline-flex h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+                <p className="text-sm leading-6 text-muted-foreground">{paragraph}</p>
+              </div>
+            ))}
+          </div>
+        ) : null}
+      </div>
+      <div className="relative mt-6">
+        <GetItNowDialog reportName={report.subtitle} buttonClassName="w-full" />
+      </div>
+    </article>
   )
 }

@@ -64,6 +64,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     ],
     quote:
       "At Infobell, we don’t just build AI—we engineer it for performance, reliability, and enterprise scale.",
+    socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/ramana-bandili-713784142/" }],
   },
   {
     name: "Karthik Krishna",
@@ -87,6 +88,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
       { description: "Leads the ROCm and Kubernetes optimization workstreams for IFX.", icon: "rocket" },
       { description: "Mentors cross-functional guilds covering MLOps, FinOps, and sustainability.", icon: "target" },
     ],
+    socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/karthikkulkarni/" }],
   },
   {
     name: "Lax Sakalkale",
@@ -166,7 +168,6 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
         details: ["Completed foundational studies prior to undergraduate specialization."],
       },
     ],
-    socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/hilax/" }],
   },
   {
     name: "Malini Rao",
@@ -213,5 +214,6 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
       { description: "Guides solution packaging for Infobell’s AI and modernization kits.", icon: "workflow" },
       { description: "Supports board-level storytelling around ROI, governance, and resilience.", icon: "building" },
     ],
+    socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/sharada-bose/" }],
   },
 ]

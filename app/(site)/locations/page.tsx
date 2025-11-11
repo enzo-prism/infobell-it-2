@@ -31,13 +31,14 @@ export default function LocationsPage() {
                   </p>
                   <p className="mt-2 text-sm font-medium text-primary">{location.contact}</p>
                 </div>
-                <div className="relative h-56 w-full overflow-hidden rounded-2xl border border-border bg-muted">
+                <div className="rounded-2xl border border-border bg-muted/40 p-3">
                   <Image
                     src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1762617079/infobellitbuilding_eawzmk.webp"
                     alt="Infobell corporate headquarters exterior"
-                    fill
+                    width={1920}
+                    height={1080}
                     sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover"
+                    className="h-auto w-full rounded-xl object-contain"
                   />
                 </div>
               </div>

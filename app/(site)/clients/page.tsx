@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import { CLIENT_LOGOS, AFFILIATION_LOGOS } from "@/lib/content/company"
 import { TECH_STACK } from "@/lib/content/home"
+import { AutoHighlightLogoGrid } from "@/components/auto-highlight-logo-grid"
 
 export const metadata: Metadata = {
   title: "Our Clients | Infobell IT Solutions",
@@ -22,16 +23,14 @@ export default function ClientsPage() {
         </header>
 
         <section className="mt-16">
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-            {CLIENT_LOGOS.map((logo) => (
-              <div
-                key={logo.image}
-                className="flex h-24 items-center justify-center rounded-xl border border-border bg-card/60 p-4"
-              >
-                <Image src={logo.image} alt={logo.alt} width={150} height={80} className="h-12 w-auto object-contain" />
-              </div>
-            ))}
-          </div>
+          <AutoHighlightLogoGrid
+            logos={CLIENT_LOGOS}
+            containerClassName="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5"
+            cardClassName="flex h-24 items-center justify-center overflow-hidden rounded-xl border border-border bg-card/60 p-4 transition hover:-translate-y-1 hover:shadow-lg"
+            baseWidth={150}
+            baseHeight={80}
+            heightRem={3}
+          />
         </section>
 
         <section className="mt-20 text-center">
@@ -39,16 +38,15 @@ export default function ClientsPage() {
           <p className="mt-3 text-base text-muted-foreground">
             Strategic alliances that support responsible AI, confidential computing, and open performance engineering.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
-            {AFFILIATION_LOGOS.map((logo) => (
-              <div
-                key={logo.image}
-                className="flex h-24 w-48 items-center justify-center rounded-lg border border-border bg-card/80 p-4"
-              >
-                <Image src={logo.image} alt={logo.alt} width={160} height={80} className="h-full w-auto object-contain" />
-              </div>
-            ))}
-          </div>
+          <AutoHighlightLogoGrid
+            logos={AFFILIATION_LOGOS}
+            containerClassName="mt-8 flex flex-wrap items-center justify-center gap-6"
+            cardClassName="flex h-24 w-48 items-center justify-center overflow-hidden rounded-lg border border-border bg-card/80 p-4 transition hover:-translate-y-1 hover:shadow-lg"
+            baseWidth={160}
+            baseHeight={80}
+            heightRem={4}
+            intervalMs={3500}
+          />
         </section>
 
         <section className="mt-20 rounded-3xl border border-border bg-muted/20 p-8">

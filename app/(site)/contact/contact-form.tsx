@@ -17,13 +17,7 @@ export function ContactForm({ fields }: ContactFormProps) {
   const initialValues = useMemo(
     () =>
       fields.reduce<Record<string, string>>((acc, field) => {
-        if (field.type === "select") {
-          const allowedOptions = field.options ?? []
-          acc[field.name] =
-            preselectedSubject && allowedOptions.includes(preselectedSubject) ? preselectedSubject : ""
-          return acc
-        }
-        acc[field.name] = ""
+        acc[field.name] = field.name === "subject" && preselectedSubject ? preselectedSubject : ""
         return acc
       }, {}),
     [fields, preselectedSubject],
@@ -81,27 +75,6 @@ export function ContactForm({ fields }: ContactFormProps) {
               handleChange(field.name, event.target.value),
             className:
               "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
-          }
-
-          if (field.type === "select") {
-            return (
-              <div key={field.name}>
-                <label htmlFor={field.name} className="text-sm font-medium text-foreground">
-                  {field.label}
-                </label>
-                <select {...commonProps}>
-                  <option value="">Select a subject</option>
-                  {(field.options ?? []).map((subject) => (
-                    <option key={subject} value={subject}>
-                      {subject}
-                    </option>
-                  ))}
-                </select>
-                <p className="mt-2 text-xs text-muted-foreground">
-                  Choose a product or service so we can connect you with the right team.
-                </p>
-              </div>
-            )
           }
 
           if (field.type === "textarea") {
