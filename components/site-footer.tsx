@@ -13,8 +13,13 @@ function isGroup(entry: NavItem | NavGroup): entry is NavGroup {
   return (entry as NavGroup).items !== undefined
 }
 
-const solutionsGroup = NAV_PRIMARY.find((entry) => isGroup(entry) && entry.label === "Solutions")
-const productGroup = NAV_PRIMARY.find((entry) => isGroup(entry) && entry.label === "Products")
+function getGroupItems(label: string) {
+  const entry = NAV_PRIMARY.find((navItem) => isGroup(navItem) && navItem.label === label)
+  return entry && isGroup(entry) ? entry.items : []
+}
+
+const solutionsItems = getGroupItems("Solutions")
+const productItems = getGroupItems("Products")
 const companyLinks = NAV_PRIMARY.filter(
   (entry): entry is NavItem => !isGroup(entry) && entry.label !== "Home"
 )
@@ -66,30 +71,26 @@ export function SiteFooter() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary">Solutions</p>
             <ul className="mt-4 space-y-3">
-              {isGroup(solutionsGroup)
-                ? solutionsGroup.items.map((item) => (
-                    <li key={item.href}>
-                      <Link href={item.href} className="transition hover:text-primary">
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))
-                : null}
+              {solutionsItems.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="transition hover:text-primary">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary">Products</p>
             <ul className="mt-4 space-y-3">
-              {isGroup(productGroup)
-                ? productGroup.items.slice(0, 6).map((item) => (
-                    <li key={item.href}>
-                      <Link href={item.href} className="transition hover:text-primary">
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))
-                : null}
+              {productItems.slice(0, 6).map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="transition hover:text-primary">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
