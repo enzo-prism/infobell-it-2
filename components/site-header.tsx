@@ -29,7 +29,7 @@ function SolutionIcon({ icon, className }: { icon?: string; className?: string }
         className
       )}
     >
-      <IconComponent className="h-3.5 w-3.5" strokeWidth={1.7} />
+      <IconComponent className="h-3.5 w-3.5 stroke-[1.6]" />
     </span>
   )
 }
