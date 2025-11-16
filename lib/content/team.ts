@@ -168,6 +168,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
         details: ["Completed foundational studies prior to undergraduate specialization."],
       },
     ],
+    socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/hilax/" }],
   },
   {
     name: "Malini Rao",

@@ -2,12 +2,37 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useRef, useState, type FocusEvent } from "react"
-import { ChevronDown, Menu, X } from "lucide-react"
+import clsx from "clsx"
+import { useEffect, useRef, useState, type FocusEvent, type ComponentType } from "react"
+import { Bot, ChevronDown, Cloud, Cpu, Gauge, Leaf, Menu, ShieldCheck, X } from "lucide-react"
 import { NAV_PRIMARY, type NavGroup, type NavItem } from "@/lib/content/site"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 type NavEntry = NavItem | NavGroup
+const ICON_MAP: Record<string, ComponentType<{ className?: string }>> = {
+  bot: Bot,
+  cpu: Cpu,
+  leaf: Leaf,
+  gauge: Gauge,
+  cloud: Cloud,
+  shield: ShieldCheck,
+}
+
+function SolutionIcon({ icon, className }: { icon?: string; className?: string }) {
+  if (!icon) return null
+  const IconComponent = ICON_MAP[icon]
+  if (!IconComponent) return null
+  return (
+    <span
+      className={clsx(
+        "flex h-8 w-8 flex-none items-center justify-center rounded-xl border border-border/50 bg-muted/40 text-muted-foreground transition duration-300 group-hover:border-primary/40 group-hover:text-primary",
+        className
+      )}
+    >
+      <IconComponent className="h-3.5 w-3.5" strokeWidth={1.7} />
+    </span>
+  )
+}
 
 function isGroup(entry: NavEntry): entry is NavGroup {
   return (entry as NavGroup).items !== undefined
@@ -101,10 +126,11 @@ export function SiteHeader() {
                       <Link
                         key={item.label}
                         href={item.href}
-                        className="block rounded-md px-2 py-1 text-sm transition hover:bg-muted"
+                        className="group flex items-center gap-3 rounded-md px-2 py-1 text-sm transition hover:bg-muted"
                         onClick={() => setDesktopGroup(null)}
                       >
-                        {item.label}
+                        <SolutionIcon icon={item.icon} />
+                        <span>{item.label}</span>
                       </Link>
                     ))}
                   </div>
@@ -149,10 +175,11 @@ export function SiteHeader() {
                       <li key={item.label}>
                         <Link
                           href={item.href}
-                          className="block rounded-md px-3 py-2 transition hover:bg-muted"
+                          className="group flex items-center gap-3 rounded-md px-3 py-2 transition hover:bg-muted"
                           onClick={() => setMobileOpen(false)}
                         >
-                          {item.label}
+                          <SolutionIcon icon={item.icon} />
+                          <span>{item.label}</span>
                         </Link>
                       </li>
                     ))}

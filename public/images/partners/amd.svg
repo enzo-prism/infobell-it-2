@@ -1,0 +1,6 @@
+<svg width="180" height="72" viewBox="0 0 180 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="72" rx="16" fill="#0C0C0C"/>
+  <path d="M28 18H66L86 38V74H50L28 52V18Z" fill="#00DC82" fill-opacity="0.9"/>
+  <path d="M48 26L36 38V54L48 66H78V44L60 26H48Z" fill="#001A0F" fill-opacity="0.35"/>
+  <text x="120" y="46" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">AMD</text>
+</svg>

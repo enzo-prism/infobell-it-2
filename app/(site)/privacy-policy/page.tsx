@@ -13,10 +13,6 @@ export default function PrivacyPolicyPage() {
       <div className="mx-auto w-full max-w-4xl px-4">
         <header className="text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Privacy Policy</h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-7 text-muted-foreground">
-            We are committed to protecting personally identifiable information and ensuring transparent practices
-            around data collection, usage, and retention.
-          </p>
         </header>
 
         <div className="mt-16 space-y-12">

@@ -1,0 +1,6 @@
+<svg width="180" height="72" viewBox="0 0 180 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="72" rx="16" fill="#0B1F17"/>
+  <path d="M36 21C49.2548 21 60 31.7452 60 45H52.2C52.2 36.3015 44.6985 28.8 36 28.8V21Z" fill="#76B900"/>
+  <path d="M36 26.4C47.0457 26.4 56 35.3543 56 46.4C56 57.4457 47.0457 66.4 36 66.4C24.9543 66.4 16 57.4457 16 46.4C16 35.3543 24.9543 26.4 36 26.4ZM36 58.6C42.3513 58.6 47.4 53.5513 47.4 47.2C47.4 40.8487 42.3513 35.8 36 35.8C29.6487 35.8 24.6 40.8487 24.6 47.2C24.6 53.5513 29.6487 58.6 36 58.6Z" fill="#76B900"/>
+  <text x="105" y="46" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="26" font-weight="700" fill="#F4FFE0">NVIDIA</text>
+</svg>

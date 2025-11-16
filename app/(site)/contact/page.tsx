@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { Suspense } from "react"
 import { CORPORATE_OFFICE } from "@/lib/content/site"
@@ -28,6 +29,16 @@ export default function ContactPage() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground">Our Office</h2>
               <p className="mt-3 text-sm text-muted-foreground">{CONTACT_COPY.officeDescription}</p>
+              <div className="mt-6 rounded-2xl border border-border bg-muted/40 p-3">
+                <Image
+                  src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1762617079/infobellitbuilding_eawzmk.webp"
+                  alt="Infobell headquarters exterior"
+                  width={1920}
+                  height={1080}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="h-auto w-full rounded-xl object-cover"
+                />
+              </div>
               <div className="mt-6 space-y-3 text-sm leading-6 text-foreground">
                 <p className="font-medium">{CORPORATE_OFFICE.heading}</p>
                 <p>{CORPORATE_OFFICE.addressLine}</p>

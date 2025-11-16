@@ -2,6 +2,7 @@ export type NavItem = {
   label: string
   href: string
   external?: boolean
+  icon?: string
 }
 
 export type NavGroup = {
@@ -15,12 +16,12 @@ export const NAV_PRIMARY: Array<NavItem | NavGroup> = [
   {
     label: "Solutions",
     items: [
-      { label: "Artificial Intelligence", href: "/ai" },
-      { label: "High Performance Computing", href: "/hpc" },
-      { label: "Carbon Footprint and Sustainability", href: "/sustainability" },
-      { label: "Performance Engineering", href: "/performance" },
-      { label: "Cloud Native Development", href: "/cloud-native" },
-      { label: "Compliance and Confidential Computing", href: "/compliance" },
+      { label: "Artificial Intelligence", href: "/ai", icon: "bot" },
+      { label: "High Performance Computing", href: "/hpc", icon: "cpu" },
+      { label: "Carbon Footprint and Sustainability", href: "/sustainability", icon: "leaf" },
+      { label: "Performance Engineering", href: "/performance", icon: "gauge" },
+      { label: "Cloud Native Development", href: "/cloud-native", icon: "cloud" },
+      { label: "Compliance and Confidential Computing", href: "/compliance", icon: "shield" },
     ],
   },
   {

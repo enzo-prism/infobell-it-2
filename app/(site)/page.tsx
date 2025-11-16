@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import clsx from "clsx"
@@ -6,6 +7,12 @@ import { LEADERSHIP_TEAM, TEAM_INTRO } from "@/lib/content/team"
 import { CLIENT_LOGOS, AFFILIATION_LOGOS } from "@/lib/content/company"
 import type { LogoEntry } from "@/lib/content/company"
 import { CoreExpertiseCarousel } from "@/components/core-expertise-carousel"
+
+export const metadata: Metadata = {
+  title: "Infobell IT Solutions | Enterprise AI & Performance Engineering",
+  description:
+    "Infobell IT Solutions partners with global innovators to deliver AI, HPC, and cloud-native programs through benchmarking, IFX accelerators, and expert engineering teams.",
+}
 
 export default function HomePage() {
   return (
@@ -32,15 +39,26 @@ function HeroSection() {
           <div className="mt-8 flex flex-wrap items-center gap-4 text-sm font-medium">
             <Link
               href={HERO_CONTENT.pressAnnouncement.href}
-              className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-primary-foreground shadow-sm transition hover:bg-primary/90"
+              className="group relative inline-flex items-center overflow-hidden rounded-full bg-gradient-to-r from-primary via-primary/90 to-sky-500 px-5 py-2.5 text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_45px_-18px_rgba(14,165,233,0.9)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/70"
             >
-              {HERO_CONTENT.pressAnnouncement.label}
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 transition duration-300 group-hover:opacity-100" />
+              <span className="relative inline-flex items-center gap-1">
+                {HERO_CONTENT.pressAnnouncement.label}
+                <span aria-hidden="true" className="translate-x-0 text-base transition group-hover:translate-x-1">
+                  &rarr;
+                </span>
+              </span>
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-full border border-primary px-4 py-2 text-primary transition hover:bg-primary/5"
+              className="group relative inline-flex items-center rounded-full border border-transparent bg-gradient-to-r from-primary/70 to-sky-400/70 p-[1px] text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/50"
             >
-              Connect with us
+              <span className="inline-flex w-full items-center gap-1 rounded-full bg-background/90 px-5 py-2.5 text-sm font-semibold text-primary transition-all duration-300 group-hover:bg-primary/5 group-hover:text-primary/90 group-hover:shadow-[inset_0_0_0_1px_rgba(14,165,233,0.4)]">
+                Connect with us
+                <span aria-hidden="true" className="translate-x-0 text-base transition group-hover:translate-x-1">
+                  &rarr;
+                </span>
+              </span>
             </Link>
           </div>
         </div>
@@ -189,11 +207,13 @@ function ProductSection() {
           <p className="mt-2 text-sm text-muted-foreground">Modern tools for next-gen IT solutions</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {TECH_STACK.map((tech) => (
-              <div
+              <a
                 key={tech.label}
+                href={tech.href}
+                target="_blank"
+                rel="noreferrer"
                 className="group flex items-center gap-4 rounded-2xl border border-border/70 bg-card/90 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
-                tabIndex={0}
-                aria-label={tech.label}
+                aria-label={`Visit ${tech.label}`}
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-muted/40">
                   <Image
@@ -205,7 +225,7 @@ function ProductSection() {
                   />
                 </div>
                 <span className="text-sm font-semibold text-foreground">{tech.label}</span>
-              </div>
+              </a>
             ))}
           </div>
         </div>

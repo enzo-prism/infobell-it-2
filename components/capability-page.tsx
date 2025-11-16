@@ -1,5 +1,6 @@
 import Link from "next/link"
 import type { CapabilityDetail } from "@/lib/content/capabilities"
+import { HeroVideoFrame } from "@/components/hero-video-frame"
 
 export function CapabilityPage({ capability }: { capability: CapabilityDetail }) {
   return (
@@ -55,15 +56,20 @@ export function CapabilityPage({ capability }: { capability: CapabilityDetail })
           </div>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-primary/30 bg-primary/10 p-8 text-center shadow-sm">
-          <h2 className="text-2xl font-semibold text-foreground">{capability.cta.heading}</h2>
-          <p className="mt-3 text-base text-foreground">{capability.cta.body}</p>
-          <Link
-            href={`/contact?subject=${encodeURIComponent(capability.title)}`}
-            className="mt-6 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-          >
-            {capability.cta.action}
-          </Link>
+        <section className="mt-12 rounded-3xl border border-primary/30 bg-primary/10 p-8 shadow-sm">
+          <div className="grid gap-8 lg:grid-cols-[1.2fr,0.8fr] lg:items-center">
+            <div className="text-center lg:text-left">
+              <h2 className="text-2xl font-semibold text-foreground">{capability.cta.heading}</h2>
+              <p className="mt-3 text-base text-foreground">{capability.cta.body}</p>
+              <Link
+                href={`/contact?subject=${encodeURIComponent(capability.title)}`}
+                className="mt-6 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+              >
+                {capability.cta.action}
+              </Link>
+            </div>
+            <HeroVideoFrame className="mx-auto w-full max-w-sm" title={`${capability.title} brand reel`} />
+          </div>
         </section>
       </div>
     </div>

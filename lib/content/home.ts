@@ -132,22 +132,27 @@ export const SERVICE_PRODUCTS: ProductOffering[] = [
 export type TechStackItem = {
   label: string
   logo: string
+  href: string
 }
 
 export const TECH_STACK: TechStackItem[] = [
-  { label: "React JS", logo: "/images/tech/react.png" },
-  { label: "Angular JS", logo: "/images/tech/angular.png" },
-  { label: "Vue JS", logo: "/images/tech/vuejs.png" },
-  { label: "Node Js", logo: "/images/tech/nodejs.png" },
-  { label: "Java", logo: "/images/tech/java.png" },
-  { label: "Golang", logo: "/images/tech/golang.png" },
-  { label: "Python", logo: "/images/tech/python.png" },
-  { label: "C", logo: "/images/tech/c.png" },
-  { label: "Kubernetes", logo: "/images/tech/kubernetes.png" },
-  { label: "Tanzu Kubernetes", logo: "/images/tech/tanzu.png" },
-  { label: "Docker", logo: "/images/tech/docker.png" },
-  { label: "Big Data", logo: "/images/tech/bigdata.png" },
-  { label: "Linux kernel", logo: "/images/tech/linux.png" },
-  { label: "VMware", logo: "/images/tech/vmware.png" },
-  { label: "OpenShift", logo: "/images/tech/openshift.png" },
+  { label: "React JS", logo: "/images/tech/react.png", href: "https://react.dev" },
+  { label: "Angular JS", logo: "/images/tech/angular.png", href: "https://angularjs.org" },
+  { label: "Vue JS", logo: "/images/tech/vuejs.png", href: "https://vuejs.org" },
+  { label: "Node.js", logo: "/images/tech/nodejs.png", href: "https://nodejs.org" },
+  { label: "Java", logo: "/images/tech/java.png", href: "https://www.java.com" },
+  { label: "Golang", logo: "/images/tech/golang.png", href: "https://go.dev" },
+  { label: "Python", logo: "/images/tech/python.png", href: "https://www.python.org" },
+  { label: "C Language", logo: "/images/tech/c.png", href: "https://en.cppreference.com/w/c" },
+  { label: "Kubernetes", logo: "/images/tech/kubernetes.png", href: "https://kubernetes.io" },
+  { label: "Tanzu Kubernetes Grid", logo: "/images/tech/tanzu.png", href: "https://tanzu.vmware.com/kubernetes-grid" },
+  { label: "Docker", logo: "/images/tech/docker.png", href: "https://www.docker.com" },
+  { label: "Big Data", logo: "/images/tech/bigdata.png", href: "https://hadoop.apache.org" },
+  { label: "Linux Kernel", logo: "/images/tech/linux.png", href: "https://www.kernel.org" },
+  { label: "VMware", logo: "/images/tech/vmware.png", href: "https://www.vmware.com" },
+  {
+    label: "OpenShift",
+    logo: "/images/tech/openshift.png",
+    href: "https://www.redhat.com/en/technologies/cloud-computing/openshift",
+  },
 ]

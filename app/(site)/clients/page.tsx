@@ -54,11 +54,13 @@ export default function ClientsPage() {
           <p className="mt-2 text-sm text-muted-foreground">Modern tools for next-gen IT solutions</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {TECH_STACK.map((tech) => (
-              <div
+              <a
                 key={tech.label}
+                href={tech.href}
+                target="_blank"
+                rel="noreferrer"
                 className="group flex items-center gap-4 rounded-2xl border border-border/70 bg-card/90 px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
-                tabIndex={0}
-                aria-label={tech.label}
+                aria-label={`Visit ${tech.label}`}
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-muted/40">
                   <Image
@@ -70,7 +72,7 @@ export default function ClientsPage() {
                   />
                 </div>
                 <span className="text-sm font-semibold text-foreground">{tech.label}</span>
-              </div>
+              </a>
             ))}
           </div>
         </section>
