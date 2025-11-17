@@ -4,13 +4,14 @@ import Image from "next/image"
 import Link from "next/link"
 import clsx from "clsx"
 import { useEffect, useRef, useState, type FocusEvent, type ComponentType } from "react"
-import { Bot, ChevronDown, Cloud, Cpu, Gauge, Leaf, Menu, ShieldCheck, X } from "lucide-react"
+import { Brain, ChevronDown, Cloud, Cpu, Gauge, Leaf, Menu, ShieldCheck, X } from "lucide-react"
 import { NAV_PRIMARY, type NavGroup, type NavItem } from "@/lib/content/site"
+import type { ExpertiseIcon } from "@/lib/content/capabilities"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 type NavEntry = NavItem | NavGroup
-const ICON_MAP: Record<string, ComponentType<{ className?: string }>> = {
-  bot: Bot,
+const ICON_MAP: Record<ExpertiseIcon, ComponentType<{ className?: string }>> = {
+  brain: Brain,
   cpu: Cpu,
   leaf: Leaf,
   gauge: Gauge,
@@ -18,7 +19,7 @@ const ICON_MAP: Record<string, ComponentType<{ className?: string }>> = {
   shield: ShieldCheck,
 }
 
-function SolutionIcon({ icon, className }: { icon?: string; className?: string }) {
+function SolutionIcon({ icon, className }: { icon?: ExpertiseIcon; className?: string }) {
   if (!icon) return null
   const IconComponent = ICON_MAP[icon]
   if (!IconComponent) return null

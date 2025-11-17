@@ -1,8 +1,10 @@
+import type { ExpertiseIcon } from "./capabilities"
+
 export type NavItem = {
   label: string
   href: string
   external?: boolean
-  icon?: string
+  icon?: ExpertiseIcon
 }
 
 export type NavGroup = {
@@ -16,7 +18,7 @@ export const NAV_PRIMARY: Array<NavItem | NavGroup> = [
   {
     label: "Solutions",
     items: [
-      { label: "Artificial Intelligence", href: "/ai", icon: "bot" },
+      { label: "Artificial Intelligence", href: "/ai", icon: "brain" },
       { label: "High Performance Computing", href: "/hpc", icon: "cpu" },
       { label: "Carbon Footprint and Sustainability", href: "/sustainability", icon: "leaf" },
       { label: "Performance Engineering", href: "/performance", icon: "gauge" },
