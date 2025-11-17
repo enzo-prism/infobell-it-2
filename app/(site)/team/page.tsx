@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { LEADERSHIP_TEAM, TEAM_INTRO } from "@/lib/content/team"
 import { LeadershipCard } from "@/components/leadership-card"
 
@@ -28,6 +29,35 @@ export default function TeamPage() {
               linkedInHref={getLinkedIn(member)}
             />
           ))}
+        </section>
+
+        <section className="mt-20">
+          <div className="card-glow flex flex-col gap-6 rounded-3xl border border-border bg-gradient-to-tr from-primary/10 via-background to-background p-8 shadow-lg md:flex-row md:items-center">
+            <div className="flex-1 space-y-3 text-center md:text-left">
+              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary">Careers</p>
+              <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">
+                Build the next era of enterprise engineering with us.
+              </h2>
+              <p className="text-base text-muted-foreground">
+                We are hiring across AI, performance, cloud, and sustainability programs. Join a global team that blends
+                deep technical expertise with collaborative, human-centered leadership.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
+              <Link
+                href="/careers"
+                className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+              >
+                Explore open roles
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full border border-primary/30 px-6 py-2.5 text-sm font-semibold text-primary transition hover:border-primary hover:bg-primary/10"
+              >
+                Talk to us
+              </Link>
+            </div>
+          </div>
         </section>
       </div>
     </div>
