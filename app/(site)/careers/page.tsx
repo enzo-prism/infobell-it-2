@@ -37,7 +37,7 @@ export default function CareersPage() {
               className="flex h-full flex-col rounded-2xl border border-border bg-card/80 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-primary">Bengaluru, India</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary">{role.location}</p>
                 <h2 className="mt-2 text-xl font-semibold text-foreground">{role.title}</h2>
                 <p className="mt-3 text-sm text-muted-foreground">{role.summary}</p>
               </div>
