@@ -41,7 +41,7 @@ export default async function CareerDetailPage({ params }: CareerPageProps) {
       <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <header className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">{role.location}</p>
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{role.title}</h1>
+          <h1 className="text-4xl font-semibold tracking-tight text-heading sm:text-5xl">{role.title}</h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">{role.summary}</p>
           <Button asChild className="mt-6">
             <Link href={`mailto:${APPLY_EMAIL}?subject=Application: ${encodeURIComponent(role.title)}`}>Apply today</Link>
@@ -50,7 +50,7 @@ export default async function CareerDetailPage({ params }: CareerPageProps) {
 
         <section className="mt-16 grid gap-6 md:grid-cols-[2fr,1fr]">
           <div className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-semibold text-foreground">Job Responsibilities / Skill-Set</h2>
+            <h2 className="text-2xl font-semibold text-heading">Job Responsibilities / Skill-Set</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground">
               {role.responsibilities.map((item) => (
                 <li key={item}>{item}</li>
@@ -58,7 +58,7 @@ export default async function CareerDetailPage({ params }: CareerPageProps) {
             </ul>
           </div>
           <aside className="rounded-3xl border border-primary/20 bg-gradient-to-b from-primary/5 to-background p-6 text-center shadow-sm sm:p-8">
-            <h2 className="text-xl font-semibold text-foreground">Apply today</h2>
+            <h2 className="text-xl font-semibold text-heading">Apply today</h2>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
               Email us your resume and a short note about this role. Make sure to mention{" "}
               <span className="font-semibold text-foreground">{role.title}</span> in the subject line so our hiring team
@@ -73,11 +73,11 @@ export default async function CareerDetailPage({ params }: CareerPageProps) {
         </section>
 
         <section className="mt-16 rounded-3xl border border-border bg-muted/20 p-6 sm:p-8">
-          <h3 className="text-xl font-semibold text-foreground">Related Jobs</h3>
+          <h3 className="text-xl font-semibold text-heading">Related Jobs</h3>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             {relatedRoles.map((related) => (
               <article key={related.slug} className="rounded-2xl border border-border bg-card/70 p-6">
-                <h4 className="text-lg font-semibold text-foreground">{related.title}</h4>
+                <h4 className="text-lg font-semibold text-heading">{related.title}</h4>
                 <p className="mt-2 text-sm text-muted-foreground">{related.summary}</p>
                 <Button asChild className="mt-4" size="sm" variant="outline">
                   <Link href={`/careers/${related.slug}`}>View role</Link>

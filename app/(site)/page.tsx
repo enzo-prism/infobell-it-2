@@ -35,7 +35,7 @@ function HeroSection() {
     <section className="bg-gradient-to-b from-background via-background to-muted/40">
       <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <div className="max-w-4xl">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-bold tracking-tight text-heading sm:text-5xl lg:text-6xl">
             {HERO_CONTENT.heading}
           </h1>
           <HeroPillarsSlider />
@@ -88,7 +88,7 @@ function EnterpriseAiMediaSection() {
         <div className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary/15 via-background to-background p-6 shadow-lg">
           <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-primary/10 blur-3xl" />
           <div className="relative space-y-5">
-            <h2 className="text-3xl font-semibold text-foreground">Building the Future of Enterprise AI</h2>
+            <h2 className="text-3xl font-semibold text-heading">Building the Future of Enterprise AI</h2>
             <p className="text-sm font-semibold text-foreground">Deep AI ML Experts | Global Delivery</p>
             <p className="text-sm leading-6 text-muted-foreground">
               <span className="font-semibold text-foreground">Infobell</span> is a premier global product engineering and
@@ -145,7 +145,7 @@ function CoreExpertiseSection() {
     <section id="expertise" className="bg-background">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Our Core Expertise</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-heading sm:text-4xl">Our Core Expertise</h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Strategic engineering capabilities that unlock scalable AI, resilient infrastructure, and sustainable cloud
             modernization.
@@ -164,7 +164,7 @@ function IfxHighlight() {
         <Image src={IFX_HIGHLIGHT.image} alt={IFX_HIGHLIGHT.title} width={200} height={120} className="h-32 w-auto" />
         <div className="space-y-4">
           <p className="text-sm font-medium uppercase tracking-wide text-primary">Introducing Infobell IFX</p>
-          <h3 className="text-2xl font-semibold text-foreground">{IFX_HIGHLIGHT.title}</h3>
+          <h3 className="text-2xl font-semibold text-heading">{IFX_HIGHLIGHT.title}</h3>
           <p className="max-w-3xl text-base text-muted-foreground">{IFX_HIGHLIGHT.description}</p>
           <Button asChild size="sm">
             <Link href={IFX_HIGHLIGHT.href}>Learn more</Link>
@@ -180,7 +180,7 @@ function ProductSection() {
     <section id="products" className="scroll-mt-24 bg-background md:scroll-mt-28">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Our Service Products</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-heading sm:text-4xl">Our Service Products</h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Productized accelerators for AI transformation, performance engineering, and sustainable cloud operations.
           </p>
@@ -202,7 +202,7 @@ function ProductSection() {
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                 />
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-foreground">{product.title}</h3>
+              <h3 className="mt-6 text-xl font-semibold text-heading">{product.title}</h3>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">{product.description}</p>
               <span className="mt-4 inline-flex w-fit items-center text-sm font-semibold text-primary underline-offset-4 transition-all duration-300 group-hover:translate-x-1 group-hover:underline">
                 Learn more
@@ -212,7 +212,7 @@ function ProductSection() {
         </div>
 
         <div className="mt-16 rounded-2xl border border-border bg-muted/30 p-6 sm:p-8">
-          <h3 className="text-xl font-semibold text-foreground">Our Tech Stacks</h3>
+          <h3 className="text-xl font-semibold text-heading">Our Tech Stacks</h3>
           <p className="mt-2 text-sm text-muted-foreground">Modern tools for next-gen IT solutions</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {TECH_STACK.map((tech) => (
@@ -249,7 +249,7 @@ function TeamSection() {
       <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl border border-border bg-card/80 p-6 text-center shadow-sm sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Leadership</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Meet the Team</h2>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-heading sm:text-4xl">Meet the Team</h2>
           <p className="mt-4 text-base text-muted-foreground">{TEAM_INTRO}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Button asChild>
@@ -270,7 +270,7 @@ function ClientsSection() {
     <section className="bg-background">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Our Clients</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-heading sm:text-4xl">Our Clients</h2>
           <p className="mt-3 text-base text-muted-foreground">
             Trusted by global brands, performance leaders, and industry innovators.
           </p>
@@ -288,7 +288,7 @@ function ClientsSection() {
           ))}
         </div>
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold text-foreground">Our Affiliations</h3>
+          <h3 className="text-2xl font-semibold text-heading">Our Affiliations</h3>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-6">
             {AFFILIATION_LOGOS.map((logo) => (
               <LogoTile

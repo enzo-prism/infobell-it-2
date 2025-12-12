@@ -11,7 +11,7 @@ export function CapabilityPage({ capability }: { capability: CapabilityDetail })
           className={`rounded-3xl border border-border bg-gradient-to-br ${capability.heroBackground} p-6 shadow-sm sm:p-8`}
         >
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Center of Excellence</p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-heading sm:text-5xl">
             {capability.title}
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">{capability.heroTagline}</p>
@@ -30,7 +30,7 @@ export function CapabilityPage({ capability }: { capability: CapabilityDetail })
               key={section.heading}
               className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm"
             >
-              <h2 className="text-2xl font-semibold text-foreground">{section.heading}</h2>
+              <h2 className="text-2xl font-semibold text-heading">{section.heading}</h2>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-muted-foreground">
                 {section.items.map((item) => (
                   <li key={item} className="flex gap-3 rounded-2xl border border-border/40 bg-card/70 p-3">
@@ -44,7 +44,7 @@ export function CapabilityPage({ capability }: { capability: CapabilityDetail })
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-semibold text-foreground">Use Cases & Featured Work</h2>
+          <h2 className="text-2xl font-semibold text-heading">Use Cases & Featured Work</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {capability.useCases.map((useCase) => (
               <div
@@ -60,7 +60,7 @@ export function CapabilityPage({ capability }: { capability: CapabilityDetail })
         <section className="mt-12 rounded-3xl border border-primary/30 bg-primary/10 p-6 shadow-sm sm:p-8">
           <div className="grid gap-8 lg:grid-cols-[1.2fr,0.8fr] lg:items-center">
             <div className="text-center lg:text-left">
-              <h2 className="text-2xl font-semibold text-foreground">{capability.cta.heading}</h2>
+              <h2 className="text-2xl font-semibold text-heading">{capability.cta.heading}</h2>
               <p className="mt-3 text-base text-foreground">{capability.cta.body}</p>
               <Button asChild className="mt-6" size="lg">
                 <Link href={`/contact?subject=${encodeURIComponent(capability.title)}`}>{capability.cta.action}</Link>

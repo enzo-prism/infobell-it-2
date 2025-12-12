@@ -51,7 +51,7 @@ export function LeadershipCard({ member, linkedInHref, index }: LeadershipCardPr
       </div>
       <div className="mt-6 flex flex-1 flex-col">
         <div>
-          <h2 className="text-2xl font-semibold text-foreground">{member.name}</h2>
+          <h2 className="text-2xl font-semibold text-heading">{member.name}</h2>
           <p className="text-sm text-muted-foreground">{member.title}</p>
         </div>
         <p className="mt-4 text-sm leading-6 text-muted-foreground">{member.summary}</p>

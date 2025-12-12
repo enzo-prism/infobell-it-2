@@ -15,7 +15,7 @@ export default function PressReleaseAmd2025Page() {
       <article className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <header className="text-left">
           <p className="text-xs font-semibold uppercase tracking-wider text-primary">Press Release</p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{title}</h1>
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-heading sm:text-5xl">{title}</h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">{subtitle}</p>
           <p className="mt-4 text-sm font-medium text-foreground">{dateline}</p>
         </header>
@@ -24,7 +24,7 @@ export default function PressReleaseAmd2025Page() {
           {sections.map((section, index) => (
             <section key={index} className="space-y-4">
               {section.heading ? (
-                <h2 className="text-2xl font-semibold text-foreground">{section.heading}</h2>
+                <h2 className="text-2xl font-semibold text-heading">{section.heading}</h2>
               ) : null}
               {section.paragraphs.map((paragraph, paragraphIndex) => (
                 <p key={paragraphIndex}>{paragraph}</p>
@@ -34,7 +34,7 @@ export default function PressReleaseAmd2025Page() {
         </div>
 
         <footer className="mt-12 border-t border-border pt-6 text-sm text-muted-foreground">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-foreground">Contacts</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-heading">Contacts</h2>
           <ul className="mt-3 space-y-1">
             {contacts.map((contact) => {
               const match = contact.match(/([\\w._%+-]+@[\\w.-]+)/i)

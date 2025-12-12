@@ -78,7 +78,7 @@ export function CoreExpertiseCarousel() {
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent text-primary shadow-inner shadow-primary/20 ring-1 ring-primary/15 transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-3">
                   <Icon className="h-8 w-8" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-heading">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.summary}</p>
                 <ul className="space-y-3 text-left text-sm leading-6 text-muted-foreground">
                   {points.slice(0, 4).map((point) => (

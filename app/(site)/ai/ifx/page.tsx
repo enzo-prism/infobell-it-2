@@ -23,7 +23,7 @@ export default function IfxPage() {
     <div className="bg-background py-16 sm:py-20">
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         <header className="text-center">
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+          <h1 className="text-4xl font-semibold tracking-tight text-heading sm:text-5xl">
             Infobell Inference Framework eXpress (IFX)
           </h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">
@@ -35,7 +35,7 @@ export default function IfxPage() {
         <div className="mt-16 space-y-10">
           {IFX_SECTIONS.map((section) => (
             <section key={section.heading} className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm sm:p-8">
-              <h2 className="text-2xl font-semibold text-foreground">{section.heading}</h2>
+              <h2 className="text-2xl font-semibold text-heading">{section.heading}</h2>
               {section.paragraphs?.map((paragraph, index) => (
                 <p key={index} className="mt-4 text-sm leading-7 text-muted-foreground">
                   {paragraph}
@@ -68,11 +68,11 @@ export default function IfxPage() {
         </div>
 
         <section className="mt-12">
-          <h2 className="text-3xl font-semibold text-foreground">IFX-Powered Enterprise AI Service Kits</h2>
+          <h2 className="text-3xl font-semibold text-heading">IFX-Powered Enterprise AI Service Kits</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {IFX_SERVICE_KITS.map((kit) => (
               <article key={kit.title} className="rounded-2xl border border-border bg-muted/30 p-6">
-                <h3 className="text-xl font-semibold text-foreground">{kit.title}</h3>
+                <h3 className="text-xl font-semibold text-heading">{kit.title}</h3>
                 <p className="mt-3 text-sm text-muted-foreground">{kit.description}</p>
               </article>
             ))}
@@ -80,11 +80,11 @@ export default function IfxPage() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-3xl font-semibold text-foreground">Other Service Kits: AI and Cloud Intelligence</h2>
+          <h2 className="text-3xl font-semibold text-heading">Other Service Kits: AI and Cloud Intelligence</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {IFX_ADDITIONAL_KITS.map((kit) => (
               <article key={kit.title} className="rounded-2xl border border-border bg-card/70 p-6">
-                <h3 className="text-xl font-semibold text-foreground">{kit.title}</h3>
+                <h3 className="text-xl font-semibold text-heading">{kit.title}</h3>
                 <p className="mt-3 text-sm text-muted-foreground">{kit.description}</p>
               </article>
             ))}

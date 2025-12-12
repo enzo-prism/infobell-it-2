@@ -14,7 +14,7 @@ export default function LocationsPage() {
     <div className="bg-background py-16 sm:py-20">
       <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <header className="text-center">
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Our Locations</h1>
+          <h1 className="text-4xl font-semibold tracking-tight text-heading sm:text-5xl">Our Locations</h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">
             Infobell IT Solutions partners with enterprises worldwide. Explore our headquarters and regional presence.
           </p>
@@ -25,7 +25,7 @@ export default function LocationsPage() {
             <article key={location.title} className="rounded-2xl border border-border bg-card/70 p-6 shadow-sm sm:p-8">
               <div className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
                 <div>
-                  <h2 className="text-2xl font-semibold text-foreground">{location.title}</h2>
+                  <h2 className="text-2xl font-semibold text-heading">{location.title}</h2>
                   <p className="mt-4 text-sm leading-6 text-muted-foreground whitespace-pre-line">
                     {location.description}
                   </p>
@@ -47,7 +47,7 @@ export default function LocationsPage() {
         </section>
 
         <section className="mt-16 rounded-2xl border border-border bg-muted/20 p-6 sm:p-8">
-          <h2 className="text-2xl font-semibold text-foreground">Global Presence</h2>
+          <h2 className="text-2xl font-semibold text-heading">Global Presence</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Our engineering and delivery teams collaborate with clients across key technology hubs.
           </p>

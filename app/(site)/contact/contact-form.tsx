@@ -63,7 +63,7 @@ export function ContactForm({ fields }: ContactFormProps) {
       className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm sm:p-8"
       aria-describedby={submitted ? "contact-success" : undefined}
     >
-      <h2 className="text-2xl font-semibold text-foreground">Send us a message</h2>
+      <h2 className="text-2xl font-semibold text-heading">Send us a message</h2>
       <div className="mt-8 space-y-6">
         {fields.map((field) => {
           const value = formData[field.name] ?? ""

@@ -33,7 +33,7 @@ export default async function BluebookReportPage({ params }: BluebookPageProps) 
       <article className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <header className="text-left">
           <p className="text-xs font-semibold uppercase tracking-wider text-primary">{report.title}</p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-heading sm:text-5xl">
             {report.subtitle}
           </h1>
         </header>
@@ -45,7 +45,7 @@ export default async function BluebookReportPage({ params }: BluebookPageProps) 
         </div>
 
         <section className="mt-12 rounded-3xl border border-primary/30 bg-primary/10 p-6 text-center sm:p-8">
-          <h2 className="text-xl font-semibold text-foreground">Need the detailed dataset or methodology?</h2>
+          <h2 className="text-xl font-semibold text-heading">Need the detailed dataset or methodology?</h2>
           <p className="mt-3 text-sm text-foreground">
             Reference: {report.legacyId}. Contact our performance engineering team for the full report.
           </p>

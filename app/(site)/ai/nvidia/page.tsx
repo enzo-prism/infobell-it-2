@@ -13,12 +13,12 @@ export default function NvidiaPage() {
     <div className="bg-background py-16 sm:py-20">
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         <header className="text-left">
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{title}</h1>
+          <h1 className="text-4xl font-semibold tracking-tight text-heading sm:text-5xl">{title}</h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">{intro}</p>
         </header>
 
         <section className="mt-16 rounded-3xl border border-border bg-card/80 p-6 shadow-sm sm:p-8">
-          <h2 className="text-2xl font-semibold text-foreground">Our Expertise</h2>
+          <h2 className="text-2xl font-semibold text-heading">Our Expertise</h2>
           <ul className="mt-4 grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
             {expertise.map((item) => (
               <li key={item} className="rounded-xl border border-border bg-background px-4 py-3">
@@ -30,7 +30,7 @@ export default function NvidiaPage() {
 
         {offerings?.map((offering) => (
           <section key={offering.heading} className="mt-12 rounded-3xl border border-border bg-muted/20 p-6 sm:p-8">
-            <h2 className="text-2xl font-semibold text-foreground">{offering.heading}</h2>
+            <h2 className="text-2xl font-semibold text-heading">{offering.heading}</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
               {offering.items.map((item) => (
                 <li key={item}>{item}</li>
@@ -41,7 +41,7 @@ export default function NvidiaPage() {
 
         {sections?.map((section) => (
           <section key={section.heading} className="mt-12 rounded-3xl border border-border bg-card/70 p-6 sm:p-8">
-            <h2 className="text-2xl font-semibold text-foreground">{section.heading}</h2>
+            <h2 className="text-2xl font-semibold text-heading">{section.heading}</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
               {section.bullets.map((bullet) => (
                 <li key={bullet}>{bullet}</li>

@@ -11,7 +11,7 @@ export function ProductDetailCard({ product }: { product: ProductDetail }) {
         <header className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Service Product</p>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{product.title}</h1>
+            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-heading sm:text-5xl">{product.title}</h1>
             <p className="mt-4 text-lg text-muted-foreground">{product.tagline}</p>
             <p className="mt-4 text-sm leading-6 text-muted-foreground">{product.description}</p>
             <div className="mt-6">
@@ -46,7 +46,7 @@ export function ProductDetailCard({ product }: { product: ProductDetail }) {
         </header>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-foreground">What you'll get</h2>
+          <h2 className="text-2xl font-semibold text-heading">What you'll get</h2>
           <ul className="grid gap-4 sm:grid-cols-2">
             {product.features.map((feature) => (
               <li
@@ -60,7 +60,7 @@ export function ProductDetailCard({ product }: { product: ProductDetail }) {
         </section>
 
         <section className="rounded-3xl border border-primary/30 bg-primary/10 p-6 text-center sm:p-8">
-          <h2 className="text-2xl font-semibold text-foreground">Ready to explore {product.title}?</h2>
+          <h2 className="text-2xl font-semibold text-heading">Ready to explore {product.title}?</h2>
           <p className="mt-3 text-base text-foreground">
             Our product specialists can walk you through live demos, pricing, and integration options tailored to your teams.
           </p>

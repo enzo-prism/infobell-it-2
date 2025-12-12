@@ -15,7 +15,7 @@ export default function ClientsPage() {
     <div className="bg-background py-16 sm:py-20">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Our Clients</h1>
+          <h1 className="text-4xl font-semibold tracking-tight text-heading sm:text-5xl">Our Clients</h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">
             We collaborate with global leaders, innovators, and infrastructure partners to benchmark performance,
             accelerate AI adoption, and modernize mission-critical workloads.
@@ -34,7 +34,7 @@ export default function ClientsPage() {
         </section>
 
         <section className="mt-20 text-center">
-          <h2 className="text-3xl font-semibold text-foreground">Our Affiliations</h2>
+          <h2 className="text-3xl font-semibold text-heading">Our Affiliations</h2>
           <p className="mt-3 text-base text-muted-foreground">
             Strategic alliances that support responsible AI, confidential computing, and open performance engineering.
           </p>
@@ -50,7 +50,7 @@ export default function ClientsPage() {
         </section>
 
         <section className="mt-20 rounded-3xl border border-border bg-muted/20 p-6 sm:p-8">
-          <h2 className="text-2xl font-semibold text-foreground">Our Tech Stacks</h2>
+          <h2 className="text-2xl font-semibold text-heading">Our Tech Stacks</h2>
           <p className="mt-2 text-sm text-muted-foreground">Modern tools for next-gen IT solutions</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {TECH_STACK.map((tech) => (

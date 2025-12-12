@@ -67,7 +67,7 @@ export function ServiceProductsSlider() {
                 className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
               />
             </div>
-            <h3 className="mt-4 text-base font-semibold text-foreground">{product.title}</h3>
+            <h3 className="mt-4 text-base font-semibold text-heading">{product.title}</h3>
             <p className="mt-2 text-sm leading-6 text-muted-foreground">{product.description}</p>
             <span className="mt-4 inline-flex w-fit items-center gap-1 text-sm font-semibold text-primary underline-offset-4 transition-all duration-300 group-hover:translate-x-1 group-hover:underline">
               Explore

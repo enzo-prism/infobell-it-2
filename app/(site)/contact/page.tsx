@@ -18,7 +18,7 @@ export default function ContactPage() {
     <div className="bg-background py-16 sm:py-20">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{CONTACT_COPY.title}</h1>
+          <h1 className="text-4xl font-semibold tracking-tight text-heading sm:text-5xl">{CONTACT_COPY.title}</h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">{CONTACT_COPY.intro}</p>
         </header>
 
@@ -30,7 +30,7 @@ export default function ContactPage() {
           </Suspense>
           <aside className="space-y-10 rounded-3xl border border-border bg-muted/30 p-6 sm:p-8">
             <section>
-              <h2 className="text-2xl font-semibold text-foreground">Our Office</h2>
+              <h2 className="text-2xl font-semibold text-heading">Our Office</h2>
               <p className="mt-3 text-sm text-muted-foreground">{CONTACT_COPY.officeDescription}</p>
               <div className="mt-6 rounded-2xl border border-border bg-muted/40 p-3">
                 <Image
@@ -43,7 +43,7 @@ export default function ContactPage() {
                 />
               </div>
               <div className="mt-6 space-y-3 text-sm leading-6 text-foreground">
-                <p className="font-medium">{CORPORATE_OFFICE.heading}</p>
+                <p className="font-medium text-heading">{CORPORATE_OFFICE.heading}</p>
                 <p>{CORPORATE_OFFICE.addressLine}</p>
                 <Link href={`mailto:${CORPORATE_OFFICE.email}`} className="text-primary transition hover:underline">
                   {CORPORATE_OFFICE.email}
@@ -52,7 +52,7 @@ export default function ContactPage() {
             </section>
 
             <section className="rounded-2xl border border-border bg-card/70 p-6">
-              <h3 className="text-xl font-semibold text-foreground">{CONTACT_COPY.banner}</h3>
+              <h3 className="text-xl font-semibold text-heading">{CONTACT_COPY.banner}</h3>
               <Button asChild className="mt-6" size="sm">
                 <Link href={CONTACT_COPY.bannerCta.href}>{CONTACT_COPY.bannerCta.label}</Link>
               </Button>

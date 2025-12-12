@@ -32,7 +32,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-6 rounded-3xl border border-border/60 bg-gradient-to-br from-muted/40 via-background to-muted/30 p-6 text-center shadow-[0_35px_90px_-45px_rgba(14,165,233,0.7)] md:flex-row md:items-center md:text-left sm:p-8">
           <div className="flex-1 space-y-4">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary">Infobell IT Solutions</p>
-            <h2 className="text-3xl font-semibold text-foreground">Let’s build today’s and tomorrow’s IT. Together.</h2>
+            <h2 className="text-3xl font-semibold text-heading">Let’s build today’s and tomorrow’s IT. Together.</h2>
             <p className="text-sm text-muted-foreground">
               From benchmarking labs to intelligent products, our teams partner with you across AI, performance
               engineering, and modern infrastructure programs.
@@ -46,7 +46,7 @@ export function SiteFooter() {
         <div className="mt-12 grid gap-10 text-sm text-muted-foreground md:grid-cols-2 lg:grid-cols-[1.1fr,1fr,1fr,1fr]">
           <div className="space-y-4">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary">Headquarters</p>
-            <p className="font-semibold text-foreground">{CORPORATE_OFFICE.heading}</p>
+            <p className="font-semibold text-heading">{CORPORATE_OFFICE.heading}</p>
             <p>{CORPORATE_OFFICE.addressLine}</p>
             <Link href={`mailto:${CORPORATE_OFFICE.email}`} className="text-primary transition hover:underline">
               {CORPORATE_OFFICE.email}

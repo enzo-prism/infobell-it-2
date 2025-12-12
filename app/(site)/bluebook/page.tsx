@@ -14,7 +14,7 @@ export default function BlueBookIndexPage() {
     <div className="bg-background py-16 sm:py-20">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Blue Book Series</h1>
+          <h1 className="text-4xl font-semibold tracking-tight text-heading sm:text-5xl">Blue Book Series</h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">
             Independent performance evaluations across cloud providers, AI infrastructure, and virtualization platforms
             to guide architecture decisions.
@@ -24,7 +24,7 @@ export default function BlueBookIndexPage() {
         <div className="mt-16 space-y-16">
           {BLUEBOOK_CATEGORIES.map((category) => (
             <section key={category.name}>
-              <h2 className="text-2xl font-semibold text-foreground">{category.name}</h2>
+              <h2 className="text-2xl font-semibold text-heading">{category.name}</h2>
               <div className="mt-8 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
                 {category.reports.map((report) => (
                   <BlueBookCard key={report.slug} report={report} />
@@ -51,7 +51,7 @@ function BlueBookCard({ report }: BlueBookCardProps) {
       <div className="relative flex-1 space-y-5">
         <div className="space-y-2">
           <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground">{report.legacyId}</p>
-          <h3 className="text-xl font-semibold leading-tight text-foreground">{report.subtitle}</h3>
+          <h3 className="text-xl font-semibold leading-tight text-heading">{report.subtitle}</h3>
         </div>
         {leadParagraph ? (
           <p className="text-sm leading-6 text-muted-foreground">{leadParagraph}</p>

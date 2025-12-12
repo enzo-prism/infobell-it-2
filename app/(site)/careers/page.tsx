@@ -26,7 +26,7 @@ export default function CareersPage() {
             />
           </div>
           <div>
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{CAREERS_HERO.title}</h1>
+            <h1 className="text-4xl font-semibold tracking-tight text-heading sm:text-5xl">{CAREERS_HERO.title}</h1>
             <p className="mt-4 text-lg leading-7 text-muted-foreground">{CAREERS_HERO.description}</p>
           </div>
         </header>
@@ -39,7 +39,7 @@ export default function CareersPage() {
             >
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-primary">{role.location}</p>
-                <h2 className="mt-2 text-xl font-semibold text-foreground">{role.title}</h2>
+                <h2 className="mt-2 text-xl font-semibold text-heading">{role.title}</h2>
                 <p className="mt-3 text-sm text-muted-foreground">{role.summary}</p>
               </div>
               <div className="mt-4 flex items-center gap-3">

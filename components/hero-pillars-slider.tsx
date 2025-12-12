@@ -87,7 +87,7 @@ export function HeroPillarsSlider() {
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </span>
                 <div className="min-w-0">
-                  <h3 className="text-base font-semibold text-foreground">{pillar.title}</h3>
+                  <h3 className="text-base font-semibold text-heading">{pillar.title}</h3>
                   <p className="mt-1 text-sm leading-6 text-muted-foreground">{pillar.summary}</p>
                 </div>
               </div>
