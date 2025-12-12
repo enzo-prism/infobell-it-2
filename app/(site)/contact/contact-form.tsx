@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import type { ContactField } from "@/lib/content/contact"
 import { APPLY_EMAIL } from "@/lib/content/careers"
+import { Button } from "@/components/ui/button"
 
 type ContactFormProps = {
   fields: ContactField[]
@@ -103,12 +104,9 @@ export function ContactForm({ fields }: ContactFormProps) {
           )
         })}
       </div>
-      <button
-        type="submit"
-        className="mt-8 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-      >
+      <Button type="submit" size="lg" className="mt-8">
         Send message
-      </button>
+      </Button>
       {submitted ? (
         <p id="contact-success" className="mt-4 text-sm text-primary">
           Opening your email client… if it did not open, email us directly at{" "}

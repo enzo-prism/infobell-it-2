@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { CAREERS_HERO, CAREER_ROLES, APPLY_EMAIL } from "@/lib/content/careers"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Careers | Infobell IT Solutions",
@@ -42,18 +43,14 @@ export default function CareersPage() {
                 <p className="mt-3 text-sm text-muted-foreground">{role.summary}</p>
               </div>
               <div className="mt-4 flex items-center gap-3">
-                <Link
-                  href={`/careers/${role.slug}`}
-                  className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-                >
-                  View details
-                </Link>
-                <Link
-                  href={`mailto:${APPLY_EMAIL}?subject=Application: ${encodeURIComponent(role.title)}`}
-                  className="inline-flex items-center rounded-full border border-primary px-4 py-2 text-sm font-medium text-primary transition hover:bg-primary/10"
-                >
-                  Apply now
-                </Link>
+                <Button asChild size="sm">
+                  <Link href={`/careers/${role.slug}`}>View details</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline">
+                  <Link href={`mailto:${APPLY_EMAIL}?subject=Application: ${encodeURIComponent(role.title)}`}>
+                    Apply now
+                  </Link>
+                </Button>
               </div>
             </article>
           ))}

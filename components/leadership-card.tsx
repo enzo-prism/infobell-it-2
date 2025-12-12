@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Linkedin } from "lucide-react"
 import type { TeamMember } from "@/lib/content/team"
+import { Button } from "@/components/ui/button"
 
 type LeadershipCardProps = {
   member: TeamMember
@@ -55,16 +56,12 @@ export function LeadershipCard({ member, linkedInHref, index }: LeadershipCardPr
         </div>
         <p className="mt-4 text-sm leading-6 text-muted-foreground">{member.summary}</p>
         <div className="mt-6">
-          <Link
-            href={linkedInHref}
-            target="_blank"
-            rel="noreferrer"
-            onClick={(event) => event.stopPropagation()}
-            className="card-glow inline-flex w-full items-center justify-center gap-2 rounded-full border border-transparent bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-primary/90 group-hover:border-sky-300 group-hover:shadow-[0_15px_30px_-15px_rgba(56,189,248,0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300/70"
-          >
-            <Linkedin className="h-4 w-4" />
-            Connect on LinkedIn
-          </Link>
+          <Button asChild size="sm" className="w-full">
+            <Link href={linkedInHref} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>
+              <Linkedin className="h-4 w-4" />
+              Connect on LinkedIn
+            </Link>
+          </Button>
         </div>
       </div>
     </article>

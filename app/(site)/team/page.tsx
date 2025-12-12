@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { LEADERSHIP_TEAM, TEAM_INTRO } from "@/lib/content/team"
 import { LeadershipCard } from "@/components/leadership-card"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Our Team | Infobell IT Solutions",
@@ -44,18 +45,12 @@ export default function TeamPage() {
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
-              <Link
-                href="/careers"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-              >
-                Explore open roles
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full border border-primary/30 px-6 py-2.5 text-sm font-semibold text-primary transition hover:border-primary hover:bg-primary/10"
-              >
-                Talk to us
-              </Link>
+              <Button asChild>
+                <Link href="/careers">Explore open roles</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="/contact">Talk to us</Link>
+              </Button>
             </div>
           </div>
         </section>

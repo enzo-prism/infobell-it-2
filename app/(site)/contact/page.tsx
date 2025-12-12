@@ -5,6 +5,7 @@ import { Suspense } from "react"
 import { CORPORATE_OFFICE } from "@/lib/content/site"
 import { CONTACT_COPY, CONTACT_FIELDS } from "@/lib/content/contact"
 import { ContactForm } from "./contact-form"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Contact Us | Infobell IT Solutions",
@@ -50,12 +51,9 @@ export default function ContactPage() {
 
             <section className="rounded-2xl border border-border bg-card/70 p-6">
               <h3 className="text-xl font-semibold text-foreground">{CONTACT_COPY.banner}</h3>
-              <Link
-                href={CONTACT_COPY.bannerCta.href}
-                className="mt-6 inline-flex items-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-              >
-                {CONTACT_COPY.bannerCta.label}
-              </Link>
+              <Button asChild className="mt-6" size="sm">
+                <Link href={CONTACT_COPY.bannerCta.href}>{CONTACT_COPY.bannerCta.label}</Link>
+              </Button>
             </section>
           </aside>
         </div>

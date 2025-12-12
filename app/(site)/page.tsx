@@ -7,6 +7,8 @@ import { LEADERSHIP_TEAM, TEAM_INTRO } from "@/lib/content/team"
 import { CLIENT_LOGOS, AFFILIATION_LOGOS } from "@/lib/content/company"
 import type { LogoEntry } from "@/lib/content/company"
 import { CoreExpertiseCarousel } from "@/components/core-expertise-carousel"
+import { ServiceProductsSlider } from "@/components/service-products-slider"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Infobell IT Solutions | Enterprise AI & Performance Engineering",
@@ -18,6 +20,7 @@ export default function HomePage() {
   return (
     <div className="space-y-24 pb-24">
       <HeroSection />
+      <EnterpriseAiMediaSection />
       <CoreExpertiseSection />
       <IfxHighlight />
       <ProductSection />
@@ -30,97 +33,118 @@ export default function HomePage() {
 function HeroSection() {
   return (
     <section className="bg-gradient-to-b from-background via-background to-muted/40">
-      <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 py-24 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
-        <div>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+      <div className="mx-auto w-full max-w-6xl px-4 py-24">
+        <div className="max-w-4xl">
+          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             {HERO_CONTENT.heading}
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">{HERO_CONTENT.description}</p>
           <div className="mt-8 flex flex-wrap items-center gap-4 text-sm font-medium">
-            <Link
-              href={HERO_CONTENT.pressAnnouncement.href}
-              className="group relative inline-flex items-center overflow-hidden rounded-full bg-gradient-to-r from-primary via-primary/90 to-sky-500 px-5 py-2.5 text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_45px_-18px_rgba(14,165,233,0.9)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/70"
-            >
-              <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 transition duration-300 group-hover:opacity-100" />
-              <span className="relative inline-flex items-center gap-1">
-                {HERO_CONTENT.pressAnnouncement.label}
-                <span aria-hidden="true" className="translate-x-0 text-base transition group-hover:translate-x-1">
-                  &rarr;
+            <Button asChild variant="cta">
+              <Link href={HERO_CONTENT.pressAnnouncement.href}>
+                <span className="relative inline-flex items-center gap-1">
+                  {HERO_CONTENT.pressAnnouncement.label}
+                  <span aria-hidden="true" className="translate-x-0 text-base transition group-hover:translate-x-1">
+                    &rarr;
+                  </span>
                 </span>
-              </span>
-            </Link>
-            <Link
-              href="/contact"
-              className="group relative inline-flex items-center rounded-full border border-transparent bg-gradient-to-r from-primary/70 to-sky-400/70 p-[1px] text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/50"
-            >
-              <span className="inline-flex w-full items-center gap-1 rounded-full bg-background/90 px-5 py-2.5 text-sm font-semibold text-primary transition-all duration-300 group-hover:bg-primary/5 group-hover:text-primary/90 group-hover:shadow-[inset_0_0_0_1px_rgba(14,165,233,0.4)]">
-                Connect with us
-                <span aria-hidden="true" className="translate-x-0 text-base transition group-hover:translate-x-1">
-                  &rarr;
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="group">
+              <Link href="/contact">
+                <span className="inline-flex items-center gap-1">
+                  Connect with us
+                  <span aria-hidden="true" className="translate-x-0 text-base transition group-hover:translate-x-1">
+                    &rarr;
+                  </span>
                 </span>
-              </span>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
-        <div className="space-y-6">
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-4 shadow-lg motion-safe:animate-float">
-            <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-tr from-primary/20 via-transparent to-primary/10" />
-            <video
-              src={HERO_CONTENT.video.src}
-              title={HERO_CONTENT.video.title}
-              controls
-              autoPlay
-              muted
-              playsInline
-              preload="metadata"
-              className="h-auto w-full rounded-2xl"
-            />
+
+        <div className="mt-16">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Service Products</p>
+          <p className="mt-3 max-w-3xl text-base text-muted-foreground">
+            Explore our product accelerators for AI transformation, performance engineering, and sustainable cloud operations.
+          </p>
+          <ServiceProductsSlider />
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <Button asChild variant="outline">
+              <a href="#products">View all service products</a>
+            </Button>
           </div>
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary/15 via-background to-background p-6 shadow-lg">
-            <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-primary/10 blur-3xl" />
-            <div className="relative space-y-5">
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-primary">
-                Powered by AMD
-              </div>
-              <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-muted-foreground">
-                <span
-                  className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-3 py-1 text-foreground motion-safe:animate-slide-up"
-                  style={{ animationDelay: "100ms" }}
-                >
-                  400+ Engineers
-                </span>
-                <span
-                  className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-3 py-1 text-foreground motion-safe:animate-slide-up"
-                  style={{ animationDelay: "200ms" }}
-                >
-                  50+ Data Scientists
-                </span>
-                <span
-                  className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-3 py-1 text-foreground motion-safe:animate-slide-up"
-                  style={{ animationDelay: "300ms" }}
-                >
-                  Global Delivery
-                </span>
-              </div>
-              <h3 className="text-3xl font-semibold text-foreground">Building the Future of AI</h3>
-              <p className="text-sm leading-6 text-muted-foreground">
-                Infobell is a global product engineering and solutions company accelerating innovation across AI, cloud, and
-                high-performance computing. Our full-stack squads deliver AI programs designed for speed, scale, and business
-                impact.
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function EnterpriseAiMediaSection() {
+  return (
+    <section className="bg-background">
+      <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 lg:grid-cols-2 lg:items-start">
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-4 shadow-lg motion-safe:animate-float">
+          <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-tr from-primary/20 via-transparent to-primary/10" />
+          <video
+            src={HERO_CONTENT.video.src}
+            title={HERO_CONTENT.video.title}
+            controls
+            autoPlay
+            muted
+            playsInline
+            preload="metadata"
+            className="h-auto w-full rounded-2xl"
+          />
+        </div>
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary/15 via-background to-background p-6 shadow-lg">
+          <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-primary/10 blur-3xl" />
+          <div className="relative space-y-5">
+            <h2 className="text-3xl font-semibold text-foreground">Building the Future of Enterprise AI</h2>
+            <p className="text-sm font-semibold text-foreground">Deep AI ML Experts | Global Delivery</p>
+            <p className="text-sm leading-6 text-muted-foreground">
+              <span className="font-semibold text-foreground">Infobell</span> is a premier global product engineering and
+              solutions firm accelerating innovation across AI, cloud, and high-performance computing. As a specialized
+              Enterprise AI implementer, our full-stack squads deliver high-impact AI programs designed for speed, scale, and
+              business value. We do not just build AI; we optimize it for the AI stack and infrastructure hardware that best
+              fits your needs.
+            </p>
+            <div className="rounded-2xl border border-border/60 bg-card/60 p-4">
+              <p className="text-sm font-semibold text-foreground">Multi-Architecture Expertise: NVIDIA, AMD, and Intel</p>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                We deliver agnostic, end-to-end engineering—from use-case definition and PoCs to deployment and
+                optimization—leveraging the distinct strengths of the industry’s leading accelerators:
               </p>
-              <div className="rounded-2xl border border-border/60 bg-card/60 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">AMD + Infobell</p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  From enterprise chatbots and co-pilots to agentic and physical AI systems, every Infobell innovation runs on
-                  AMD MI-Series GPUs and EPYC CPUs. Proprietary tools like Echo Swift and Convo Genie push performance boundaries
-                  for LLM optimization, inference acceleration, and real-time multimodal experiences.
-                </p>
-              </div>
-              <p className="text-sm leading-6 text-muted-foreground">
-                We deliver end-to-end AI engineering — from use-case definition and PoCs to deployment, optimization, and
-                go-to-market acceleration.
-              </p>
+              <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-muted-foreground">
+                <li>
+                  <span className="font-semibold text-foreground">NVIDIA:</span> As an NVIDIA Inception Partner, we leverage the
+                  full NVIDIA stack, including <span className="font-semibold text-foreground">NVIDIA NIM microservices</span>{" "}
+                  and <span className="font-semibold text-foreground">TensorRT-LLM</span>, to deliver high-throughput,
+                  low-latency inference and scalable AI applications.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">AMD:</span> We drive enterprise-ready innovation on{" "}
+                  <span className="font-semibold text-foreground">AMD Instinct™ MI-Series GPUs and EPYC™ CPUs</span>, utilizing
+                  the <span className="font-semibold text-foreground">ROCm™</span> open software stack and{" "}
+                  <span className="font-semibold text-foreground">AMD’s new Enterprise AI Suite</span> and{" "}
+                  <span className="font-semibold text-foreground">Infobell’s IFX (Inference Framework eXpress)</span> to push
+                  performance boundaries.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">Intel:</span> We enable comprehensive, scalable solutions on
+                  Intel platforms, supporting <span className="font-semibold text-foreground">OPEA (Open Platform for Enterprise AI)</span>{" "}
+                  and Confidential Computing to ensure security and performance for critical workloads.
+                </li>
+              </ul>
             </div>
+            <p className="text-sm leading-6 text-muted-foreground">
+              <span className="font-semibold text-foreground">High-value Innovation -</span> Our AI framework use-case-based
+              accelerators—including <span className="font-semibold text-foreground">ConvoGene™</span> for chatbots,{" "}
+              <span className="font-semibold text-foreground">EchoSwift™</span> for LLM benchmarking, and{" "}
+              <span className="font-semibold text-foreground">AgenticFlow</span> for autonomous AI agents—are architected to run
+              seamlessly across these ecosystems, ensuring you get the best performance regardless of your infrastructure
+              choice.
+            </p>
           </div>
         </div>
       </div>
@@ -154,12 +178,9 @@ function IfxHighlight() {
           <p className="text-sm font-medium uppercase tracking-wide text-primary">Introducing Infobell IFX</p>
           <h3 className="text-2xl font-semibold text-foreground">{IFX_HIGHLIGHT.title}</h3>
           <p className="max-w-3xl text-base text-muted-foreground">{IFX_HIGHLIGHT.description}</p>
-          <Link
-            href={IFX_HIGHLIGHT.href}
-            className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-          >
-            Learn more
-          </Link>
+          <Button asChild size="sm">
+            <Link href={IFX_HIGHLIGHT.href}>Learn more</Link>
+          </Button>
         </div>
       </div>
     </section>
@@ -168,7 +189,7 @@ function IfxHighlight() {
 
 function ProductSection() {
   return (
-    <section id="products" className="bg-background">
+    <section id="products" className="scroll-mt-24 bg-background md:scroll-mt-28">
       <div className="mx-auto w-full max-w-6xl px-4">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Our Service Products</h2>
@@ -243,18 +264,12 @@ function TeamSection() {
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Meet the Team</h2>
           <p className="mt-4 text-base text-muted-foreground">{TEAM_INTRO}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/careers"
-              className="inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-            >
-              Join our team
-            </Link>
-            <Link
-              href="/team"
-              className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:text-primary"
-            >
-              Meet the leadership
-            </Link>
+            <Button asChild>
+              <Link href="/careers">Join our team</Link>
+            </Button>
+            <Button asChild variant="neutral">
+              <Link href="/team">Meet the leadership</Link>
+            </Button>
           </div>
         </div>
       </div>

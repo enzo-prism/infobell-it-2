@@ -12,6 +12,14 @@ export type NavGroup = {
   items: NavItem[]
 }
 
+export const SITE_LOGO = {
+  alt: "Infobell IT logo",
+  lightSrc: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765552704/Logo-color-svg_pvibq9.svg",
+  darkSrc: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765552704/Logo-white-svg_c4xwbn.svg",
+  width: 160,
+  height: 41,
+} as const
+
 export const NAV_PRIMARY: Array<NavItem | NavGroup> = [
   { label: "Home", href: "/" },
   { label: "Our Team", href: "/team" },

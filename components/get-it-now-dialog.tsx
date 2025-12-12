@@ -2,7 +2,7 @@
 
 import * as Dialog from "@radix-ui/react-dialog"
 import { useState } from "react"
-import clsx from "clsx"
+import { Button } from "@/components/ui/button"
 
 export type GetItNowDialogProps = {
   reportName: string
@@ -20,14 +20,9 @@ export function GetItNowDialog({
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
-        <button
-          className={clsx(
-            "inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90",
-            buttonClassName
-          )}
-        >
+        <Button size="sm" className={buttonClassName}>
           {buttonLabel}
-        </button>
+        </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm" />
@@ -44,19 +39,17 @@ export function GetItNowDialog({
             <FormField label="Phone Number" placeholder="+91 1234 5678 90" type="tel" />
             <FormField label="Country" placeholder="Enter your Country" type="text" />
             <div className="mt-2 flex justify-end gap-2">
-              <button
+              <Button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="inline-flex items-center rounded-full border border-border px-5 py-2 text-sm font-semibold text-foreground transition hover:border-primary hover:text-primary"
+                size="sm"
+                variant="neutral"
               >
                 Cancel
-              </button>
-              <button
-                type="submit"
-                className="inline-flex items-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-              >
+              </Button>
+              <Button type="submit" size="sm">
                 Submit request
-              </button>
+              </Button>
             </div>
           </form>
         </Dialog.Content>

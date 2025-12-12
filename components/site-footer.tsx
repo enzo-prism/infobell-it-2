@@ -8,6 +8,7 @@ import {
   type NavItem,
   CORPORATE_OFFICE,
 } from "@/lib/content/site"
+import { Button } from "@/components/ui/button"
 
 function isGroup(entry: NavItem | NavGroup): entry is NavGroup {
   return (entry as NavGroup).items !== undefined
@@ -28,7 +29,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-background/95">
       <div className="mx-auto w-full max-w-6xl px-4 py-14">
-        <div className="flex flex-col gap-6 rounded-3xl border border-border/60 bg-gradient-to-br from-muted/40 via-background to-muted/30 p-8 text-center shadow-[0_35px_90px_-45px_rgba(14,165,233,0.7)] md:flex-row md:text-left">
+        <div className="flex flex-col gap-6 rounded-3xl border border-border/60 bg-gradient-to-br from-muted/40 via-background to-muted/30 p-8 text-center shadow-[0_35px_90px_-45px_rgba(14,165,233,0.7)] md:flex-row md:items-center md:text-left">
           <div className="flex-1 space-y-4">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary">Infobell IT Solutions</p>
             <h2 className="text-3xl font-semibold text-foreground">Let’s build today’s and tomorrow’s IT. Together.</h2>
@@ -37,12 +38,9 @@ export function SiteFooter() {
               engineering, and modern infrastructure programs.
             </p>
           </div>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-lg transition hover:-translate-y-0.5 hover:bg-primary/90"
-          >
-            Connect with us
-          </Link>
+          <Button asChild>
+            <Link href="/contact">Connect with us</Link>
+          </Button>
         </div>
 
         <div className="mt-12 grid gap-10 text-sm text-muted-foreground md:grid-cols-2 lg:grid-cols-[1.1fr,1fr,1fr,1fr]">

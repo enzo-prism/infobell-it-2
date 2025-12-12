@@ -4,6 +4,7 @@ import Link from "next/link"
 import { AI_HERO, AI_PARTNERS, AI_SERVICE_SECTIONS } from "@/lib/content/ai"
 import { IFX_HIGHLIGHT } from "@/lib/content/home"
 import { HeroVideoFrame } from "@/components/hero-video-frame"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Artificial Intelligence Solutions | Infobell IT Solutions",
@@ -29,12 +30,9 @@ export default function AiOverviewPage() {
               <h2 className="text-3xl font-semibold text-foreground">{IFX_HIGHLIGHT.title}</h2>
               <p className="text-sm leading-7 text-muted-foreground">{IFX_HIGHLIGHT.description}</p>
             </div>
-            <Link
-              href={IFX_HIGHLIGHT.href}
-              className="inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-            >
-              Explore IFX
-            </Link>
+            <Button asChild>
+              <Link href={IFX_HIGHLIGHT.href}>Explore IFX</Link>
+            </Button>
           </div>
         </section>
 
@@ -48,12 +46,9 @@ export default function AiOverviewPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">{partner.name}</h3>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">{partner.description}</p>
-                <Link
-                  href={partner.href}
-                  className="mt-6 inline-flex items-center rounded-full border border-primary px-4 py-2 text-sm font-medium text-primary transition hover:bg-primary/10"
-                >
-                  Learn more
-                </Link>
+                <Button asChild className="mt-6" variant="outline" size="sm">
+                  <Link href={partner.href}>Learn more</Link>
+                </Button>
               </article>
             ))}
           </div>
@@ -87,12 +82,9 @@ export default function AiOverviewPage() {
               <p className="mt-3 text-base text-muted-foreground">
                 From lab design to launch readiness, Infobell keeps your workloads fast, predictable, and auditable.
               </p>
-              <Link
-                href="/contact?subject=AI%20Solutions"
-                className="mt-6 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-              >
-                Connect with performance engineering
-              </Link>
+              <Button asChild className="mt-6" size="lg">
+                <Link href="/contact?subject=AI%20Solutions">Connect with performance engineering</Link>
+              </Button>
             </div>
             <HeroVideoFrame className="mx-auto w-full max-w-sm" />
           </div>

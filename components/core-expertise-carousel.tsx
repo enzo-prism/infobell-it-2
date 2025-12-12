@@ -5,6 +5,7 @@ import { useRef } from "react"
 import { Brain, Cloud, Cpu, Gauge, Leaf, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 import { CORE_EXPERTISE } from "@/lib/content/home"
+import { Button } from "@/components/ui/button"
 
 const expertiseIconMap: Record<(typeof CORE_EXPERTISE)[number]["icon"], LucideIcon> = {
   brain: Brain,
@@ -31,22 +32,26 @@ export function CoreExpertiseCarousel() {
   return (
     <div className="mt-8">
       <div className="mb-4 flex justify-end gap-2">
-        <button
+        <Button
           type="button"
           onClick={() => scrollByCards("prev")}
           aria-label="Scroll previous expertise"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          size="icon"
+          variant="icon"
+          className="rounded-full bg-card"
         >
           <ChevronLeft className="h-5 w-5" />
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
           onClick={() => scrollByCards("next")}
           aria-label="Scroll next expertise"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          size="icon"
+          variant="icon"
+          className="rounded-full bg-card"
         >
           <ChevronRight className="h-5 w-5" />
-        </button>
+        </Button>
       </div>
       <div
         ref={scrollContainerRef}

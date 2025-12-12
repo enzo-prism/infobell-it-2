@@ -7,6 +7,7 @@ import {
   IFX_ADDITIONAL_KITS,
   IFX_CTA,
 } from "@/lib/content/ai"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Infobell Inference Framework eXpress (IFX) | Infobell IT Solutions",
@@ -96,12 +97,9 @@ export default function IfxPage() {
               {paragraph}
             </p>
           ))}
-          <Link
-            href="mailto:info@infobellit.com"
-            className="mt-6 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-          >
-            Schedule a demo
-          </Link>
+          <Button asChild className="mt-6" size="lg">
+            <Link href="mailto:info@infobellit.com">Schedule a demo</Link>
+          </Button>
         </section>
       </div>
     </div>

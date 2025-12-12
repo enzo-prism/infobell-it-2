@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { BLUEBOOK_CATEGORIES } from "@/lib/content/bluebook"
 import { APPLY_EMAIL } from "@/lib/content/careers"
+import { Button } from "@/components/ui/button"
 
 const ALL_REPORTS = BLUEBOOK_CATEGORIES.flatMap((category) => category.reports)
 
@@ -48,12 +49,11 @@ export default async function BluebookReportPage({ params }: BluebookPageProps) 
           <p className="mt-3 text-sm text-foreground">
             Reference: {report.legacyId}. Contact our performance engineering team for the full report.
           </p>
-          <Link
-            href={`mailto:${APPLY_EMAIL}?subject=Blue Book Report Request: ${encodeURIComponent(report.subtitle)}`}
-            className="mt-6 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-          >
-            Request full report
-          </Link>
+          <Button asChild className="mt-6" size="lg">
+            <Link href={`mailto:${APPLY_EMAIL}?subject=Blue Book Report Request: ${encodeURIComponent(report.subtitle)}`}>
+              Request full report
+            </Link>
+          </Button>
         </section>
       </article>
     </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { CAREER_ROLES, APPLY_EMAIL } from "@/lib/content/careers"
+import { Button } from "@/components/ui/button"
 
 type CareerPageProps = {
   params: { slug: string }
@@ -42,12 +43,9 @@ export default async function CareerDetailPage({ params }: CareerPageProps) {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">{role.location}</p>
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{role.title}</h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">{role.summary}</p>
-          <Link
-            href={`mailto:${APPLY_EMAIL}?subject=Application: ${encodeURIComponent(role.title)}`}
-            className="mt-6 inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-          >
-            Apply today
-          </Link>
+          <Button asChild className="mt-6">
+            <Link href={`mailto:${APPLY_EMAIL}?subject=Application: ${encodeURIComponent(role.title)}`}>Apply today</Link>
+          </Button>
         </header>
 
         <section className="mt-16 grid gap-6 md:grid-cols-[2fr,1fr]">
@@ -66,12 +64,11 @@ export default async function CareerDetailPage({ params }: CareerPageProps) {
               <span className="font-semibold text-foreground">{role.title}</span> in the subject line so our hiring team
               can fast-track your application.
             </p>
-            <Link
-              href={`mailto:${APPLY_EMAIL}?subject=Application: ${encodeURIComponent(role.title)}`}
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-            >
-              Email {APPLY_EMAIL}
-            </Link>
+            <Button asChild className="mt-6">
+              <Link href={`mailto:${APPLY_EMAIL}?subject=Application: ${encodeURIComponent(role.title)}`}>
+                Email {APPLY_EMAIL}
+              </Link>
+            </Button>
           </aside>
         </section>
 
@@ -82,12 +79,9 @@ export default async function CareerDetailPage({ params }: CareerPageProps) {
               <article key={related.slug} className="rounded-2xl border border-border bg-card/70 p-6">
                 <h4 className="text-lg font-semibold text-foreground">{related.title}</h4>
                 <p className="mt-2 text-sm text-muted-foreground">{related.summary}</p>
-                <Link
-                  href={`/careers/${related.slug}`}
-                  className="mt-4 inline-flex items-center rounded-full border border-primary px-4 py-2 text-sm font-medium text-primary transition hover:bg-primary/10"
-                >
-                  View role
-                </Link>
+                <Button asChild className="mt-4" size="sm" variant="outline">
+                  <Link href={`/careers/${related.slug}`}>View role</Link>
+                </Button>
               </article>
             ))}
           </div>

@@ -5,9 +5,10 @@ import Link from "next/link"
 import clsx from "clsx"
 import { useEffect, useRef, useState, type FocusEvent, type ComponentType } from "react"
 import { Brain, ChevronDown, Cloud, Cpu, Gauge, Leaf, Menu, ShieldCheck, X } from "lucide-react"
-import { NAV_PRIMARY, type NavGroup, type NavItem } from "@/lib/content/site"
+import { NAV_PRIMARY, SITE_LOGO, type NavGroup, type NavItem } from "@/lib/content/site"
 import type { ExpertiseIcon } from "@/lib/content/capabilities"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Button } from "@/components/ui/button"
 
 type NavEntry = NavItem | NavGroup
 const ICON_MAP: Record<ExpertiseIcon, ComponentType<{ className?: string }>> = {
@@ -80,15 +81,23 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-4 md:h-24">
         <Link
           href="/"
-          className="flex items-center gap-3 rounded-xl border border-border bg-white px-3 py-2 shadow-sm transition hover:border-primary/50 dark:border-border/40"
+          className="flex items-center gap-3 rounded-xl border border-border bg-background px-3 py-2 shadow-sm transition hover:border-primary/50 dark:border-border/40"
         >
           <Image
-            src="/images/logos/infobellLogo.png"
-            alt="Infobell IT logo"
-            width={160}
-            height={50}
-            className="h-10 w-auto md:h-12"
-            priority
+            src={SITE_LOGO.lightSrc}
+            alt={SITE_LOGO.alt}
+            width={SITE_LOGO.width}
+            height={SITE_LOGO.height}
+            className="h-10 w-auto dark:hidden md:h-12"
+            priority={true}
+          />
+          <Image
+            src={SITE_LOGO.darkSrc}
+            alt={SITE_LOGO.alt}
+            width={SITE_LOGO.width}
+            height={SITE_LOGO.height}
+            className="hidden h-10 w-auto dark:block md:h-12"
+            priority={true}
           />
           <span className="sr-only">Infobell IT</span>
         </Link>
@@ -105,7 +114,7 @@ export function SiteHeader() {
               >
                 <button
                   type="button"
-                  className="flex cursor-pointer items-center gap-1 rounded-md px-2 py-1 text-foreground transition hover:text-primary"
+                  className="flex cursor-pointer items-center gap-1 rounded-md px-2 py-1 text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   aria-expanded={desktopGroup === entry.label}
                   aria-haspopup="true"
                   onClick={() =>
@@ -150,15 +159,17 @@ export function SiteHeader() {
         </nav>
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <button
+          <Button
             type="button"
-            className="inline-flex items-center justify-center rounded-md border border-border bg-background p-2 text-sm text-foreground lg:hidden"
+            size="icon"
+            variant="icon"
+            className="lg:hidden"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          </Button>
         </div>
       </div>
       {mobileOpen ? (

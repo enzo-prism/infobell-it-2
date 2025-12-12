@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import clsx from "clsx"
 import type { ProductDetail } from "@/lib/content/products"
+import { Button } from "@/components/ui/button"
 
 export function ProductDetailCard({ product }: { product: ProductDetail }) {
   return (
@@ -77,22 +78,16 @@ export function ProductDetailCard({ product }: { product: ProductDetail }) {
 function PrimaryCTA({ href, children, external }: { href: string; children: React.ReactNode; external?: boolean }) {
   if (external) {
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-      >
-        {children}
-      </a>
+      <Button asChild size="lg">
+        <a href={href} target="_blank" rel="noreferrer">
+          {children}
+        </a>
+      </Button>
     )
   }
   return (
-    <Link
-      href={href}
-      className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-    >
-      {children}
-    </Link>
+    <Button asChild size="lg">
+      <Link href={href}>{children}</Link>
+    </Button>
   )
 }
