@@ -46,7 +46,10 @@ export function ServiceProductsSlider() {
         </Button>
       </div>
 
-      <div ref={scrollContainerRef} className="flex gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory">
+      <div
+        ref={scrollContainerRef}
+        className="flex gap-4 overflow-x-auto overflow-y-visible scroll-smooth pb-4 snap-x snap-mandatory"
+      >
         {SERVICE_PRODUCTS.map((product) => (
           <Link
             key={product.slug}

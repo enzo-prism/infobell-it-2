@@ -33,7 +33,7 @@ export default function HomePage() {
 function HeroSection() {
   return (
     <section className="bg-gradient-to-b from-background via-background to-muted/40">
-      <div className="mx-auto w-full max-w-6xl px-4 py-24">
+      <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <div className="max-w-4xl">
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             {HERO_CONTENT.heading}
@@ -83,7 +83,7 @@ function HeroSection() {
 function EnterpriseAiMediaSection() {
   return (
     <section className="bg-background">
-      <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 lg:grid-cols-2 lg:items-start">
+      <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-start lg:px-8">
         <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-4 shadow-lg motion-safe:animate-float">
           <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-tr from-primary/20 via-transparent to-primary/10" />
           <video
@@ -155,7 +155,7 @@ function EnterpriseAiMediaSection() {
 function CoreExpertiseSection() {
   return (
     <section id="expertise" className="bg-background">
-      <div className="mx-auto w-full max-w-6xl px-4">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Our Core Expertise</h2>
           <p className="mt-4 text-lg text-muted-foreground">
@@ -172,7 +172,7 @@ function CoreExpertiseSection() {
 function IfxHighlight() {
   return (
     <section className="bg-gradient-to-r from-primary/10 via-background to-primary/5">
-      <div className="mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-4 py-16 rounded-3xl md:flex-row md:items-center">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-start gap-6 rounded-3xl px-4 py-14 md:flex-row md:items-center sm:px-6 sm:py-16 lg:px-8">
         <Image src={IFX_HIGHLIGHT.image} alt={IFX_HIGHLIGHT.title} width={200} height={120} className="h-32 w-auto" />
         <div className="space-y-4">
           <p className="text-sm font-medium uppercase tracking-wide text-primary">Introducing Infobell IFX</p>
@@ -190,7 +190,7 @@ function IfxHighlight() {
 function ProductSection() {
   return (
     <section id="products" className="scroll-mt-24 bg-background md:scroll-mt-28">
-      <div className="mx-auto w-full max-w-6xl px-4">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Our Service Products</h2>
           <p className="mt-4 text-lg text-muted-foreground">
@@ -223,7 +223,7 @@ function ProductSection() {
           ))}
         </div>
 
-        <div className="mt-16 rounded-2xl border border-border bg-muted/30 p-8">
+        <div className="mt-16 rounded-2xl border border-border bg-muted/30 p-6 sm:p-8">
           <h3 className="text-xl font-semibold text-foreground">Our Tech Stacks</h3>
           <p className="mt-2 text-sm text-muted-foreground">Modern tools for next-gen IT solutions</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -258,8 +258,8 @@ function ProductSection() {
 function TeamSection() {
   return (
     <section id="team" className="bg-muted/20 py-16">
-      <div className="mx-auto w-full max-w-4xl px-4">
-        <div className="rounded-3xl border border-border bg-card/80 p-8 text-center shadow-sm">
+      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-border bg-card/80 p-6 text-center shadow-sm sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Leadership</p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Meet the Team</h2>
           <p className="mt-4 text-base text-muted-foreground">{TEAM_INTRO}</p>
@@ -280,7 +280,7 @@ function TeamSection() {
 function ClientsSection() {
   return (
     <section className="bg-background">
-      <div className="mx-auto w-full max-w-6xl px-4">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Our Clients</h2>
           <p className="mt-3 text-base text-muted-foreground">

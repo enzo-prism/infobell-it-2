@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button"
 
 export function CapabilityPage({ capability }: { capability: CapabilityDetail }) {
   return (
-    <div className="bg-background py-20">
-      <div className="mx-auto w-full max-w-6xl px-4">
+    <div className="bg-background py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <header
-          className={`rounded-3xl border border-border bg-gradient-to-br ${capability.heroBackground} p-8 shadow-sm`}
+          className={`rounded-3xl border border-border bg-gradient-to-br ${capability.heroBackground} p-6 shadow-sm sm:p-8`}
         >
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Center of Excellence</p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
@@ -57,7 +57,7 @@ export function CapabilityPage({ capability }: { capability: CapabilityDetail })
           </div>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-primary/30 bg-primary/10 p-8 shadow-sm">
+        <section className="mt-12 rounded-3xl border border-primary/30 bg-primary/10 p-6 shadow-sm sm:p-8">
           <div className="grid gap-8 lg:grid-cols-[1.2fr,0.8fr] lg:items-center">
             <div className="text-center lg:text-left">
               <h2 className="text-2xl font-semibold text-foreground">{capability.cta.heading}</h2>

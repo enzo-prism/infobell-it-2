@@ -37,8 +37,8 @@ export default async function CareerDetailPage({ params }: CareerPageProps) {
   const relatedRoles = CAREER_ROLES.filter((item) => item.slug !== role.slug).slice(0, 2)
 
   return (
-    <div className="bg-background py-20">
-      <div className="mx-auto w-full max-w-4xl px-4">
+    <div className="bg-background py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <header className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">{role.location}</p>
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{role.title}</h1>
@@ -49,7 +49,7 @@ export default async function CareerDetailPage({ params }: CareerPageProps) {
         </header>
 
         <section className="mt-16 grid gap-6 md:grid-cols-[2fr,1fr]">
-          <div className="rounded-3xl border border-border bg-card/80 p-8 shadow-sm">
+          <div className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold text-foreground">Job Responsibilities / Skill-Set</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground">
               {role.responsibilities.map((item) => (
@@ -57,7 +57,7 @@ export default async function CareerDetailPage({ params }: CareerPageProps) {
               ))}
             </ul>
           </div>
-          <aside className="rounded-3xl border border-primary/20 bg-gradient-to-b from-primary/5 to-background p-8 text-center shadow-sm">
+          <aside className="rounded-3xl border border-primary/20 bg-gradient-to-b from-primary/5 to-background p-6 text-center shadow-sm sm:p-8">
             <h2 className="text-xl font-semibold text-foreground">Apply today</h2>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
               Email us your resume and a short note about this role. Make sure to mention{" "}
@@ -72,7 +72,7 @@ export default async function CareerDetailPage({ params }: CareerPageProps) {
           </aside>
         </section>
 
-        <section className="mt-16 rounded-3xl border border-border bg-muted/20 p-8">
+        <section className="mt-16 rounded-3xl border border-border bg-muted/20 p-6 sm:p-8">
           <h3 className="text-xl font-semibold text-foreground">Related Jobs</h3>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             {relatedRoles.map((related) => (

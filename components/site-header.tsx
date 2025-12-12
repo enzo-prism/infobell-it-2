@@ -78,7 +78,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-4 md:h-24">
+      <div className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-4 md:h-24 sm:px-6 lg:px-8">
         <Link
           href="/"
           className="flex items-center gap-3 rounded-xl border border-border bg-background px-3 py-2 shadow-sm transition hover:border-primary/50 dark:border-border/40"
@@ -173,7 +173,10 @@ export function SiteHeader() {
         </div>
       </div>
       {mobileOpen ? (
-        <nav id="mobile-nav" className="border-t border-border bg-background px-4 py-4 lg:hidden">
+        <nav
+          id="mobile-nav"
+          className="max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-border bg-background px-4 py-4 lg:hidden md:max-h-[calc(100dvh-6rem)] sm:px-6"
+        >
           <div className="mb-4 flex justify-end">
             <ThemeToggle />
           </div>

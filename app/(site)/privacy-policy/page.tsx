@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="bg-background py-20">
-      <div className="mx-auto w-full max-w-4xl px-4">
+    <div className="bg-background py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <header className="text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Privacy Policy</h1>
         </header>
 
         <div className="mt-16 space-y-12">
           {PRIVACY_SECTIONS.map((section) => (
-            <section key={section.heading} className="rounded-3xl border border-border bg-card/70 p-8 shadow-sm">
+            <section key={section.heading} className="rounded-3xl border border-border bg-card/70 p-6 shadow-sm sm:p-8">
               <h2 className="text-2xl font-semibold text-foreground">{section.heading}</h2>
               <div className="mt-4 space-y-4 text-sm leading-6 text-muted-foreground">
                 {section.body.map((paragraph, index) => (

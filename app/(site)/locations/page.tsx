@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 export default function LocationsPage() {
   return (
-    <div className="bg-background py-20">
-      <div className="mx-auto w-full max-w-4xl px-4">
+    <div className="bg-background py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <header className="text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Our Locations</h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">
@@ -22,7 +22,7 @@ export default function LocationsPage() {
 
         <section className="mt-16 space-y-10">
           {CORPORATE_LOCATIONS.map((location) => (
-            <article key={location.title} className="rounded-2xl border border-border bg-card/70 p-8 shadow-sm">
+            <article key={location.title} className="rounded-2xl border border-border bg-card/70 p-6 shadow-sm sm:p-8">
               <div className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
                 <div>
                   <h2 className="text-2xl font-semibold text-foreground">{location.title}</h2>
@@ -46,7 +46,7 @@ export default function LocationsPage() {
           ))}
         </section>
 
-        <section className="mt-16 rounded-2xl border border-border bg-muted/20 p-8">
+        <section className="mt-16 rounded-2xl border border-border bg-muted/20 p-6 sm:p-8">
           <h2 className="text-2xl font-semibold text-foreground">Global Presence</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Our engineering and delivery teams collaborate with clients across key technology hubs.

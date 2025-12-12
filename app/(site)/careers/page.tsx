@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 
 export default function CareersPage() {
   return (
-    <div className="bg-background py-20">
-      <div className="mx-auto w-full max-w-6xl px-4">
-        <header className="mx-auto max-w-4xl text-center space-y-6">
-          <div className="relative h-72 w-full overflow-hidden rounded-3xl border border-border bg-muted">
+    <div className="bg-background py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <header className="mx-auto max-w-4xl space-y-6 text-center">
+          <div className="relative h-56 w-full overflow-hidden rounded-3xl border border-border bg-muted sm:h-72">
             <Image
               src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1762617675/infobell-team_dimbqx.webp"
               alt="Infobell team collaborating"

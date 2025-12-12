@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 export default function BlueBookIndexPage() {
   return (
-    <div className="bg-background py-20">
-      <div className="mx-auto w-full max-w-6xl px-4">
+    <div className="bg-background py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Blue Book Series</h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">

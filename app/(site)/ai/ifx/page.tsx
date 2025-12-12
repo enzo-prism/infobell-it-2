@@ -20,8 +20,8 @@ const IFX_DIAGRAM_SRC =
 
 export default function IfxPage() {
   return (
-    <div className="bg-background py-20">
-      <div className="mx-auto w-full max-w-5xl px-4">
+    <div className="bg-background py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         <header className="text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
             Infobell Inference Framework eXpress (IFX)
@@ -34,7 +34,7 @@ export default function IfxPage() {
 
         <div className="mt-16 space-y-10">
           {IFX_SECTIONS.map((section) => (
-            <section key={section.heading} className="rounded-3xl border border-border bg-card/80 p-8 shadow-sm">
+            <section key={section.heading} className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm sm:p-8">
               <h2 className="text-2xl font-semibold text-foreground">{section.heading}</h2>
               {section.paragraphs?.map((paragraph, index) => (
                 <p key={index} className="mt-4 text-sm leading-7 text-muted-foreground">
@@ -91,7 +91,7 @@ export default function IfxPage() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-primary/30 bg-primary/10 p-8 text-center">
+        <section className="mt-12 rounded-3xl border border-primary/30 bg-primary/10 p-6 text-center sm:p-8">
           {IFX_CTA.map((paragraph, index) => (
             <p key={index} className="mt-4 text-base text-foreground">
               {paragraph}

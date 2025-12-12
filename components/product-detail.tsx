@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 
 export function ProductDetailCard({ product }: { product: ProductDetail }) {
   return (
-    <div className="bg-background py-20">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-12 px-4">
+    <div className="bg-background py-16 sm:py-20">
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
         <header className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Service Product</p>
@@ -20,7 +20,7 @@ export function ProductDetailCard({ product }: { product: ProductDetail }) {
               </PrimaryCTA>
             </div>
           </div>
-          <div className="card-glow flex w-full items-center justify-center rounded-3xl border border-border bg-muted p-4">
+          <div className="card-glow flex w-full items-center justify-center rounded-3xl border border-border bg-muted p-4 sm:p-6">
             {product.heroGradient ? (
               <div className="relative h-72 w-full overflow-hidden rounded-2xl motion-safe:animate-float">
                 <div className={clsx("absolute inset-0 bg-gradient-to-br", product.heroGradient)} />
@@ -59,7 +59,7 @@ export function ProductDetailCard({ product }: { product: ProductDetail }) {
           </ul>
         </section>
 
-        <section className="rounded-3xl border border-primary/30 bg-primary/10 p-8 text-center">
+        <section className="rounded-3xl border border-primary/30 bg-primary/10 p-6 text-center sm:p-8">
           <h2 className="text-2xl font-semibold text-foreground">Ready to explore {product.title}?</h2>
           <p className="mt-3 text-base text-foreground">
             Our product specialists can walk you through live demos, pricing, and integration options tailored to your teams.

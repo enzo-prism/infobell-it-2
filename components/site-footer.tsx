@@ -28,8 +28,8 @@ const companyLinks = NAV_PRIMARY.filter(
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-background/95">
-      <div className="mx-auto w-full max-w-6xl px-4 py-14">
-        <div className="flex flex-col gap-6 rounded-3xl border border-border/60 bg-gradient-to-br from-muted/40 via-background to-muted/30 p-8 text-center shadow-[0_35px_90px_-45px_rgba(14,165,233,0.7)] md:flex-row md:items-center md:text-left">
+      <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+        <div className="flex flex-col gap-6 rounded-3xl border border-border/60 bg-gradient-to-br from-muted/40 via-background to-muted/30 p-6 text-center shadow-[0_35px_90px_-45px_rgba(14,165,233,0.7)] md:flex-row md:items-center md:text-left sm:p-8">
           <div className="flex-1 space-y-4">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary">Infobell IT Solutions</p>
             <h2 className="text-3xl font-semibold text-foreground">Let’s build today’s and tomorrow’s IT. Together.</h2>

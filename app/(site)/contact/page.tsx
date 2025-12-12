@@ -15,18 +15,20 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="bg-background py-20">
-      <div className="mx-auto w-full max-w-6xl px-4">
+    <div className="bg-background py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{CONTACT_COPY.title}</h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">{CONTACT_COPY.intro}</p>
         </header>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[1.1fr,0.9fr]">
-          <Suspense fallback={<div className="rounded-3xl border border-border bg-card/80 p-8 shadow-sm">Loading…</div>}>
+          <Suspense
+            fallback={<div className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm sm:p-8">Loading…</div>}
+          >
             <ContactForm fields={CONTACT_FIELDS} />
           </Suspense>
-          <aside className="space-y-10 rounded-3xl border border-border bg-muted/30 p-8">
+          <aside className="space-y-10 rounded-3xl border border-border bg-muted/30 p-6 sm:p-8">
             <section>
               <h2 className="text-2xl font-semibold text-foreground">Our Office</h2>
               <p className="mt-3 text-sm text-muted-foreground">{CONTACT_COPY.officeDescription}</p>

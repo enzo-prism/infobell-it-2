@@ -14,8 +14,8 @@ const COMPANY_LINKEDIN = "https://www.linkedin.com/company/infobell-it/"
 
 export default function TeamPage() {
   return (
-    <div className="bg-background py-20">
-      <div className="mx-auto w-full max-w-6xl px-4">
+    <div className="bg-background py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">Our Leadership</h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">{TEAM_INTRO}</p>
@@ -33,7 +33,7 @@ export default function TeamPage() {
         </section>
 
         <section className="mt-20">
-          <div className="card-glow flex flex-col gap-6 rounded-3xl border border-border bg-gradient-to-tr from-primary/10 via-background to-background p-8 shadow-lg md:flex-row md:items-center">
+          <div className="card-glow flex flex-col gap-6 rounded-3xl border border-border bg-gradient-to-tr from-primary/10 via-background to-background p-6 shadow-lg md:flex-row md:items-center sm:p-8">
             <div className="flex-1 space-y-3 text-center md:text-left">
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary">Careers</p>
               <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">

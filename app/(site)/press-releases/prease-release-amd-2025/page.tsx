@@ -11,8 +11,8 @@ export default function PressReleaseAmd2025Page() {
   const { title, subtitle, dateline, sections, contacts } = PRESS_RELEASE_AMD
 
   return (
-    <div className="bg-background py-20">
-      <article className="mx-auto w-full max-w-4xl px-4">
+    <div className="bg-background py-16 sm:py-20">
+      <article className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <header className="text-left">
           <p className="text-xs font-semibold uppercase tracking-wider text-primary">Press Release</p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{title}</h1>

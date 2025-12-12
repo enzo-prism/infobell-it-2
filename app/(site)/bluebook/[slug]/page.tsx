@@ -29,8 +29,8 @@ export default async function BluebookReportPage({ params }: BluebookPageProps) 
   }
 
   return (
-    <div className="bg-background py-20">
-      <article className="mx-auto w-full max-w-4xl px-4">
+    <div className="bg-background py-16 sm:py-20">
+      <article className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <header className="text-left">
           <p className="text-xs font-semibold uppercase tracking-wider text-primary">{report.title}</p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
@@ -44,7 +44,7 @@ export default async function BluebookReportPage({ params }: BluebookPageProps) 
           ))}
         </div>
 
-        <section className="mt-12 rounded-3xl border border-primary/30 bg-primary/10 p-8 text-center">
+        <section className="mt-12 rounded-3xl border border-primary/30 bg-primary/10 p-6 text-center sm:p-8">
           <h2 className="text-xl font-semibold text-foreground">Need the detailed dataset or methodology?</h2>
           <p className="mt-3 text-sm text-foreground">
             Reference: {report.legacyId}. Contact our performance engineering team for the full report.
