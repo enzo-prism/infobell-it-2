@@ -71,7 +71,7 @@ export function HeroPillarsSlider() {
         ref={scrollContainerRef}
         role="region"
         aria-label="Infobell focus areas"
-        className="flex gap-4 overflow-x-auto overflow-y-visible scroll-smooth pb-4 snap-x snap-mandatory"
+        className="flex gap-4 overflow-x-auto scroll-smooth px-1 pb-8 pt-2 snap-x snap-mandatory"
       >
         {HERO_PILLARS.map((pillar) => {
           const Icon = iconMap[pillar.icon]
@@ -102,4 +102,3 @@ export function HeroPillarsSlider() {
     </div>
   )
 }
-

@@ -48,7 +48,7 @@ export function ServiceProductsSlider() {
 
       <div
         ref={scrollContainerRef}
-        className="flex gap-4 overflow-x-auto overflow-y-visible scroll-smooth pb-4 snap-x snap-mandatory"
+        className="flex gap-4 overflow-x-auto scroll-smooth px-1 pb-8 pt-2 snap-x snap-mandatory"
       >
         {SERVICE_PRODUCTS.map((product) => (
           <Link
