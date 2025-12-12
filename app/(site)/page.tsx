@@ -40,7 +40,7 @@ function HeroSection() {
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">{HERO_CONTENT.description}</p>
           <div className="mt-8 flex flex-wrap items-center gap-4 text-sm font-medium">
-            <Button asChild variant="cta">
+            <Button asChild className="group">
               <Link href={HERO_CONTENT.pressAnnouncement.href}>
                 <span className="relative inline-flex items-center gap-1">
                   {HERO_CONTENT.pressAnnouncement.label}
