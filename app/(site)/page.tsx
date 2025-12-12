@@ -7,6 +7,7 @@ import { LEADERSHIP_TEAM, TEAM_INTRO } from "@/lib/content/team"
 import { CLIENT_LOGOS, AFFILIATION_LOGOS } from "@/lib/content/company"
 import type { LogoEntry } from "@/lib/content/company"
 import { CoreExpertiseCarousel } from "@/components/core-expertise-carousel"
+import { HeroPillarsSlider } from "@/components/hero-pillars-slider"
 import { ServiceProductsSlider } from "@/components/service-products-slider"
 import { Button } from "@/components/ui/button"
 
@@ -20,6 +21,7 @@ export default function HomePage() {
   return (
     <div className="space-y-24 pb-24">
       <HeroSection />
+      <ServiceProductsTeaserSection />
       <EnterpriseAiMediaSection />
       <CoreExpertiseSection />
       <IfxHighlight />
@@ -38,7 +40,8 @@ function HeroSection() {
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             {HERO_CONTENT.heading}
           </h1>
-          <p className="mt-6 text-lg leading-8 text-muted-foreground">{HERO_CONTENT.description}</p>
+          <HeroPillarsSlider />
+          <p className="mt-8 text-lg leading-8 text-muted-foreground">{HERO_CONTENT.description}</p>
           <div className="mt-8 flex flex-wrap items-center gap-4 text-sm font-medium">
             <Button asChild className="group">
               <Link href={HERO_CONTENT.pressAnnouncement.href}>
@@ -62,17 +65,29 @@ function HeroSection() {
             </Button>
           </div>
         </div>
+      </div>
+    </section>
+  )
+}
 
-        <div className="mt-16">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Service Products</p>
-          <p className="mt-3 max-w-3xl text-base text-muted-foreground">
-            Explore our product accelerators for AI transformation, performance engineering, and sustainable cloud operations.
-          </p>
-          <ServiceProductsSlider />
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            <Button asChild variant="outline">
-              <a href="#products">View all service products</a>
-            </Button>
+function ServiceProductsTeaserSection() {
+  return (
+    <section className="bg-background">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary/10 via-background to-background p-6 shadow-lg sm:p-8">
+          <div className="absolute right-8 top-8 h-32 w-32 rounded-full bg-primary/10 blur-3xl" />
+          <div className="relative">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Service Products</p>
+            <p className="mt-3 max-w-3xl text-base text-muted-foreground">
+              Explore our product accelerators for AI transformation, performance engineering, and sustainable cloud
+              operations.
+            </p>
+            <ServiceProductsSlider />
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <Button asChild variant="outline">
+                <a href="#products">View all service products</a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
