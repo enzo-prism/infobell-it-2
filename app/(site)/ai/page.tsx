@@ -41,8 +41,14 @@ export default function AiOverviewPage() {
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {AI_PARTNERS.map((partner) => (
               <article key={partner.name} className="rounded-2xl border border-border bg-card/80 p-6 shadow-sm sm:p-8">
-                <div className="mb-6">
-                  <Image src={partner.logo} alt={`${partner.name} logo`} width={180} height={72} className="h-auto w-40" />
+                <div className="mb-6 flex h-20 items-center justify-center overflow-hidden rounded-2xl border border-border bg-muted/30 px-4">
+                  <Image
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    width={240}
+                    height={96}
+                    className="h-10 w-auto object-contain"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">{partner.name}</h3>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">{partner.description}</p>

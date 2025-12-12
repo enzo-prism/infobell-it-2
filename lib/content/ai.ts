@@ -15,21 +15,21 @@ export const AI_PARTNERS: AiPartner[] = [
   {
     name: "NVIDIA",
     href: "/ai/nvidia",
-    logo: "/images/partners/nvidia.svg",
+    logo: "/images/clients/ni.jpeg",
     description:
       "Infobell is a trusted NVIDIA partner helping enterprises identify high-impact AI and ML use cases, and build and deploy GenAI applications and chatbots using the NVIDIA accelerated computing stack—including GPUs, CUDA, TensorRT, and NVIDIA NIMs. We specialize in performance characterization for LLMs, computer vision, and agentic AI workflows across sectors like IT operations, retail, healthcare, and real estate. From data pipeline design to scalable deployment, Infobell leverages the full NVIDIA ecosystem to deliver state-of-the-art AI solutions at scale.",
   },
   {
     name: "AMD",
     href: "/ai/amd",
-    logo: "/images/partners/amd.svg",
+    logo: "/images/clients/a.png",
     description:
       "Infobell is an AMD engineering and solutions partner helping enterprises unlock GenAI and ML opportunities with AMD’s open, flexible infrastructure—including Instinct GPUs, EPYC CPUs, and the ROCm software stack. We specialize in performance benchmarking, LLM inference frameworks (like IFX), and customized AI solutions such as chatbots, RAG pipelines, and domain-specific model tuning. Sectors served include retail, healthcare, manufacturing, and energy.",
   },
   {
     name: "Intel",
     href: "/ai/intel",
-    logo: "/images/partners/intel.svg",
+    logo: "/images/clients/in.png",
     description:
       "Infobell partners with Intel to deliver robust enterprise AI and ML solutions leveraging Intel Xeon, Gaudi processors, and the OpenVINO toolkit. We help customers identify use cases, design architecture, and deploy GenAI applications like internal copilots, RAG pipelines, and industry-specific LLMs—with a focus on performance tuning, cost-efficiency, and secure deployment.",
   },
