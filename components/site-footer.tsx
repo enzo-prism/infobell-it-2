@@ -51,14 +51,30 @@ export function SiteFooter() {
             <Link href={`mailto:${CORPORATE_OFFICE.email}`} className="text-primary transition hover:underline">
               {CORPORATE_OFFICE.email}
             </Link>
-            <div className="flex items-center gap-4 pt-2">
-              {SOCIAL_LINKS.map((link) => (
-                <Button key={link.href} asChild size="icon" variant="icon">
-                  <Link href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
-                    {link.label.toLowerCase().includes("linkedin") ? <Linkedin className="h-4 w-4" /> : link.label}
-                  </Link>
-                </Button>
-              ))}
+            <div className="flex flex-wrap items-center justify-center gap-3 pt-2 md:justify-start">
+              {SOCIAL_LINKS.map((link) => {
+                const isLinkedIn = link.label.toLowerCase().includes("linkedin")
+
+                return (
+                  <Button key={link.href} asChild size="sm">
+                    <Link
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={isLinkedIn ? "Connect on Linkedin" : link.label}
+                    >
+                      {isLinkedIn ? (
+                        <>
+                          <Linkedin className="h-4 w-4" />
+                          Connect on Linkedin
+                        </>
+                      ) : (
+                        link.label
+                      )}
+                    </Link>
+                  </Button>
+                )
+              })}
             </div>
           </div>
 
