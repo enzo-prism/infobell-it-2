@@ -247,11 +247,8 @@ function TeamSection() {
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-heading sm:text-4xl">Meet the Team</h2>
           <p className="mt-4 text-base text-muted-foreground">{TEAM_INTRO}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button asChild>
-              <Link href="/careers">Join our team</Link>
-            </Button>
             <Button asChild variant="neutral">
-              <Link href="/team">Meet the leadership</Link>
+              <Link href="/team">Detailed Leader Profiles</Link>
             </Button>
           </div>
         </div>
