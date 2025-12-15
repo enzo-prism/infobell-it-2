@@ -11,6 +11,10 @@ type BluebookPageProps = {
   params: { slug: string }
 }
 
+export function generateStaticParams() {
+  return ALL_REPORTS.map((report) => ({ slug: report.slug }))
+}
+
 export async function generateMetadata({ params }: BluebookPageProps): Promise<Metadata> {
   const report = ALL_REPORTS.find((item) => item.slug === params.slug)
   if (!report) {
