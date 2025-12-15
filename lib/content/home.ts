@@ -6,7 +6,7 @@ import {
 } from "./capabilities"
 
 export const HERO_CONTENT = {
-  heading: "Empowering the future through innovative IT solutions.",
+  heading: "Empowering the future through innovative IT solutions for AI Era.",
   description:
     "Infobell IT is a company dedicated to product development and advanced services, specializing in artificial intelligence, high-performance computing, modernization and cloud migration, and performance benchmarking and optimization. We offer a dozen customizable product frameworks for end-to-end automation, AI recommendation engines, and pricing and sustainability analysis.",
   pressAnnouncement: {
