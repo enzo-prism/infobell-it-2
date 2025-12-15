@@ -17,7 +17,7 @@ This document captures how to rebuild the infobellit.com marketing site inside t
   - Links: `Careers`, `Privacy Policy`.
   - Social link: LinkedIn (`https://www.linkedin.com/company/infobell-it/`).
 - **Brand elements**: animations (Swiper carousels), `Infobell-at-AMD-AI Day-2025.mp4`, hero gradient backgrounds, shared CSS (`main.css`, `responsive.css`).
-- **Motion system**: shared animation utilities live in `styles/globals.css` (`animate-float`, `card-glow`, `hover-tilt`, etc.) with `prefers-reduced-motion` fallbacks. Reuse these helpers instead of adding bespoke keyframes per component.
+- **Motion system**: shared animation utilities live in `app/globals.css` (`animate-float`, `card-glow`, `hover-tilt`, etc.) with `prefers-reduced-motion` fallbacks. Reuse these helpers instead of adding bespoke keyframes per component.
 - **Forms**: Contact form with fields `Name`, `Email`, `Phone Number`, `Subject`, `Description` and submit CTA `Send`.
   - Eight contact landing pages (`contactus.html?subject=...`) pre-set the “Subject” field for product inquiries.
 - **Call-to-action banners** used across careers/legal pages: `Let’s make your project our next success story.` / `Let’s build today’s and tomorrow’s IT. Together.`
@@ -154,7 +154,7 @@ This document captures how to rebuild the infobellit.com marketing site inside t
   - Ensure download CTA text `Get it now` and descriptive paragraphs remain intact (consider storing full HTML/Markdown).
 
 ### Additional Assets
-- Keep `robots.txt` / `sitemap.xml` from the legacy export (store locally under `site-rebuild/`), and replicate those behaviors via Next.js static files as needed.
+- Keep `robots.txt` / `sitemap.xml` from the legacy export (store locally under `site-rebuild/`), and replicate those behaviors via `app/robots.ts` and `app/sitemap.ts`.
 - Images under `assets/images`, `assets/imgs` (client logos, team photos, product artwork) to be copied into `public/`.
 - Video `assets/video/Infobell-at-AMD-AI Day-2025.mp4` for hero carousel.
 
@@ -190,7 +190,7 @@ This document captures how to rebuild the infobellit.com marketing site inside t
 5. **Routing & SEO**
    - Recreate legacy slugs whenever practical (e.g., `/BlueBookSeries/...` becomes `/bluebook/...` with redirects).
    - Provide canonical URLs and meta descriptions matching legacy `<meta>` tags (home, careers, contact, press release, AI pages).
-   - Update `robots.txt` and `sitemap.xml` during deployment to include all new routes.
+   - Update `app/robots.ts` and `app/sitemap.ts` during deployment to include all new routes.
 
 6. **Forms & CTAs**
    - Implement contact form front-end replicating fields + success messaging; integrate backend/email solution later.

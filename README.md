@@ -44,7 +44,6 @@ docs/
   redesign-plan.md  # migration reference + checklist
 lib/content/        # typed content sources consumed by pages
 public/images/      # exported imagery from the legacy site
-public/media/       # hero video (≈79 MB)
 legacy-bluebook/    # exported HTML for Blue Book reports used by scripts/generate_bluebook_data.py
 \`\`\`
 
@@ -62,11 +61,11 @@ Update these modules when copy or product offerings change; page components auto
 ### Assets
 
 - Optimised images live beneath `public/images`. Each filename mirrors the corresponding asset from the legacy export.
-- The AMD day hero video (`public/media/Infobell-at-AMD-AI-Day-2025.mp4`) is ~79 MB. GitHub flags this as large – consider moving it to Git LFS or a CDN if repository size becomes a concern.
+- The home hero video is served from a remote URL (see `lib/content/home.ts`) to keep the repository lightweight.
 
 ### Motion & Interaction
 
-- Common animation helpers live in `styles/globals.css` under the `@layer utilities` block (`animate-float`, `animate-slide-up`, `card-glow`, etc.). Use these classes instead of ad-hoc keyframes so interactions stay consistent.
+- Common animation helpers live in `app/globals.css` under the `@layer utilities` block (`animate-float`, `animate-slide-up`, `card-glow`, etc.). Use these classes instead of ad-hoc keyframes so interactions stay consistent.
 - All utilities respect `prefers-reduced-motion`; avoid adding bespoke animations that bypass those safeguards.
 - Sections that need bespoke behaviour (e.g., `CoreExpertiseCarousel`, `AutoHighlightLogoGrid`) already expose predictable class hooks—extend those components instead of duplicating logic elsewhere.
 
@@ -91,8 +90,7 @@ Consult this folder when validating copy fidelity or retrieving additional media
 
 ## Deployment Notes
 
-- `next.config.mjs` disables image optimisation (legacy assets are already rasterised) and skips TypeScript blocking build errors. Adjust as needed for your deployment target (Vercel or custom).
-- The build currently emits a warning about using TypeScript 5.0.2. Upgrade to ≥5.1 when feasible.
+- `next.config.mjs` disables image optimisation (legacy assets are already rasterised) and allows remote Cloudinary images. Adjust as needed for your deployment target (Vercel or custom).
 
 ## Contributing
 
