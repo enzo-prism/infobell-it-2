@@ -116,13 +116,6 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
-              {FOOTER_LINKS.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="transition hover:text-primary">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
             </ul>
           </div>
         </div>
