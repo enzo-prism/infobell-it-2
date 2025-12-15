@@ -30,7 +30,6 @@ export function ServiceProductsSlider() {
           aria-label="Scroll previous service product"
           size="icon"
           variant="icon"
-          className="rounded-full bg-card"
         >
           <ChevronLeft className="h-5 w-5" />
         </Button>
@@ -40,7 +39,6 @@ export function ServiceProductsSlider() {
           aria-label="Scroll next service product"
           size="icon"
           variant="icon"
-          className="rounded-full bg-card"
         >
           <ChevronRight className="h-5 w-5" />
         </Button>
@@ -69,8 +67,8 @@ export function ServiceProductsSlider() {
             </div>
             <h3 className="mt-4 text-base font-semibold text-heading">{product.title}</h3>
             <p className="mt-2 text-sm leading-6 text-muted-foreground">{product.description}</p>
-            <span className="mt-4 inline-flex w-fit items-center gap-1 text-sm font-semibold text-primary underline-offset-4 transition-all duration-300 group-hover:translate-x-1 group-hover:underline">
-              Explore
+            <span className="mt-4 inline-flex w-fit items-center gap-1 text-sm font-semibold text-primary transition-all duration-300 group-hover:translate-x-1">
+              <span className="underline-offset-4 group-hover:underline">Explore</span>
               <span aria-hidden="true">&rarr;</span>
             </span>
           </Link>

@@ -50,7 +50,6 @@ export function HeroPillarsSlider() {
             aria-label="Scroll previous focus area"
             size="icon"
             variant="icon"
-            className="rounded-full bg-card"
           >
             <ChevronLeft className="h-5 w-5" />
           </Button>
@@ -60,7 +59,6 @@ export function HeroPillarsSlider() {
             aria-label="Scroll next focus area"
             size="icon"
             variant="icon"
-            className="rounded-full bg-card"
           >
             <ChevronRight className="h-5 w-5" />
           </Button>
@@ -91,8 +89,8 @@ export function HeroPillarsSlider() {
                   <p className="mt-1 text-sm leading-6 text-muted-foreground">{pillar.summary}</p>
                 </div>
               </div>
-              <span className="mt-4 inline-flex w-fit items-center gap-1 text-sm font-semibold text-primary underline-offset-4 transition-all duration-300 group-hover:translate-x-1 group-hover:underline">
-                Learn more
+              <span className="mt-4 inline-flex w-fit items-center gap-1 text-sm font-semibold text-primary transition-all duration-300 group-hover:translate-x-1">
+                <span className="underline-offset-4 group-hover:underline">Learn more</span>
                 <span aria-hidden="true">&rarr;</span>
               </span>
             </Link>

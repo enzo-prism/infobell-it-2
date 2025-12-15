@@ -16,10 +16,10 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <span
-        className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-transparent"
+        className="inline-flex h-11 w-14 items-center justify-center rounded-full border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-sm"
         aria-hidden="true"
       >
-        <Moon className="h-5 w-5 text-muted-foreground" />
+        <Moon className="h-5 w-5" />
       </span>
     )
   }

@@ -5,27 +5,28 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 motion-safe:transform-gpu",
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--navy)] focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 motion-safe:transform-gpu",
   {
     variants: {
       variant: {
         primary:
-          "bg-primary text-primary-foreground shadow-sm hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-md active:translate-y-0 active:shadow-sm",
+          "border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)] hover:-translate-y-0.5 hover:border-[color:var(--navy)] hover:bg-[color:var(--navy)] hover:text-white hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.92),0_18px_45px_-30px_rgba(10,31,68,0.85)] active:translate-y-0 active:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.75),0_10px_25px_-20px_rgba(10,31,68,0.7)]",
         outline:
-          "border border-primary/40 bg-background text-primary shadow-sm hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary/10 hover:shadow-md active:translate-y-0 active:shadow-sm",
+          "border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)] hover:-translate-y-0.5 hover:border-[color:var(--navy)] hover:bg-[color:var(--navy)] hover:text-white hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.92),0_18px_45px_-30px_rgba(10,31,68,0.85)] active:translate-y-0 active:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.75),0_10px_25px_-20px_rgba(10,31,68,0.7)]",
         neutral:
-          "border border-border bg-background text-foreground shadow-sm hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary hover:shadow-md active:translate-y-0 active:shadow-sm",
+          "border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)] hover:-translate-y-0.5 hover:border-[color:var(--navy)] hover:bg-[color:var(--navy)] hover:text-white hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.92),0_18px_45px_-30px_rgba(10,31,68,0.85)] active:translate-y-0 active:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.75),0_10px_25px_-20px_rgba(10,31,68,0.7)]",
         cta:
-          "group relative overflow-hidden bg-gradient-to-r from-primary via-primary/90 to-sky-500 text-primary-foreground shadow-lg hover:-translate-y-0.5 hover:shadow-[0_20px_45px_-18px_rgba(14,165,233,0.9)] active:translate-y-0 before:pointer-events-none before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/10 before:via-transparent before:to-white/10 before:opacity-0 before:transition before:duration-300 hover:before:opacity-100",
-        ghost: "text-foreground hover:bg-muted",
+          "border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)] hover:-translate-y-0.5 hover:border-[color:var(--navy)] hover:bg-[color:var(--navy)] hover:text-white hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.92),0_18px_45px_-30px_rgba(10,31,68,0.85)] active:translate-y-0 active:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.75),0_10px_25px_-20px_rgba(10,31,68,0.7)]",
+        ghost:
+          "border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)] hover:-translate-y-0.5 hover:border-[color:var(--navy)] hover:bg-[color:var(--navy)] hover:text-white hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.92),0_18px_45px_-30px_rgba(10,31,68,0.85)] active:translate-y-0 active:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.75),0_10px_25px_-20px_rgba(10,31,68,0.7)]",
         icon:
-          "rounded-md border border-border bg-background text-foreground shadow-sm hover:border-primary/50 hover:text-primary",
+          "border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-sm hover:border-[color:var(--navy)] hover:bg-[color:var(--navy)] hover:text-white hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.92),0_14px_35px_-26px_rgba(10,31,68,0.8)] active:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.75),0_10px_25px_-22px_rgba(10,31,68,0.65)]",
       },
       size: {
-        sm: "px-4 py-2",
-        md: "px-5 py-2.5",
-        lg: "px-6 py-3",
-        icon: "h-10 w-10 p-0",
+        sm: "h-10 px-6 text-sm",
+        md: "h-11 px-8 text-sm",
+        lg: "h-12 px-10 text-base",
+        icon: "h-11 w-14 p-0",
       },
     },
     defaultVariants: {

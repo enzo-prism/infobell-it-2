@@ -53,15 +53,11 @@ export function SiteFooter() {
             </Link>
             <div className="flex items-center gap-4 pt-2">
               {SOCIAL_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/70 text-muted-foreground transition hover:border-primary hover:text-primary"
-                >
-                  {link.label.toLowerCase().includes("linkedin") ? <Linkedin className="h-4 w-4" /> : link.label}
-                </Link>
+                <Button key={link.href} asChild size="icon" variant="icon">
+                  <Link href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
+                    {link.label.toLowerCase().includes("linkedin") ? <Linkedin className="h-4 w-4" /> : link.label}
+                  </Link>
+                </Button>
               ))}
             </div>
           </div>

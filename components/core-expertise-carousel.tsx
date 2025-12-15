@@ -38,7 +38,6 @@ export function CoreExpertiseCarousel() {
           aria-label="Scroll previous expertise"
           size="icon"
           variant="icon"
-          className="rounded-full bg-card"
         >
           <ChevronLeft className="h-5 w-5" />
         </Button>
@@ -48,7 +47,6 @@ export function CoreExpertiseCarousel() {
           aria-label="Scroll next expertise"
           size="icon"
           variant="icon"
-          className="rounded-full bg-card"
         >
           <ChevronRight className="h-5 w-5" />
         </Button>
