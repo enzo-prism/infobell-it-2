@@ -71,25 +71,19 @@ function HeroSection() {
 function EnterpriseAiMediaSection() {
   return (
     <section className="bg-background">
-      <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-start lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-4 shadow-lg motion-safe:animate-float">
-          <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-tr from-primary/20 via-transparent to-primary/10" />
-          <video
-            src={HERO_CONTENT.video.src}
-            title={HERO_CONTENT.video.title}
-            controls
-            autoPlay
-            muted
-            playsInline
-            preload="metadata"
-            className="h-auto w-full rounded-2xl"
-          />
-        </div>
-        <div className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary/15 via-background to-background p-6 shadow-lg">
-          <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-primary/10 blur-3xl" />
-          <div className="relative space-y-5">
-            <h2 className="text-3xl font-semibold text-heading">Building the Future of Enterprise AI</h2>
-            <p className="text-sm font-semibold text-foreground">Deep AI ML Experts | Global Delivery</p>
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary/10 via-background to-background shadow-lg">
+          <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
+
+          <div className="relative space-y-4 p-5 sm:p-6 lg:p-8">
+            <header className="space-y-2">
+              <h2 className="text-3xl font-semibold text-heading sm:text-4xl">
+                Building the Future of Enterprise AI
+              </h2>
+              <p className="text-sm font-semibold text-foreground">Deep AI ML Experts | Global Delivery</p>
+            </header>
+
             <p className="text-sm leading-6 text-muted-foreground">
               <span className="font-semibold text-foreground">Infobell</span> is a premier global product engineering and
               solutions firm accelerating innovation across AI, cloud, and high-performance computing. As a specialized
@@ -97,13 +91,14 @@ function EnterpriseAiMediaSection() {
               business value. We do not just build AI; we optimize it for the AI stack and infrastructure hardware that best
               fits your needs.
             </p>
-            <div className="rounded-2xl border border-border/60 bg-card/60 p-4">
+
+            <div className="rounded-2xl border border-border/60 bg-card/50 p-4 sm:p-5">
               <p className="text-sm font-semibold text-foreground">Multi-Architecture Expertise: NVIDIA, AMD, and Intel</p>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
                 We deliver agnostic, end-to-end engineering—from use-case definition and PoCs to deployment and
                 optimization—leveraging the distinct strengths of the industry’s leading accelerators:
               </p>
-              <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-muted-foreground">
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground">
                 <li>
                   <span className="font-semibold text-foreground">NVIDIA:</span> As an NVIDIA Inception Partner, we leverage the
                   full NVIDIA stack, including <span className="font-semibold text-foreground">NVIDIA NIM microservices</span>{" "}
@@ -120,11 +115,32 @@ function EnterpriseAiMediaSection() {
                 </li>
                 <li>
                   <span className="font-semibold text-foreground">Intel:</span> We enable comprehensive, scalable solutions on
-                  Intel platforms, supporting <span className="font-semibold text-foreground">OPEA (Open Platform for Enterprise AI)</span>{" "}
-                  and Confidential Computing to ensure security and performance for critical workloads.
+                  Intel platforms, supporting{" "}
+                  <span className="font-semibold text-foreground">OPEA (Open Platform for Enterprise AI)</span> and Confidential
+                  Computing to ensure security and performance for critical workloads.
                 </li>
               </ul>
+
+              <figure className="relative mt-5 overflow-hidden rounded-2xl border border-border bg-card/40 p-2 shadow-sm motion-safe:animate-float">
+                <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-tr from-primary/15 via-transparent to-primary/10" />
+                <video
+                  src={HERO_CONTENT.video.src}
+                  title={HERO_CONTENT.video.title}
+                  controls
+                  autoPlay
+                  muted
+                  playsInline
+                  preload="metadata"
+                  className="aspect-video w-full rounded-xl"
+                />
+                {HERO_CONTENT.video.caption ? (
+                  <figcaption className="mt-2 px-1 text-xs text-muted-foreground">
+                    {HERO_CONTENT.video.caption}
+                  </figcaption>
+                ) : null}
+              </figure>
             </div>
+
             <p className="text-sm leading-6 text-muted-foreground">
               <span className="font-semibold text-foreground">High-value Innovation -</span> Our AI framework use-case-based
               accelerators—including <span className="font-semibold text-foreground">ConvoGene™</span> for chatbots,{" "}
