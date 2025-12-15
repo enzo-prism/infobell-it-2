@@ -12,6 +12,8 @@ export type NavGroup = {
   items: NavItem[]
 }
 
+export const SITE_URL = "https://www.infobellit.com" as const
+
 export const SITE_LOGO = {
   alt: "Infobell IT logo",
   lightSrc: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765552704/Logo-color-svg_pvibq9.svg",
