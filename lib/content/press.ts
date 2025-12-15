@@ -48,3 +48,5 @@ export const PRESS_RELEASE_AMD: PressRelease = {
   ],
   contacts: ["Lax Sakalkale - lax@infobellit.com"],
 }
+
+export const PRESS_RELEASES: PressRelease[] = [PRESS_RELEASE_AMD]

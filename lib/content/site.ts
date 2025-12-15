@@ -24,7 +24,6 @@ export const SITE_LOGO = {
 
 export const NAV_PRIMARY: Array<NavItem | NavGroup> = [
   { label: "Home", href: "/" },
-  { label: "Our Team", href: "/team" },
   {
     label: "Solutions",
     items: [
@@ -49,6 +48,15 @@ export const NAV_PRIMARY: Array<NavItem | NavGroup> = [
       { label: "VAST", href: "/vast" },
       { label: "SmartE", href: "/smarte" },
       { label: "Blue Book Series", href: "/bluebook" },
+    ],
+  },
+  {
+    label: "Company",
+    items: [
+      { label: "About Us", href: "/company" },
+      { label: "Leadership Team", href: "/team" },
+      { label: "Careers", href: "/careers" },
+      { label: "Press Releases", href: "/press-releases" },
     ],
   },
   { label: "Our Clients", href: "/clients" },

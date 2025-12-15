@@ -9,10 +9,8 @@ import clsx from "clsx"
 import { useEffect, useRef, useState, type FocusEvent, type ComponentType } from "react"
 import { Brain, ChevronDown, Cloud, Cpu, Gauge, Leaf, Menu, ShieldCheck, X } from "lucide-react"
 import {
-  FOOTER_LINKS,
   NAV_PRIMARY,
   SITE_LOGO,
-  SOCIAL_LINKS,
   type NavGroup,
   type NavItem,
 } from "@/lib/content/site"
@@ -119,7 +117,7 @@ export function SiteHeader() {
   }
 
   const mobileNavGroups = NAV_PRIMARY.filter(isGroup)
-  const companyLinks = NAV_PRIMARY.filter(
+  const mobileNavLinks = NAV_PRIMARY.filter(
     (entry): entry is NavItem => !isGroup(entry) && entry.href !== "/" && entry.href !== "/contact",
   )
 
@@ -327,76 +325,30 @@ export function SiteHeader() {
                         </Accordion.Item>
                       )
                     })}
-
-                    <Accordion.Item
-                      value="Company"
-                      className="overflow-hidden rounded-2xl border border-border bg-card/50 shadow-sm"
-                    >
-                      <Accordion.Header>
-                        <Accordion.Trigger className="group flex w-full items-center justify-between px-4 py-3 text-base font-semibold text-foreground transition hover:bg-card/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 data-[state=open]:bg-card/70">
-                          <span>Company</span>
-                          <ChevronDown className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-                        </Accordion.Trigger>
-                      </Accordion.Header>
-                      <Accordion.Content className="px-2 pb-2">
-                        <ul className="space-y-1">
-                          {companyLinks.map((item) => {
-                            const isActive = isActiveRoute(pathname, item.href)
-                            return (
-                              <li key={item.label}>
-                                <Link
-                                  href={item.href}
-                                  aria-current={isActive ? "page" : undefined}
-                                  className={clsx(
-                                    "flex items-center justify-between rounded-xl border border-transparent px-3 py-3 text-sm font-semibold text-foreground transition hover:border-border hover:bg-muted/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50",
-                                    isActive && "border-primary/40 bg-primary/10",
-                                  )}
-                                  onClick={() => setMobileOpen(false)}
-                                >
-                                  <span>{item.label}</span>
-                                  <ChevronDown className="h-4 w-4 -rotate-90 text-muted-foreground" />
-                                </Link>
-                              </li>
-                            )
-                          })}
-
-                          {FOOTER_LINKS.map((item) => {
-                            const isActive = isActiveRoute(pathname, item.href)
-                            return (
-                              <li key={item.label}>
-                                <Link
-                                  href={item.href}
-                                  aria-current={isActive ? "page" : undefined}
-                                  className={clsx(
-                                    "flex items-center justify-between rounded-xl border border-transparent px-3 py-3 text-sm font-semibold text-foreground transition hover:border-border hover:bg-muted/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50",
-                                    isActive && "border-primary/40 bg-primary/10",
-                                  )}
-                                  onClick={() => setMobileOpen(false)}
-                                >
-                                  <span>{item.label}</span>
-                                  <ChevronDown className="h-4 w-4 -rotate-90 text-muted-foreground" />
-                                </Link>
-                              </li>
-                            )
-                          })}
-
-                          {SOCIAL_LINKS.map((item) => (
-                            <li key={item.label}>
-                              <a
-                                href={item.href}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex items-center justify-between rounded-xl border border-transparent px-3 py-3 text-sm font-semibold text-foreground transition hover:border-border hover:bg-muted/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
-                              >
-                                <span>{item.label}</span>
-                                <ChevronDown className="h-4 w-4 -rotate-90 text-muted-foreground" />
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </Accordion.Content>
-                    </Accordion.Item>
                   </Accordion.Root>
+
+                  <div className="mt-6 space-y-2">
+                    {mobileNavLinks.map((item) => {
+                      const isActive = isActiveRoute(pathname, item.href)
+                      return (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          aria-current={isActive ? "page" : undefined}
+                          className={clsx(
+                            "flex items-center justify-between rounded-2xl border border-border bg-card/60 px-4 py-3 text-base font-semibold text-foreground shadow-sm transition hover:-translate-y-0.5 hover:border-primary/50 hover:bg-card/80 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50",
+                            isActive && "border-primary/60 bg-primary/10",
+                          )}
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {item.label}
+                          <span className={clsx("text-muted-foreground", isActive && "text-primary")}>
+                            <ChevronDown className="h-4 w-4 -rotate-90" />
+                          </span>
+                        </Link>
+                      )
+                    })}
+                  </div>
                 </div>
 
                 <div className="border-t border-border bg-background/80 px-4 py-4 backdrop-blur sm:px-6">

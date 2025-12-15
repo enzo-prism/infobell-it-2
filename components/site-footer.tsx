@@ -21,9 +21,11 @@ function getGroupItems(label: string) {
 
 const solutionsItems = getGroupItems("Solutions")
 const productItems = getGroupItems("Products")
-const companyLinks = NAV_PRIMARY.filter(
-  (entry): entry is NavItem => !isGroup(entry) && entry.label !== "Home"
-)
+const companyItems = getGroupItems("Company")
+const companyLinks = [
+  ...companyItems,
+  ...FOOTER_LINKS.filter((item) => !companyItems.some((companyItem) => companyItem.href === item.href)),
+]
 
 export function SiteFooter() {
   return (
