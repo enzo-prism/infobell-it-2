@@ -7,6 +7,8 @@
   --background: oklch(0.98 0 0);
   --foreground: oklch(0.15 0 0);
   --navy: #0a1f44;
+  --text-xs: max(11pt, 0.75rem);
+  --text-sm: max(11pt, 0.875rem);
   --heading: var(--primary);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0 0);

@@ -50,7 +50,7 @@ function BlueBookCard({ report }: BlueBookCardProps) {
       <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       <div className="relative flex-1 space-y-5">
         <div className="space-y-2">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground">{report.legacyId}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">{report.legacyId}</p>
           <h3 className="text-xl font-semibold leading-tight text-heading">{report.subtitle}</h3>
         </div>
         {leadParagraph ? (
