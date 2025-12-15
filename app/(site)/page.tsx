@@ -8,6 +8,7 @@ import { CLIENT_LOGOS, AFFILIATION_LOGOS } from "@/lib/content/company"
 import type { LogoEntry } from "@/lib/content/company"
 import { CoreExpertiseCarousel } from "@/components/core-expertise-carousel"
 import { HeroPillarsSlider } from "@/components/hero-pillars-slider"
+import { LatestPressReleasePill } from "@/components/latest-press-release-pill"
 import { TechStackGrid } from "@/components/tech-stack-grid"
 import { Button } from "@/components/ui/button"
 
@@ -36,22 +37,13 @@ function HeroSection() {
     <section className="bg-gradient-to-b from-background via-background to-muted/40">
       <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <div className="max-w-4xl">
+          <LatestPressReleasePill className="mb-6 w-fit" />
           <h1 className="text-4xl font-bold tracking-tight text-heading sm:text-5xl lg:text-6xl">
             {HERO_CONTENT.heading}
           </h1>
           <HeroPillarsSlider />
           <p className="mt-8 text-lg leading-8 text-muted-foreground">{HERO_CONTENT.description}</p>
           <div className="mt-8 flex flex-wrap items-center gap-4 text-sm font-medium">
-            <Button asChild className="group">
-              <Link href={HERO_CONTENT.pressAnnouncement.href}>
-                <span className="relative inline-flex items-center gap-1">
-                  {HERO_CONTENT.pressAnnouncement.label}
-                  <span aria-hidden="true" className="translate-x-0 text-base transition group-hover:translate-x-1">
-                    &rarr;
-                  </span>
-                </span>
-              </Link>
-            </Button>
             <Button asChild variant="outline" className="group">
               <Link href="/contact">
                 <span className="inline-flex items-center gap-1">
