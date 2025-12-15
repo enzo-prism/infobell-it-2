@@ -42,7 +42,7 @@ export function HeroPillarsSlider() {
   return (
     <div className="mt-10">
       <div className="mb-4 flex items-center justify-between gap-3">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Our focus areas</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Centers of excellence</p>
         <div className="flex gap-2">
           <Button
             type="button"
