@@ -41,7 +41,7 @@ export function SiteFooter() {
             </p>
           </div>
           <Button asChild>
-            <Link href="/contact">Connect with us</Link>
+            <Link href="/contact">Contact the Team</Link>
           </Button>
         </div>
 
