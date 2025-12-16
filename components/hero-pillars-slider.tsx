@@ -39,15 +39,18 @@ export function HeroPillarsSlider() {
     })
   }
 
+  const baseCardClassName =
+    "card-glow group flex flex-col rounded-2xl border border-border bg-card/70 p-5 shadow-sm transition hover:-translate-y-1 hover:border-sky-300/70 hover:shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+
   return (
-    <div className="mt-10">
+    <div className="mt-8 sm:mt-10">
       <div className="mb-4 flex items-center justify-between gap-3">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Centers of excellence</p>
-        <div className="flex gap-2">
+        <div className="hidden gap-2 sm:flex lg:hidden">
           <Button
             type="button"
             onClick={() => scrollByCards("prev")}
-            aria-label="Scroll previous focus area"
+            aria-label="Scroll previous center of excellence"
             size="icon"
             variant="icon"
           >
@@ -56,7 +59,7 @@ export function HeroPillarsSlider() {
           <Button
             type="button"
             onClick={() => scrollByCards("next")}
-            aria-label="Scroll next focus area"
+            aria-label="Scroll next center of excellence"
             size="icon"
             variant="icon"
           >
@@ -68,8 +71,8 @@ export function HeroPillarsSlider() {
       <div
         ref={scrollContainerRef}
         role="region"
-        aria-label="Infobell focus areas"
-        className="flex gap-4 overflow-x-auto scroll-smooth px-1 pb-8 pt-2 snap-x snap-mandatory"
+        aria-label="Infobell centers of excellence"
+        className="flex gap-4 overflow-x-auto scroll-smooth px-1 pb-8 pt-2 snap-x snap-mandatory lg:hidden"
       >
         {HERO_PILLARS.map((pillar) => {
           const Icon = iconMap[pillar.icon]
@@ -78,7 +81,35 @@ export function HeroPillarsSlider() {
               key={pillar.title}
               href={pillar.href}
               aria-label={`Explore ${pillar.title}`}
-              className="card-glow group flex min-w-[260px] max-w-[320px] snap-start flex-col rounded-2xl border border-border bg-card/70 p-5 shadow-sm transition hover:-translate-y-1 hover:border-sky-300/70 hover:shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className={`${baseCardClassName} min-w-[260px] max-w-[320px] snap-start`}
+            >
+              <div className="flex items-start gap-4">
+                <span className="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 via-primary/5 to-transparent text-primary shadow-inner shadow-primary/20 ring-1 ring-primary/15 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-2">
+                  <Icon className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <h3 className="text-base font-semibold text-heading">{pillar.title}</h3>
+                  <p className="mt-1 text-sm leading-6 text-muted-foreground">{pillar.summary}</p>
+                </div>
+              </div>
+              <span className="mt-4 inline-flex w-fit items-center gap-1 text-sm font-semibold text-primary transition-all duration-300 group-hover:translate-x-1">
+                <span className="underline-offset-4 group-hover:underline">Learn more</span>
+                <span aria-hidden="true">&rarr;</span>
+              </span>
+            </Link>
+          )
+        })}
+      </div>
+
+      <div className="hidden grid-cols-3 gap-4 lg:grid xl:gap-6">
+        {HERO_PILLARS.map((pillar) => {
+          const Icon = iconMap[pillar.icon]
+          return (
+            <Link
+              key={pillar.title}
+              href={pillar.href}
+              aria-label={`Explore ${pillar.title}`}
+              className={`${baseCardClassName} h-full`}
             >
               <div className="flex items-start gap-4">
                 <span className="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 via-primary/5 to-transparent text-primary shadow-inner shadow-primary/20 ring-1 ring-primary/15 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-2">
