@@ -1,20 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { Brain, Cloud, Cpu, Gauge, Leaf, ShieldCheck } from "lucide-react"
-import type { LucideIcon } from "lucide-react"
-import type { ExpertiseIcon } from "@/lib/content/capabilities"
 import type { ExpertiseItem } from "@/lib/content/home"
+import { ExpertiseHoverIcon } from "@/components/expertise-hover-icon"
 import { cn } from "@/lib/utils"
-
-const iconMap: Record<ExpertiseIcon, LucideIcon> = {
-  brain: Brain,
-  cpu: Cpu,
-  leaf: Leaf,
-  gauge: Gauge,
-  cloud: Cloud,
-  shield: ShieldCheck,
-}
 
 export type ExpertiseSlideCardProps = {
   item: ExpertiseItem
@@ -40,7 +29,6 @@ export function ExpertiseSlideCard({
   className,
   ariaLabel,
 }: ExpertiseSlideCardProps) {
-  const Icon = iconMap[item.icon]
   const points = variant === "detailed" ? getHighlights(item.description).slice(0, 4) : []
 
   return (
@@ -54,7 +42,7 @@ export function ExpertiseSlideCard({
     >
       <div className="flex flex-col gap-4 text-center">
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent text-primary shadow-inner shadow-primary/20 ring-1 ring-primary/15 transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-3">
-          <Icon className="h-8 w-8" aria-hidden="true" />
+          <ExpertiseHoverIcon icon={item.icon} className="h-8 w-8" />
         </div>
         <h3 className="text-lg font-semibold text-heading">{item.title}</h3>
         <p className="text-sm text-muted-foreground">{item.summary}</p>
@@ -75,4 +63,3 @@ export function ExpertiseSlideCard({
     </Link>
   )
 }
-

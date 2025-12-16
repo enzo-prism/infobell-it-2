@@ -38,7 +38,7 @@ export const NAV_PRIMARY: Array<NavItem | NavGroup> = [
       { label: "High Performance Computing", href: "/hpc", icon: "cpu" },
       { label: "Carbon Footprint and Sustainability", href: "/sustainability", icon: "leaf" },
       { label: "Performance Engineering", href: "/performance", icon: "gauge" },
-      { label: "Cloud Native Development", href: "/cloud-native", icon: "cloud" },
+      { label: "Cloud Native Development and Migration", href: "/cloud-native", icon: "cloud" },
       { label: "Compliance and Confidential Computing", href: "/compliance", icon: "shield" },
     ],
   },

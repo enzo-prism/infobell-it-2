@@ -38,11 +38,11 @@ export type ExpertiseItem = BaseContentItem & {
 
 const HOME_CAPABILITY_ORDER: CapabilitySlug[] = [
   "ai",
-  "hpc",
-  "sustainability",
   "performance",
+  "hpc",
   "cloud-native",
   "compliance",
+  "sustainability",
 ]
 
 export const CORE_EXPERTISE: ExpertiseItem[] = HOME_CAPABILITY_ORDER.map((slug) => {

@@ -22,7 +22,7 @@ export function HeroPillarsSlider() {
   return (
     <div className="mt-8 sm:mt-10">
       <div className="mb-4 flex items-center justify-between gap-3">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Centers of excellence</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Centers of Excellence</p>
         <div className="hidden gap-2 sm:flex lg:hidden">
           <Button
             type="button"

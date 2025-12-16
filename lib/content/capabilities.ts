@@ -95,7 +95,7 @@ export const CAPABILITY_SUMMARIES: Record<CapabilitySlug, CapabilitySummary> = {
   },
   "cloud-native": {
     slug: "cloud-native",
-    title: "Cloud Native Development",
+    title: "Cloud Native Development and Migration",
     summary: "Designing full-stack platforms, modernizing monoliths, and automating delivery pipelines.",
     icon: "cloud",
     href: "/cloud-native",

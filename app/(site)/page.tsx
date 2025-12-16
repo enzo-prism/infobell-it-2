@@ -156,7 +156,8 @@ function CoreExpertiseSection() {
     <section id="expertise" className="bg-background">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-heading sm:text-4xl">Our Core Expertise</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Delivering high-value services</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-heading sm:text-4xl">Centers of Excellence</h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Strategic engineering capabilities that unlock scalable AI, resilient infrastructure, and sustainable cloud
             modernization.
