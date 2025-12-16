@@ -16,52 +16,6 @@ export const HERO_CONTENT = {
   },
 }
 
-export type HeroPillar = {
-  title: string
-  summary: string
-  icon: ExpertiseIcon
-  href: string
-}
-
-export const HERO_PILLARS: HeroPillar[] = [
-  {
-    title: "Product Development & Services",
-    summary: "Global teams delivering product engineering and advanced IT services.",
-    icon: "shield",
-    href: "/contact",
-  },
-  {
-    title: "Artificial Intelligence",
-    summary: "Enterprise AI programs built for speed, scale, and measurable business value.",
-    icon: "brain",
-    href: "/ai",
-  },
-  {
-    title: "High-Performance Computing",
-    summary: "HPC expertise that accelerates compute-heavy workloads and benchmarking labs.",
-    icon: "cpu",
-    href: "/hpc",
-  },
-  {
-    title: "Modernization & Cloud Migration",
-    summary: "Cloud-native modernization and migration strategies across hybrid environments.",
-    icon: "cloud",
-    href: "/cloud-native",
-  },
-  {
-    title: "Benchmarking & Optimization",
-    summary: "Performance benchmarking and optimization across applications, infra, and AI stacks.",
-    icon: "gauge",
-    href: "/performance",
-  },
-  {
-    title: "Product Framework Accelerators",
-    summary: "Customizable frameworks for automation, recommendations, pricing, and sustainability analysis.",
-    icon: "leaf",
-    href: "/#products",
-  },
-]
-
 export const IFX_HIGHLIGHT = {
   image: "/images/products/IFX.png",
   title: "Introducing Infobell Inference Framework eXpress (IFX)",
