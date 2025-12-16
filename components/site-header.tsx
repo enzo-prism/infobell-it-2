@@ -7,30 +7,48 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import clsx from "clsx"
 import { useEffect, useRef, useState, type FocusEvent, type ComponentType } from "react"
-import { Brain, ChevronDown, Cloud, Cpu, Gauge, Leaf, Menu, ShieldCheck, X } from "lucide-react"
+import {
+  Brain,
+  BriefcaseBusiness,
+  Building2,
+  ChevronDown,
+  Cloud,
+  Cpu,
+  Gauge,
+  Leaf,
+  Menu,
+  Newspaper,
+  ShieldCheck,
+  UsersRound,
+  X,
+} from "lucide-react"
 import {
   NAV_PRIMARY,
   SITE_LOGO,
   type NavGroup,
+  type NavIcon,
   type NavItem,
 } from "@/lib/content/site"
-import type { ExpertiseIcon } from "@/lib/content/capabilities"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
 
 type NavEntry = NavItem | NavGroup
-const ICON_MAP: Record<ExpertiseIcon, ComponentType<{ className?: string }>> = {
+const NAV_ICON_MAP: Record<NavIcon, ComponentType<{ className?: string }>> = {
   brain: Brain,
   cpu: Cpu,
   leaf: Leaf,
   gauge: Gauge,
   cloud: Cloud,
   shield: ShieldCheck,
+  building2: Building2,
+  usersRound: UsersRound,
+  briefcaseBusiness: BriefcaseBusiness,
+  newspaper: Newspaper,
 }
 
-function SolutionIcon({ icon, className }: { icon?: ExpertiseIcon; className?: string }) {
+function SolutionIcon({ icon, className }: { icon?: NavIcon; className?: string }) {
   if (!icon) return null
-  const IconComponent = ICON_MAP[icon]
+  const IconComponent = NAV_ICON_MAP[icon]
   if (!IconComponent) return null
   return (
     <span

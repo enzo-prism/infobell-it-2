@@ -1,10 +1,17 @@
 import type { ExpertiseIcon } from "./capabilities"
 
+export type NavIcon =
+  | ExpertiseIcon
+  | "building2"
+  | "usersRound"
+  | "briefcaseBusiness"
+  | "newspaper"
+
 export type NavItem = {
   label: string
   href: string
   external?: boolean
-  icon?: ExpertiseIcon
+  icon?: NavIcon
 }
 
 export type NavGroup = {
@@ -53,10 +60,10 @@ export const NAV_PRIMARY: Array<NavItem | NavGroup> = [
   {
     label: "Company",
     items: [
-      { label: "About Us", href: "/company" },
-      { label: "Leadership Team", href: "/team" },
-      { label: "Careers", href: "/careers" },
-      { label: "Press Releases", href: "/press-releases" },
+      { label: "About Us", href: "/company", icon: "building2" },
+      { label: "Leadership Team", href: "/team", icon: "usersRound" },
+      { label: "Careers", href: "/careers", icon: "briefcaseBusiness" },
+      { label: "Press Releases", href: "/press-releases", icon: "newspaper" },
     ],
   },
   { label: "Our Clients", href: "/clients" },
