@@ -5,7 +5,7 @@ import clsx from "clsx"
 import { HERO_CONTENT, SERVICE_PRODUCTS, TECH_STACK, IFX_HIGHLIGHT } from "@/lib/content/home"
 import { LEADERSHIP_TEAM, TEAM_INTRO } from "@/lib/content/team"
 import { CLIENT_LOGOS, AFFILIATION_LOGOS } from "@/lib/content/company"
-import type { LogoEntry } from "@/lib/content/company"
+import { AutoHighlightLogoGrid } from "@/components/auto-highlight-logo-grid"
 import { CoreExpertiseCarousel } from "@/components/core-expertise-carousel"
 import { HeroPillarsSlider } from "@/components/hero-pillars-slider"
 import { LatestPressReleasePill } from "@/components/latest-press-release-pill"
@@ -261,78 +261,26 @@ function ClientsSection() {
             Trusted by global brands, performance leaders, and industry innovators.
           </p>
         </div>
-        <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-          {CLIENT_LOGOS.map((logo) => (
-            <LogoTile
-              key={logo.image}
-              logo={logo}
-              className="card-glow flex h-20 items-center justify-center rounded-xl border border-border bg-card/60 p-4 transition hover:-translate-y-1 hover:shadow-lg"
-              baseWidth={120}
-              baseHeight={60}
-              heightRem={3}
-            />
-          ))}
-        </div>
+        <AutoHighlightLogoGrid
+          logos={CLIENT_LOGOS}
+          containerClassName="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-5"
+          cardClassName="card-glow flex h-20 items-center justify-center overflow-hidden rounded-xl border border-border bg-card/60 transition hover:-translate-y-1 hover:shadow-lg sm:h-24"
+          logoFrameClassName="h-8 w-full sm:h-10"
+          autoHighlight={false}
+          sizes="(max-width: 640px) 45vw, (max-width: 1024px) 28vw, 18vw"
+        />
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-semibold text-heading">Our Affiliations</h3>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-6">
-            {AFFILIATION_LOGOS.map((logo) => (
-              <LogoTile
-                key={logo.image}
-                logo={logo}
-                className="card-glow flex h-20 w-44 items-center justify-center rounded-lg border border-border bg-card/80 p-3 transition hover:-translate-y-1 hover:shadow-lg"
-                baseWidth={160}
-                baseHeight={80}
-                heightRem={5}
-              />
-            ))}
-          </div>
+          <AutoHighlightLogoGrid
+            logos={AFFILIATION_LOGOS}
+            containerClassName="mt-6 flex flex-wrap items-center justify-center gap-6"
+            cardClassName="card-glow flex h-20 w-44 items-center justify-center overflow-hidden rounded-lg border border-border bg-card/80 transition hover:-translate-y-1 hover:shadow-lg sm:h-24 sm:w-48"
+            logoFrameClassName="h-10 w-full"
+            autoHighlight={false}
+            sizes="(max-width: 640px) 50vw, 12rem"
+          />
         </div>
       </div>
     </section>
-  )
-}
-
-type LogoTileProps = {
-  logo: LogoEntry
-  className: string
-  baseWidth: number
-  baseHeight: number
-  heightRem: number
-}
-
-function LogoTile({ logo, className, baseWidth, baseHeight, heightRem }: LogoTileProps) {
-  const multiplier = logo.multiplier ?? 1
-  const sharedClasses = clsx(
-    "group overflow-hidden",
-    className,
-    logo.href
-      ? "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
-      : "cursor-default"
-  )
-
-  const image = (
-    <Image
-      src={logo.image}
-      alt={logo.alt}
-      width={baseWidth * multiplier}
-      height={baseHeight * multiplier}
-      className="w-auto object-contain grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
-      style={{ height: `${heightRem * multiplier}rem` }}
-    />
-  )
-
-  if (logo.href) {
-    return (
-      <a href={logo.href} target="_blank" rel="noreferrer" aria-label={`Visit ${logo.alt}`} className={sharedClasses}>
-        {image}
-      </a>
-    )
-  }
-
-  return (
-    <div className={sharedClasses} role="img" aria-label={logo.alt}>
-      {image}
-    </div>
   )
 }

@@ -2,7 +2,6 @@ export type LogoEntry = {
   image: string
   alt: string
   href?: string
-  multiplier?: number
 }
 
 export const CLIENT_LOGOS: LogoEntry[] = [
@@ -21,10 +20,9 @@ export const CLIENT_LOGOS: LogoEntry[] = [
   { image: "/images/clients/z.png", alt: "Datagamz", href: "https://datagamz.com/" },
   { image: "/images/clients/u.png", alt: "Upturn", href: "https://upturn.org/" },
   {
-    image: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1762809696/AIF_Metrics_vadpyv.webp",
+    image: "/images/clients/aifmetrics.png",
     alt: "AIFMetrics",
     href: "https://www.aifmetrics.com/",
-    multiplier: 5,
   },
   { image: "/images/clients/t.png", alt: "Client partner logo (circular seal)" },
   { image: "/images/clients/h.png", alt: "Hatics Technologies LLP", href: "https://www.hatics.com/" },
@@ -38,7 +36,6 @@ export const AFFILIATION_LOGOS: LogoEntry[] = [
     image: "/images/clients/SPEC.png",
     alt: "SPEC (Standard Performance Evaluation Corporation)",
     href: "https://www.spec.org",
-    multiplier: 0.5,
   },
   {
     image: "/images/clients/tpc.jpg",
@@ -56,10 +53,9 @@ export const AFFILIATION_LOGOS: LogoEntry[] = [
     href: "https://confidentialcomputing.io",
   },
   {
-    image: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1762809697/AWS_marketplace_i7asqu.webp",
+    image: "/images/clients/aws-marketplace.png",
     alt: "AWS Marketplace",
     href: "https://aws.amazon.com/marketplace",
-    multiplier: 5,
   },
 ]
 

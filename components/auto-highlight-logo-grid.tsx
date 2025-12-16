@@ -9,9 +9,9 @@ type AutoHighlightLogoGridProps = {
   logos: LogoEntry[]
   containerClassName: string
   cardClassName: string
-  baseWidth: number
-  baseHeight: number
-  heightRem: number
+  logoFrameClassName?: string
+  sizes?: string
+  autoHighlight?: boolean
   intervalMs?: number
 }
 
@@ -19,9 +19,9 @@ export function AutoHighlightLogoGrid({
   logos,
   containerClassName,
   cardClassName,
-  baseWidth,
-  baseHeight,
-  heightRem,
+  logoFrameClassName = "h-8 w-full sm:h-10",
+  sizes = "(max-width: 640px) 45vw, (max-width: 1024px) 28vw, 18vw",
+  autoHighlight = true,
   intervalMs = 3000,
 }: AutoHighlightLogoGridProps) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -30,17 +30,17 @@ export function AutoHighlightLogoGrid({
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
-    if (!logos.length) return
+    if (!autoHighlight || !logos.length) return
     const interval = setInterval(() => {
       setPrevIndex((prev) => (prev === null ? activeIndex : prev))
       setActiveIndex((prev) => (prev + 1) % logos.length)
     }, intervalMs)
 
     return () => clearInterval(interval)
-  }, [logos.length, intervalMs, activeIndex])
+  }, [autoHighlight, logos.length, intervalMs, activeIndex])
 
   useEffect(() => {
-    if (prevIndex === null) return
+    if (!autoHighlight || prevIndex === null) return
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current)
     }
@@ -57,9 +57,8 @@ export function AutoHighlightLogoGrid({
   return (
     <div className={containerClassName}>
       {logos.map((logo, index) => {
-        const multiplier = logo.multiplier ?? 1
-        const isActive = hoveredIndex === index || activeIndex === index
-        const isFading = prevIndex === index
+        const isActive = hoveredIndex === index || (autoHighlight && activeIndex === index)
+        const isFading = autoHighlight && prevIndex === index
         const baseClasses = clsx(
           "group relative overflow-hidden",
           cardClassName,
@@ -69,22 +68,23 @@ export function AutoHighlightLogoGrid({
         )
 
         const image = (
-          <Image
-            src={logo.image}
-            alt={logo.alt}
-            width={baseWidth * multiplier}
-            height={baseHeight * multiplier}
-            className={clsx(
-              "w-auto object-contain transition duration-700 ease-out",
-              isActive
-                ? "grayscale-0 opacity-100"
-                : isFading
-                  ? "grayscale-[20%] opacity-90"
-                  : "grayscale opacity-70",
-              "group-hover:grayscale-0 group-hover:opacity-100"
-            )}
-            style={{ height: `${heightRem * multiplier}rem` }}
-          />
+          <div className={clsx("relative", logoFrameClassName)}>
+            <Image
+              src={logo.image}
+              alt={logo.alt}
+              fill
+              sizes={sizes}
+              className={clsx(
+                "object-contain transition duration-700 ease-out",
+                isActive
+                  ? "grayscale-0 opacity-100"
+                  : isFading
+                    ? "grayscale-[20%] opacity-90"
+                    : "grayscale opacity-70",
+                "group-hover:grayscale-0 group-hover:opacity-100"
+              )}
+            />
+          </div>
         )
 
         const sweepHighlight = isActive ? (
