@@ -43,22 +43,26 @@ export default function AiOverviewPage() {
           <h2 className="text-3xl font-semibold text-heading">Strategic Accelerator Partnerships</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {AI_PARTNERS.map((partner) => (
-              <article key={partner.name} className="rounded-2xl border border-border bg-card/80 p-6 shadow-sm sm:p-8">
-                <div className="mb-6 flex h-20 items-center justify-center overflow-hidden rounded-2xl border border-border bg-muted/30 px-4">
+              <Link
+                key={partner.name}
+                href={partner.href}
+                className="card-glow group flex flex-col rounded-2xl border border-border bg-card/80 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sky-300/70 hover:bg-card hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none sm:p-8"
+              >
+                <div className="mb-6 flex h-20 items-center justify-center overflow-hidden rounded-2xl border border-border bg-muted/30 px-4 transition-colors duration-300 group-hover:border-sky-300/50 group-hover:bg-muted/20 motion-reduce:transition-none">
                   <Image
                     src={partner.logo}
                     alt={`${partner.name} logo`}
                     width={240}
                     height={96}
-                    className="h-10 w-auto object-contain"
+                    className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none"
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-heading">{partner.name}</h3>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">{partner.description}</p>
-                <Button asChild className="mt-6" variant="outline" size="sm">
-                  <Link href={partner.href}>Learn more</Link>
+                <Button asChild className="mt-6 w-fit pointer-events-none" variant="outline" size="sm">
+                  <span>Learn more</span>
                 </Button>
-              </article>
+              </Link>
             ))}
           </div>
         </section>

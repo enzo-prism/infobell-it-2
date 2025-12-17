@@ -16,7 +16,7 @@ export function TechStackGrid({ items, className }: TechStackGridProps) {
           key={tech.label}
           href={tech.href}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           aria-label={`Visit ${tech.label}`}
           className="group flex min-h-20 items-center justify-center overflow-hidden rounded-2xl border border-border/70 bg-card/90 p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300/60 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 sm:min-h-24 sm:p-5"
         >
@@ -34,4 +34,3 @@ export function TechStackGrid({ items, className }: TechStackGridProps) {
     </div>
   )
 }
-

@@ -22,6 +22,11 @@ export type ProductDetail = {
     href: string
     external?: boolean
   }
+  secondaryCta?: {
+    label: string
+    href: string
+    external?: boolean
+  }
 }
 
 export const PRODUCT_DETAILS: ProductDetail[] = [
@@ -39,6 +44,7 @@ export const PRODUCT_DETAILS: ProductDetail[] = [
       "Security reviews and compliance accelerators for highly regulated clients.",
     ],
     cta: { label: "Live Demo", href: "https://convogene.ai", external: true },
+    secondaryCta: { label: "Contact us", href: "/contact?subject=ConvoGene" },
   },
   {
     slug: "transcribe",

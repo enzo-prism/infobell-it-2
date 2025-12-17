@@ -97,7 +97,7 @@ export function AutoHighlightLogoGrid({
               key={logo.image}
               href={logo.href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label={`Visit ${logo.alt}`}
               className={baseClasses}
               onMouseEnter={() => setHoveredIndex(index)}

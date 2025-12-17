@@ -5,6 +5,8 @@ import type { ProductDetail } from "@/lib/content/products"
 import { Button } from "@/components/ui/button"
 
 export function ProductDetailCard({ product }: { product: ProductDetail }) {
+  const secondaryCta = product.secondaryCta
+
   return (
     <div className="bg-background py-16 sm:py-20">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
@@ -14,10 +16,15 @@ export function ProductDetailCard({ product }: { product: ProductDetail }) {
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-heading sm:text-5xl">{product.title}</h1>
             <p className="mt-4 text-lg text-muted-foreground">{product.tagline}</p>
             <p className="mt-4 text-sm leading-6 text-muted-foreground">{product.description}</p>
-            <div className="mt-6">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <PrimaryCTA href={product.cta.href} external={product.cta.external}>
                 {product.cta.label}
               </PrimaryCTA>
+              {secondaryCta ? (
+                <SecondaryCTA href={secondaryCta.href} external={secondaryCta.external}>
+                  {secondaryCta.label}
+                </SecondaryCTA>
+              ) : null}
             </div>
           </div>
           <div className="card-glow flex w-full items-center justify-center rounded-3xl border border-border bg-muted p-4 sm:p-6">
@@ -64,10 +71,15 @@ export function ProductDetailCard({ product }: { product: ProductDetail }) {
           <p className="mt-3 text-base text-foreground">
             Our product specialists can walk you through live demos, pricing, and integration options tailored to your teams.
           </p>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row sm:items-center">
             <PrimaryCTA href={product.cta.href} external={product.cta.external}>
               {product.cta.label}
             </PrimaryCTA>
+            {secondaryCta ? (
+              <SecondaryCTA href={secondaryCta.href} external={secondaryCta.external}>
+                {secondaryCta.label}
+              </SecondaryCTA>
+            ) : null}
           </div>
         </section>
       </div>
@@ -79,7 +91,7 @@ function PrimaryCTA({ href, children, external }: { href: string; children: Reac
   if (external) {
     return (
       <Button asChild size="lg">
-        <a href={href} target="_blank" rel="noreferrer">
+        <a href={href} target="_blank" rel="noopener noreferrer">
           {children}
         </a>
       </Button>
@@ -87,6 +99,24 @@ function PrimaryCTA({ href, children, external }: { href: string; children: Reac
   }
   return (
     <Button asChild size="lg">
+      <Link href={href}>{children}</Link>
+    </Button>
+  )
+}
+
+function SecondaryCTA({ href, children, external }: { href: string; children: React.ReactNode; external?: boolean }) {
+  if (external) {
+    return (
+      <Button asChild size="lg" variant="outline">
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      </Button>
+    )
+  }
+
+  return (
+    <Button asChild size="lg" variant="outline">
       <Link href={href}>{children}</Link>
     </Button>
   )
