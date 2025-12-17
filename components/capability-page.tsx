@@ -1,16 +1,22 @@
 import Link from "next/link"
-import type { CapabilityDetail } from "@/lib/content/capabilities"
+import { CAPABILITY_SUMMARIES, type CapabilityDetail } from "@/lib/content/capabilities"
 import { HeroVideoFrame } from "@/components/hero-video-frame"
+import { SolutionHeroIcon } from "@/components/solution-hero-icon"
 import { Button } from "@/components/ui/button"
 
 export function CapabilityPage({ capability }: { capability: CapabilityDetail }) {
+  const capabilitySummary = CAPABILITY_SUMMARIES[capability.slug]
+
   return (
     <div className="bg-background py-16 sm:py-20">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <header
-          className={`rounded-3xl border border-border bg-gradient-to-br ${capability.heroBackground} p-6 shadow-sm sm:p-8`}
+          className={`group rounded-3xl border border-border bg-gradient-to-br ${capability.heroBackground} p-6 shadow-sm sm:p-8`}
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Center of Excellence</p>
+          <div className="flex flex-wrap items-center gap-3">
+            <SolutionHeroIcon icon={capabilitySummary.icon} />
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Center of Excellence</p>
+          </div>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-heading sm:text-5xl">
             {capability.title}
           </h1>

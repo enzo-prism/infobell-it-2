@@ -1,5 +1,5 @@
 import type { ComponentType, CSSProperties } from "react"
-import { Brain, Cloud, Cpu, Gauge, Leaf, ShieldCheck } from "@phosphor-icons/react"
+import { Brain, Cloud, Cpu, Gauge, Leaf, ShieldCheck } from "@phosphor-icons/react/dist/ssr"
 import type { IconProps } from "@phosphor-icons/react"
 import type { ExpertiseIcon } from "@/lib/content/capabilities"
 import { cn } from "@/lib/utils"
