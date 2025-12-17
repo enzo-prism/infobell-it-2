@@ -62,7 +62,7 @@ export function AutoHighlightLogoGrid({
         const baseClasses = clsx(
           "group relative overflow-hidden",
           cardClassName,
-          isActive && "border-sky-300 shadow-lg",
+          isActive && "border-sky-300 shadow-md",
           isFading && !isActive && "border-sky-200",
           logo.href ? "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300" : "cursor-default"
         )

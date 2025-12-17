@@ -26,9 +26,9 @@ export default function ClientsPage() {
         <section className="mt-16">
           <AutoHighlightLogoGrid
             logos={CLIENT_LOGOS}
-            containerClassName="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-5"
-            cardClassName="card-glow flex h-20 items-center justify-center overflow-hidden rounded-xl border border-border bg-card/60 transition hover:-translate-y-1 hover:shadow-lg sm:h-24"
-            logoFrameClassName="h-12 w-full sm:h-14 lg:h-16"
+            containerClassName="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 md:grid-cols-4 lg:grid-cols-6 lg:gap-6"
+            cardClassName="flex w-full aspect-[1000/667] items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sky-300/70 hover:shadow-md motion-reduce:transition-none"
+            logoFrameClassName="h-full w-full"
             autoHighlight={false}
             sizes="(max-width: 640px) 45vw, (max-width: 1024px) 28vw, 18vw"
           />
