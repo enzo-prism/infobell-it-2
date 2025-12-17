@@ -1,5 +1,6 @@
 import type { NavItem } from "./site"
 import {
+  CAPABILITY_DETAILS,
   CAPABILITY_SUMMARIES,
   type CapabilitySlug,
   type ExpertiseIcon,
@@ -54,6 +55,52 @@ export const CORE_EXPERTISE: ExpertiseItem[] = HOME_CAPABILITY_ORDER.map((slug) 
     summary: capability.summary,
     href: capability.href,
     description: capability.highlights.join("; "),
+  }
+})
+
+export type HeroCenterSlide = {
+  slug: CapabilitySlug
+  title: string
+  tagline: string
+  summary: string
+  href: string
+  hoverImageSrc: string
+}
+
+const AI_HERO_TAGLINE = "Identify. Implement. Optimize enterprise AI."
+
+const HERO_CENTER_TAGLINES: Record<CapabilitySlug, string> = {
+  ai: AI_HERO_TAGLINE,
+  hpc: CAPABILITY_DETAILS.hpc.heroTagline,
+  sustainability: CAPABILITY_DETAILS.sustainability.heroTagline,
+  performance: CAPABILITY_DETAILS.performance.heroTagline,
+  "cloud-native": CAPABILITY_DETAILS["cloud-native"].heroTagline,
+  compliance: CAPABILITY_DETAILS.compliance.heroTagline,
+}
+
+const HERO_CENTER_HOVER_IMAGES: Record<CapabilitySlug, string> = {
+  ai: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765941122/ai_clbw4l.webp",
+  performance:
+    "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765941122/performance_engineering_olh47v.webp",
+  compliance:
+    "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765941122/compliance_and_confidential_computing_ndspjs.webp",
+  hpc: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765941121/high-performance-computing_fnnjat.webp",
+  sustainability:
+    "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765941122/carbon_footprint_and_sustainability_yqihpa.webp",
+  "cloud-native":
+    "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765941122/cloud_native_development_and_migration_jnbfxu.webp",
+}
+
+export const HERO_CENTER_SLIDES: HeroCenterSlide[] = HOME_CAPABILITY_ORDER.map((slug) => {
+  const capability = CAPABILITY_SUMMARIES[slug]
+
+  return {
+    slug,
+    title: `${capability.title} Services`,
+    tagline: HERO_CENTER_TAGLINES[slug],
+    summary: capability.summary,
+    href: capability.href,
+    hoverImageSrc: HERO_CENTER_HOVER_IMAGES[slug],
   }
 })
 

@@ -37,12 +37,12 @@ function HeroSection() {
     <section className="bg-gradient-to-b from-background via-background to-muted/40">
       <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <div className="w-full">
-          <LatestPressReleasePill className="mb-5 sm:mb-6 max-w-3xl" />
-          <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-heading sm:text-5xl lg:text-6xl lg:leading-[1.05]">
+          <LatestPressReleasePill className="mb-5 sm:mb-6" />
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-heading sm:text-5xl lg:text-6xl lg:leading-[1.05]">
             {HERO_CONTENT.heading}
           </h1>
           <HeroPillarsSlider />
-          <p className="mt-7 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+          <p className="mt-7 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
             {HERO_CONTENT.description}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4 text-sm font-medium">
