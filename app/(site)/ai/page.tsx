@@ -4,6 +4,7 @@ import Link from "next/link"
 import { AI_HERO, AI_PARTNERS, AI_SERVICE_SECTIONS } from "@/lib/content/ai"
 import { CAPABILITY_SUMMARIES } from "@/lib/content/capabilities"
 import { IFX_HIGHLIGHT } from "@/lib/content/home"
+import { AiServicesTabs } from "@/components/ai/ai-services-tabs"
 import { HeroVideoFrame } from "@/components/hero-video-frame"
 import { SolutionHeroIcon } from "@/components/solution-hero-icon"
 import { Button } from "@/components/ui/button"
@@ -67,22 +68,14 @@ export default function AiOverviewPage() {
           </div>
         </section>
 
-        <section className="mt-16 space-y-8">
-          {AI_SERVICE_SECTIONS.map((section) => (
-            <article key={section.heading} className="rounded-3xl border border-border bg-muted/20 p-6 sm:p-8">
-              <h3 className="text-2xl font-semibold text-heading">{section.heading}</h3>
-              {section.description ? (
-                <p className="mt-3 text-sm text-muted-foreground">{section.description}</p>
-              ) : null}
-              {section.bullets ? (
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
-                  {section.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              ) : null}
-            </article>
-          ))}
+        <section className="mt-16">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-semibold text-heading">How we deliver</h2>
+            <p className="mt-3 text-base text-muted-foreground">
+              Explore focused service tracks—each designed to move from prototype to production with benchmark-ready confidence.
+            </p>
+          </div>
+          <AiServicesTabs sections={AI_SERVICE_SECTIONS} />
         </section>
 
         <section className="mt-16 rounded-3xl border border-primary/30 bg-primary/5 p-6 shadow-sm sm:p-8">

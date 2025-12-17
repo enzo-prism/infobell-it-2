@@ -189,6 +189,12 @@ export const IFX_CTA = [
 ]
 
 export type PartnerPageContent = {
+  partner: {
+    name: string
+    logo: string
+    logoAlt: string
+    contactSubject: string
+  }
   title: string
   intro: string
   spotlight?: {
@@ -209,6 +215,12 @@ export type PartnerPageContent = {
 }
 
 export const AMD_PAGE: PartnerPageContent = {
+  partner: {
+    name: "AMD",
+    logo: "/images/clients/a.png",
+    logoAlt: "AMD logo",
+    contactSubject: "AI Solutions - AMD",
+  },
   title: "Infobell AI Solutions powered by AMD",
   intro:
     "Infobell brings deep product engineering and AI infrastructure expertise to help enterprises and cloud providers accelerate their AI transformation. We showcase our AI Factory Platform powered by AMD Instinct MI350X GPUs and the ROCm stack, offering industry-leading performance and sustainability.",
@@ -240,6 +252,12 @@ export const AMD_PAGE: PartnerPageContent = {
 }
 
 export const INTEL_PAGE: PartnerPageContent = {
+  partner: {
+    name: "Intel",
+    logo: "/images/clients/in.png",
+    logoAlt: "Intel logo",
+    contactSubject: "AI Solutions - Intel",
+  },
   title: "Intel Powered AI Solutions by Infobell",
   intro:
     "Infobell partners with Intel to deliver robust enterprise AI and ML solutions leveraging Intel Xeon, Gaudi processors, and the OpenVINO toolkit. We help customers identify use cases, design architecture, and deploy GenAI applications like internal copilots, RAG pipelines, and industry-specific LLMs—with a focus on performance tuning, cost-efficiency, and secure deployment.",
@@ -255,6 +273,12 @@ export const INTEL_PAGE: PartnerPageContent = {
 }
 
 export const NVIDIA_PAGE: PartnerPageContent = {
+  partner: {
+    name: "NVIDIA",
+    logo: "/images/clients/ni.jpeg",
+    logoAlt: "NVIDIA Inception Program logo",
+    contactSubject: "AI Solutions - NVIDIA",
+  },
   title: "NVIDIA Powered AI Solutions by Infobell",
   intro:
     "Infobell is a trusted NVIDIA partner helping enterprises identify high-impact AI and ML use cases, and build and deploy GenAI applications and chatbots using the NVIDIA accelerated computing stack — including GPUs, CUDA, TensorRT, and NVIDIA NIMs. We specialize in performance characterization for LLMs, computer vision, and agentic AI workflows across sectors like IT operations, retail, healthcare, and real estate.",
