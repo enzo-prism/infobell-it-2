@@ -75,13 +75,9 @@ export function AutoHighlightLogoGrid({
               fill
               sizes={sizes}
               className={clsx(
-                "object-contain transition duration-700 ease-out",
-                isActive
-                  ? "grayscale-0 opacity-100"
-                  : isFading
-                    ? "grayscale-[15%] opacity-95"
-                    : "grayscale opacity-90",
-                "group-hover:grayscale-0 group-hover:opacity-100"
+                "object-contain grayscale opacity-90 transition duration-700 ease-out",
+                isFading && "opacity-95",
+                "group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100 group-active:grayscale-0 group-active:opacity-100"
               )}
             />
           </div>
