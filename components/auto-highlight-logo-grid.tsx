@@ -79,8 +79,8 @@ export function AutoHighlightLogoGrid({
                 isActive
                   ? "grayscale-0 opacity-100"
                   : isFading
-                    ? "grayscale-[20%] opacity-90"
-                    : "grayscale opacity-70",
+                    ? "grayscale-[15%] opacity-95"
+                    : "grayscale opacity-90",
                 "group-hover:grayscale-0 group-hover:opacity-100"
               )}
             />

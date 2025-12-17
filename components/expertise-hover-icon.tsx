@@ -18,7 +18,7 @@ const ACCENT_MAP: Record<ExpertiseIcon, string> = {
   gauge: "rgb(251 146 60)",
   cpu: "rgb(167 139 250)",
   cloud: "rgb(96 165 250)",
-  shield: "rgb(74 222 128)",
+  shield: "rgb(56 189 248)",
   leaf: "rgb(163 230 53)",
 }
 
@@ -49,4 +49,3 @@ export function ExpertiseHoverIcon({ icon, className }: ExpertiseHoverIconProps)
     </span>
   )
 }
-

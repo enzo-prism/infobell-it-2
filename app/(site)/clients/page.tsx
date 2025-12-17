@@ -28,7 +28,7 @@ export default function ClientsPage() {
             logos={CLIENT_LOGOS}
             containerClassName="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-5"
             cardClassName="card-glow flex h-20 items-center justify-center overflow-hidden rounded-xl border border-border bg-card/60 transition hover:-translate-y-1 hover:shadow-lg sm:h-24"
-            logoFrameClassName="h-8 w-full sm:h-10"
+            logoFrameClassName="h-12 w-full sm:h-14 lg:h-16"
             sizes="(max-width: 640px) 45vw, (max-width: 1024px) 28vw, 18vw"
           />
         </section>
