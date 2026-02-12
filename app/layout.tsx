@@ -27,7 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} bg-background font-sans text-foreground antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          forcedTheme="light"
+          disableTransitionOnChange
+        >
           {children}
           <Analytics />
         </ThemeProvider>

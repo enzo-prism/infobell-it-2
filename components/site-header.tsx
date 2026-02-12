@@ -29,7 +29,6 @@ import {
   type NavIcon,
   type NavItem,
 } from "@/lib/content/site"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
 
 type NavEntry = NavItem | NavGroup
@@ -221,9 +220,6 @@ export function SiteHeader() {
           )}
         </nav>
         <div className="flex items-center gap-3">
-          <div className="hidden lg:block">
-            <ThemeToggle />
-          </div>
           <Dialog.Root open={mobileOpen} onOpenChange={setMobileOpen}>
             <Dialog.Trigger asChild>
               <Button
@@ -264,14 +260,11 @@ export function SiteHeader() {
                     />
                     <span className="sr-only">Infobell IT</span>
                   </Link>
-                  <div className="flex items-center gap-2">
-                    <ThemeToggle />
-                    <Dialog.Close asChild>
-                      <Button type="button" size="icon" variant="icon" aria-label="Close menu">
-                        <X className="h-5 w-5" />
-                      </Button>
-                    </Dialog.Close>
-                  </div>
+                  <Dialog.Close asChild>
+                    <Button type="button" size="icon" variant="icon" aria-label="Close menu">
+                      <X className="h-5 w-5" />
+                    </Button>
+                  </Dialog.Close>
                 </div>
 
                 <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
