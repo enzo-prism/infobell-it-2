@@ -1,14 +1,16 @@
 import type { Metadata } from "next"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { CAREERS_HERO, CAREER_ROLES, APPLY_EMAIL } from "@/lib/content/careers"
 import { Button } from "@/components/ui/button"
 
-export const metadata: Metadata = {
-  title: "Careers | Infobell IT Solutions",
+export const metadata: Metadata = withSeoMetadata({
+  title: "Careers at Infobell IT",
   description:
-    "Join Infobell IT Solutions to build the future of enterprise AI, performance engineering, cloud-native development, and sustainable infrastructure.",
-}
+    "Join Infobell IT to build AI, cloud, and performance engineering solutions with global impact, strong mentorship, and real enterprise workloads.",
+  path: "/careers",
+})
 
 export default function CareersPage() {
   return (

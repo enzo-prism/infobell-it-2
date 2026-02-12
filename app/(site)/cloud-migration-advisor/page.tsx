@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import { ProductDetailCard } from "@/components/product-detail"
 import { getProductBySlug } from "@/lib/content/products"
 
@@ -10,10 +11,12 @@ if (!productDetail) {
 
 const product = productDetail
 
-export const metadata: Metadata = {
-  title: `${product.title} | Infobell IT Service Product`,
-  description: product.tagline,
-}
+export const metadata: Metadata = withSeoMetadata({
+  title: "Cloud Migration Advisor",
+  description:
+    "Cloud Migration Advisor helps enterprises assess workloads, reduce migration risk, and prioritize modernization decisions.",
+  path: "/cloud-migration-advisor",
+})
 
 export default function ProductPage() {
   return <ProductDetailCard product={product} />

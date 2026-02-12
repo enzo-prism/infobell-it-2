@@ -10,13 +10,15 @@ import { CoreExpertiseCarousel } from "@/components/core-expertise-carousel"
 import { HeroPillarsSlider } from "@/components/hero-pillars-slider"
 import { LatestPressReleasePill } from "@/components/latest-press-release-pill"
 import { TechStackGrid } from "@/components/tech-stack-grid"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import { Button } from "@/components/ui/button"
 
-export const metadata: Metadata = {
-  title: "Infobell IT Solutions | Enterprise AI & Performance Engineering",
+export const metadata: Metadata = withSeoMetadata({
+  title: "Enterprise AI & Performance Engineering",
   description:
-    "Infobell IT Solutions partners with global innovators to deliver AI, HPC, and cloud-native programs through benchmarking, IFX accelerators, and expert engineering teams.",
-}
+    "Infobell IT delivers enterprise AI, cloud modernization, and performance engineering services that move teams from pilot to production faster.",
+  path: "/",
+})
 
 export default function HomePage() {
   return (

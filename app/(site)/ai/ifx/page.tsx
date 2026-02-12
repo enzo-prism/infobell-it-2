@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -9,11 +10,12 @@ import {
 } from "@/lib/content/ai"
 import { Button } from "@/components/ui/button"
 
-export const metadata: Metadata = {
-  title: "Infobell IT Inference Framework eXpress (IFX) | Infobell IT Solutions",
+export const metadata: Metadata = withSeoMetadata({
+  title: "Inference Framework eXpress (IFX)",
   description:
-    "Discover IFX — Infobell IT’s open, high-performance LLM inference framework optimized for AMD Instinct GPUs and EPYC CPUs.",
-}
+    "IFX is Infobell IT's open inference framework for enterprise LLM workloads, built for high throughput, observability, and scalable deployment.",
+  path: "/ai/ifx",
+})
 
 const IFX_DIAGRAM_SRC =
   "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1762614447/ifx-diagram_gflz6d.webp"

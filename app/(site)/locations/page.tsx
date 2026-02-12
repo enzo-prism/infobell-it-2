@@ -1,13 +1,15 @@
 import type { Metadata } from "next"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import Image from "next/image"
 import { CORPORATE_LOCATIONS } from "@/lib/content/company"
 import { GLOBAL_PRESENCE } from "@/lib/content/site"
 
-export const metadata: Metadata = {
-  title: "Our Locations | Infobell IT Solutions",
+export const metadata: Metadata = withSeoMetadata({
+  title: "Infobell IT Global Locations",
   description:
-    "Infobell IT Solutions operates globally with headquarters in Bengaluru and teams supporting customers across North America, Europe, and the Middle East.",
-}
+    "Find Infobell IT locations and regional coverage supporting enterprises across North America, Europe, the Middle East, and India.",
+  path: "/locations",
+})
 
 export default function LocationsPage() {
   return (

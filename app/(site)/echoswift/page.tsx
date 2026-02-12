@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import { ProductDetailCard } from "@/components/product-detail"
 import { getProductBySlug } from "@/lib/content/products"
 
@@ -10,10 +11,12 @@ if (!productDetail) {
 
 const product = productDetail
 
-export const metadata: Metadata = {
-  title: `${product.title} | Infobell IT Service Product`,
-  description: product.tagline,
-}
+export const metadata: Metadata = withSeoMetadata({
+  title: "EchoSwift LLM Benchmarking",
+  description:
+    "EchoSwift benchmarks LLM workloads across infrastructure options, helping teams compare latency, throughput, and cost.",
+  path: "/echoswift",
+})
 
 export default function ProductPage() {
   return <ProductDetailCard product={product} />

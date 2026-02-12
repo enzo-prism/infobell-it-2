@@ -1,13 +1,15 @@
 import type { Metadata } from "next"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import { BLUEBOOK_CATEGORIES } from "@/lib/content/bluebook"
 import type { BlueBookReport } from "@/lib/content/bluebook"
 import { GetItNowDialog } from "@/components/get-it-now-dialog"
 
-export const metadata: Metadata = {
-  title: "Blue Book Series | Infobell IT Solutions",
+export const metadata: Metadata = withSeoMetadata({
+  title: "Blue Book Performance Reports",
   description:
-    "Download Infobell IT Solutions Blue Book performance evaluations covering cloud instances, bare metal systems, AI-in-a-box solutions, and virtualization platforms.",
-}
+    "Explore Infobell IT Blue Book reports with independent benchmark insights across cloud, AI infrastructure, and virtualization platforms.",
+  path: "/bluebook",
+})
 
 export default function BlueBookIndexPage() {
   return (

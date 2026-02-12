@@ -111,7 +111,7 @@
         ]
       },
       {
-        "slug": "ibpe-tencentcloud-amdvsintel–16-64vcpus-2025-1031",
+        "slug": "ibpe-tencentcloud-amdvsintel-16-64vcpus-2025-1031",
         "legacyId": "IBPE-TencentCloud-AMDvsIntel–16-64vCPUs-2025-1031",
         "title": "",
         "subtitle": "Performance Evaluation of Tencent Cloud SA4 and SA9e Instances with AMD EPYC CPUs vs. S9e Instances with Intel Xeon CPUs (16-64 vCPUs)",

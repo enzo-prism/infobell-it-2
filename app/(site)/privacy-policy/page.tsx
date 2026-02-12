@@ -1,11 +1,13 @@
 import type { Metadata } from "next"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import { PRIVACY_SECTIONS } from "@/lib/content/privacy"
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Infobell IT Solutions",
+export const metadata: Metadata = withSeoMetadata({
+  title: "Privacy Policy & Data Practices",
   description:
-    "Learn how Infobell IT Solutions collects, uses, and safeguards personal information across its digital experiences and services.",
-}
+    "Review how Infobell IT collects, uses, protects, and manages personal information across its websites, services, and customer communications.",
+  path: "/privacy-policy",
+})
 
 export default function PrivacyPolicyPage() {
   return (

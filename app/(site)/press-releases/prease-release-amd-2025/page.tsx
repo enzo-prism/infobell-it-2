@@ -1,11 +1,14 @@
 import type { Metadata } from "next"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import Link from "next/link"
 import { PRESS_RELEASE_AMD } from "@/lib/content/press"
 
-export const metadata: Metadata = {
-  title: `${PRESS_RELEASE_AMD.title} | Infobell IT Solutions`,
-  description: PRESS_RELEASE_AMD.subtitle,
-}
+export const metadata: Metadata = withSeoMetadata({
+  title: "Infobell IT Expands AMD Collaboration",
+  description:
+    "Infobell IT expands collaboration with AMD to accelerate enterprise AI with optimized infrastructure, open software, and delivery expertise.",
+  path: "/press-releases/prease-release-amd-2025",
+})
 
 export default function PressReleaseAmd2025Page() {
   const { title, subtitle, dateline, sections, contacts } = PRESS_RELEASE_AMD

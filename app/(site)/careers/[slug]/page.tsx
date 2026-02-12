@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { CAREER_ROLES, APPLY_EMAIL } from "@/lib/content/careers"
+import { buildCareerSeo } from "@/lib/metadata/seo"
 import { Button } from "@/components/ui/button"
 
 type CareerPageProps = {
@@ -20,10 +21,7 @@ export async function generateMetadata({ params }: CareerPageProps): Promise<Met
     return {}
   }
 
-  return {
-    title: `${role.title} | Careers at Infobell IT Solutions`,
-    description: role.summary,
-  }
+  return buildCareerSeo(role, slug)
 }
 
 export default async function CareerDetailPage({ params }: CareerPageProps) {

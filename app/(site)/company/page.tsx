@@ -1,15 +1,17 @@
 import type { Metadata } from "next"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import Link from "next/link"
 
 import { HERO_CONTENT } from "@/lib/content/home"
 import { PRESS_RELEASE_AMD } from "@/lib/content/press"
 import { Button } from "@/components/ui/button"
 
-export const metadata: Metadata = {
-  title: "About Us | Infobell IT Solutions",
+export const metadata: Metadata = withSeoMetadata({
+  title: "About Infobell IT Solutions",
   description:
-    "Infobell IT Solutions is a global product engineering and solutions firm accelerating innovation across AI, cloud, and high-performance computing.",
-}
+    "Learn about Infobell IT's mission, leadership, and engineering expertise across AI, high-performance computing, and modernization.",
+  path: "/company",
+})
 
 export default function CompanyPage() {
   const aboutInfobell = PRESS_RELEASE_AMD.sections.find((section) => section.heading === "About Infobell IT")

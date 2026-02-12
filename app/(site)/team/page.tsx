@@ -1,14 +1,16 @@
 import type { Metadata } from "next"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import Link from "next/link"
 import { LEADERSHIP_TEAM, TEAM_INTRO } from "@/lib/content/team"
 import { LeadershipCard } from "@/components/leadership-card"
 import { Button } from "@/components/ui/button"
 
-export const metadata: Metadata = {
-  title: "Our Team | Infobell IT Solutions",
+export const metadata: Metadata = withSeoMetadata({
+  title: "Infobell IT Leadership Team",
   description:
-    "Meet the leadership team guiding Infobell IT Solutions across AI, performance engineering, cloud-native development, and sustainability initiatives.",
-}
+    "Meet the Infobell IT leadership team guiding strategy, engineering excellence, and enterprise delivery across AI, cloud, and performance domains.",
+  path: "/team",
+})
 
 const COMPANY_LINKEDIN = "https://www.linkedin.com/company/infobell-it/"
 

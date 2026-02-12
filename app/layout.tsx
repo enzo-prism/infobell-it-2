@@ -11,11 +11,54 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Infobell IT Solutions",
-    template: "%s | Infobell IT Solutions",
+    default: "Infobell IT",
+    template: "%s | Infobell IT",
   },
   description:
-    "Infobell IT Solutions delivers enterprise AI, high-performance computing, cloud modernization, and sustainability engineering for global innovators.",
+    "Infobell IT delivers enterprise AI, cloud modernization, and performance engineering services that move teams from pilot to production faster.",
+  openGraph: {
+    title: "Infobell IT",
+    description:
+      "Infobell IT delivers enterprise AI, cloud modernization, and performance engineering services that move teams from pilot to production faster.",
+    url: "/",
+    siteName: "Infobell IT",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Infobell IT Advanced Technology Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Infobell IT",
+    description:
+      "Infobell IT delivers enterprise AI, cloud modernization, and performance engineering services that move teams from pilot to production faster.",
+    images: ["/opengraph-image"],
+  },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-light-32x32.png", sizes: "32x32", type: "image/png" },
+      {
+        url: "/icon-light-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+    shortcut: ["/icon-light-32x32.png"],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   generator: "v0.app",
 }
 

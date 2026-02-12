@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import Image from "next/image"
 import Link from "next/link"
 import { Suspense } from "react"
@@ -7,11 +8,12 @@ import { CONTACT_COPY, CONTACT_FIELDS } from "@/lib/content/contact"
 import { ContactForm } from "./contact-form"
 import { Button } from "@/components/ui/button"
 
-export const metadata: Metadata = {
-  title: "Contact Us | Infobell IT Solutions",
+export const metadata: Metadata = withSeoMetadata({
+  title: "Contact Infobell IT Experts",
   description:
-    "Speak with Infobell IT Solutions about enterprise AI, performance engineering, cloud-native development, and sustainability initiatives.",
-}
+    "Contact Infobell IT to discuss AI, cloud, performance engineering, and modernization initiatives with our solution and product engineering teams.",
+  path: "/contact",
+})
 
 export default function ContactPage() {
   return (

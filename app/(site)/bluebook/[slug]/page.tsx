@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { BLUEBOOK_CATEGORIES } from "@/lib/content/bluebook"
 import { APPLY_EMAIL } from "@/lib/content/careers"
+import { buildBluebookSeo } from "@/lib/metadata/seo"
 import { Button } from "@/components/ui/button"
 
 const ALL_REPORTS = BLUEBOOK_CATEGORIES.flatMap((category) => category.reports)
@@ -16,18 +17,18 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: BluebookPageProps): Promise<Metadata> {
-  const report = ALL_REPORTS.find((item) => item.slug === params.slug)
+  const { slug } = await Promise.resolve(params)
+  const report = ALL_REPORTS.find((item) => item.slug === slug)
   if (!report) {
     return {}
   }
-  return {
-    title: `${report.subtitle} | Infobell IT Solutions Blue Book`,
-    description: report.summary[0] ?? report.subtitle,
-  }
+
+  return buildBluebookSeo(report, slug)
 }
 
 export default async function BluebookReportPage({ params }: BluebookPageProps) {
-  const report = ALL_REPORTS.find((item) => item.slug === params.slug)
+  const { slug } = await Promise.resolve(params)
+  const report = ALL_REPORTS.find((item) => item.slug === slug)
   if (!report) {
     notFound()
   }

@@ -7,12 +7,15 @@ import { IFX_HIGHLIGHT } from "@/lib/content/home"
 import { AiServicesTabs } from "@/components/ai/ai-services-tabs"
 import { HeroVideoFrame } from "@/components/hero-video-frame"
 import { SolutionHeroIcon } from "@/components/solution-hero-icon"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import { Button } from "@/components/ui/button"
 
-export const metadata: Metadata = {
-  title: "Artificial Intelligence Solutions | Infobell IT Solutions",
-  description: AI_HERO.description,
-}
+export const metadata: Metadata = withSeoMetadata({
+  title: "AI Solutions & Services",
+  description:
+    "Build and scale enterprise AI with Infobell IT, from use-case discovery and LLM deployment to production tuning and governance.",
+  path: "/ai",
+})
 
 export default function AiOverviewPage() {
   return (

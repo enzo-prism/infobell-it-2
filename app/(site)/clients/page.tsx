@@ -1,15 +1,17 @@
 import type { Metadata } from "next"
+import { withSeoMetadata } from "@/lib/metadata/seo"
 import Image from "next/image"
 import { CLIENT_LOGOS, AFFILIATION_LOGOS } from "@/lib/content/company"
 import { TECH_STACK } from "@/lib/content/home"
 import { AutoHighlightLogoGrid } from "@/components/auto-highlight-logo-grid"
 import { TechStackGrid } from "@/components/tech-stack-grid"
 
-export const metadata: Metadata = {
-  title: "Our Clients | Infobell IT Solutions",
+export const metadata: Metadata = withSeoMetadata({
+  title: "Global Client Success Stories",
   description:
-    "Infobell IT Solutions collaborates with global enterprises, technology partners, and industry consortia to deliver high-performance AI, cloud, and sustainability outcomes.",
-}
+    "See how global enterprises partner with Infobell IT to deliver AI, cloud, and performance programs with measurable outcomes and long-term impact.",
+  path: "/clients",
+})
 
 export default function ClientsPage() {
   return (
