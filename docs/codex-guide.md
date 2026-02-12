@@ -8,6 +8,20 @@ This guide captures the decisions and conventions that now drive the Infobell IT
 - Content is centralized inside `lib/content`. Update these modules (e.g., `lib/content/company.ts`, `lib/content/home.ts`, `lib/content/site.ts`) instead of hard-coding copy or navigation in components.
 - Navigation (`NAV_PRIMARY`), footer links, and corporate details (`CORPORATE_OFFICE`) power the header/footer and should be edited via `lib/content/site.ts`.
 
+## Brand Consistency Rules
+
+- Use `Infobell IT` for all user-visible mentions across page copy, metadata, and UI labels.
+- Treat standalone `Infobell` in active website code as a regression unless it is part of a fixed external filename/URL.
+- When performing bulk copy updates, re-run a repo search for `Infobell` to verify no unintended brand drift remains.
+
+## Homepage Content Map
+
+- `lib/content/home.ts` is the source of truth for:
+  - `HERO_CONTENT.heading` and `HERO_CONTENT.description`
+  - `HERO_CENTER_TITLE_OVERRIDES`, `HERO_CENTER_TAGLINES`, and `HERO_CENTER_SUMMARY_OVERRIDES` (Centers of Excellence card copy)
+  - `TECH_STACK` entries (labels, logos, and destination links)
+- Keep slider-specific copy overrides in those dedicated override maps rather than adding inline conditionals in components.
+
 ## Metadata Requirements
 
 - Every page must export `metadata` with a short `title` + `description`.
@@ -32,6 +46,12 @@ This guide captures the decisions and conventions that now drive the Infobell IT
 - Store partner/client logos under `public/images/partners` or `public/images/clients` as appropriate.
 - When adding a logo, reference it in `lib/content/...` (e.g., `AI_PARTNERS`) so both home cards and detail pages use the same data.
 - Remote media (e.g., Cloudinary videos) should be whitelisted in `next.config.mjs` before using in `<Image>`/`<video>`.
+
+## Client Link Maintenance
+
+- Client cards on `/` and `/clients` are driven by `CLIENT_LOGOS` in `lib/content/company.ts`.
+- Use `href` on each client entry to control click-through behavior; missing `href` means the card is non-clickable.
+- When updating a client domain, search the repository for the old domain to eliminate stale references.
 
 ## Contact & Location Blocks
 

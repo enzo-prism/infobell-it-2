@@ -43,10 +43,10 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     image: "/images/team/RamanaBandili.jpeg",
     slug: "ramana-bandili",
     summary:
-      "Ramana leads Infobell’s global strategy, pairing deep HPC expertise with a relentless focus on enterprise-ready AI outcomes.",
+      "Ramana leads Infobell IT’s global strategy, pairing deep HPC expertise with a relentless focus on enterprise-ready AI outcomes.",
     bio: [
-      "Ramana Bandili founded Infobell to help enterprises bridge the gap between research-grade innovation and production-grade reliability. He brings decades of experience across high-performance computing, infrastructure design, and advisory work for Fortune 500 engineering teams.",
-      "Under his guidance, Infobell has scaled its AI factory approach—spanning benchmarking, LLM optimization, and sustainability strategy—while fostering close collaboration with silicon partners and enterprise CTO organizations.",
+      "Ramana Bandili founded Infobell IT to help enterprises bridge the gap between research-grade innovation and production-grade reliability. He brings decades of experience across high-performance computing, infrastructure design, and advisory work for Fortune 500 engineering teams.",
+      "Under his guidance, Infobell IT has scaled its AI factory approach—spanning benchmarking, LLM optimization, and sustainability strategy—while fostering close collaboration with silicon partners and enterprise CTO organizations.",
     ],
     focusAreas: [
       { label: "AI strategy", icon: "cpu" },
@@ -55,7 +55,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
       { label: "Customer advisory", icon: "compass" },
     ],
     highlights: [
-      { description: "Champions Infobell IFX and turnkey AI factory deployments in regulated industries.", icon: "target" },
+      { description: "Champions Infobell IT IFX and turnkey AI factory deployments in regulated industries.", icon: "target" },
       {
         description: "Trusted advisor to hyperscalers and semiconductor partners on HPC and AI infrastructure roadmaps.",
         icon: "workflow",
@@ -63,7 +63,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
       { description: "Speaker at AMD Advancing AI and performance forums worldwide.", icon: "star" },
     ],
     quote:
-      "At Infobell, we don’t just build AI—we engineer it for performance, reliability, and enterprise scale.",
+      "At Infobell IT, we don’t just build AI—we engineer it for performance, reliability, and enterprise scale.",
     socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/ramana-bandili-713784142/" }],
   },
   {
@@ -72,9 +72,9 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     image: "/images/team/karthik.jpeg",
     slug: "karthik-krishna",
     summary:
-      "Karthik architects Infobell’s platform capabilities, leading the engineering teams behind IFX, benchmarking labs, and AI-native services.",
+      "Karthik architects Infobell IT’s platform capabilities, leading the engineering teams behind IFX, benchmarking labs, and AI-native services.",
     bio: [
-      "With a background in systems engineering and product incubation, Karthik Krishna oversees Infobell’s technical roadmap—from silicon bring-up to cloud-native deployment blueprints.",
+      "With a background in systems engineering and product incubation, Karthik Krishna oversees Infobell IT’s technical roadmap—from silicon bring-up to cloud-native deployment blueprints.",
       "He directs multidisciplinary squads that ship reusable accelerators, sustaining toolchains, and RAG-ready data services for enterprise AI programs.",
     ],
     focusAreas: [
@@ -84,7 +84,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
       { label: "Observability", icon: "compass" },
     ],
     highlights: [
-      { description: "Designed Infobell’s multi-cloud AI Factory reference architecture.", icon: "workflow" },
+      { description: "Designed Infobell IT’s multi-cloud AI Factory reference architecture.", icon: "workflow" },
       { description: "Leads the ROCm and Kubernetes optimization workstreams for IFX.", icon: "rocket" },
       { description: "Mentors cross-functional guilds covering MLOps, FinOps, and sustainability.", icon: "target" },
     ],
@@ -97,9 +97,9 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     slug: "lax-sakalkale",
     location: "San Jose, California — Remote",
     summary:
-      "Lax drives Infobell’s global expansion across AI, HPC, and cloud product engineering, pairing vision with go-to-market execution for chipmakers, cloud providers, and enterprise innovators.",
+      "Lax drives Infobell IT’s global expansion across AI, HPC, and cloud product engineering, pairing vision with go-to-market execution for chipmakers, cloud providers, and enterprise innovators.",
     bio: [
-      "Lax Sakalkale is a visionary technology executive with 20+ years of leadership across AI, cloud, product strategy, and performance engineering. At Infobell he leads growth strategy, orchestrating AI-driven services, ISV performance engineering frameworks, and partner programs that connect innovation to measurable business outcomes.",
+      "Lax Sakalkale is a visionary technology executive with 20+ years of leadership across AI, cloud, product strategy, and performance engineering. At Infobell IT he leads growth strategy, orchestrating AI-driven services, ISV performance engineering frameworks, and partner programs that connect innovation to measurable business outcomes.",
       "His teams help clients identify high-performing AI stacks, optimize LLM workloads, and adopt next-generation GPU/CPU and confidential computing architectures with confidence—accelerating time to value across regulated industries and hyperscale ecosystems.",
     ],
     focusAreas: [
@@ -176,10 +176,10 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     image: "/images/team/malini.jpeg",
     slug: "malini-rao",
     summary:
-      "Malini leads delivery for Infobell’s AI, HPC, and modernization programs—ensuring each build is reliable, secure, and supportable.",
+      "Malini leads delivery for Infobell IT’s AI, HPC, and modernization programs—ensuring each build is reliable, secure, and supportable.",
     bio: [
       "Malini Rao manages globally distributed delivery teams that execute modernization, data platform, and AI initiatives for enterprise clients.",
-      "She established Infobell’s quality playbooks, blending compliance frameworks with agile release cadences to accelerate customer launches.",
+      "She established Infobell IT’s quality playbooks, blending compliance frameworks with agile release cadences to accelerate customer launches.",
     ],
     focusAreas: [
       { label: "Program delivery", icon: "network" },
@@ -188,7 +188,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
       { label: "People leadership", icon: "compass" },
     ],
     highlights: [
-      { description: "Scaled Infobell’s delivery center of excellence spanning AI, cloud, and FinOps practices.", icon: "rocket" },
+      { description: "Scaled Infobell IT’s delivery center of excellence spanning AI, cloud, and FinOps practices.", icon: "rocket" },
       { description: "Introduced reusable blueprints for secure, compliant deployment pipelines.", icon: "workflow" },
       { description: "Advocates for mentorship, inclusive teams, and continuous skills development.", icon: "target" },
     ],
@@ -199,9 +199,9 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     image: "/images/team/Sharada.jpeg",
     slug: "sharada-bose",
     summary:
-      "Sharada shapes Infobell’s market positioning, ensuring the portfolio resonates with customer challenges across regions and industries.",
+      "Sharada shapes Infobell IT’s market positioning, ensuring the portfolio resonates with customer challenges across regions and industries.",
     bio: [
-      "Sharada Bose collaborates with Infobell leadership on long-range planning, pricing models, and strategic pursuits spanning AI, HPC, and sustainability.",
+      "Sharada Bose collaborates with Infobell IT leadership on long-range planning, pricing models, and strategic pursuits spanning AI, HPC, and sustainability.",
       "Her career includes executive roles in enterprise technology and consulting, where she launched global partner programs and AI transformation offerings.",
     ],
     focusAreas: [
@@ -212,7 +212,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     ],
     highlights: [
       { description: "Advises on major pursuits across North America, Europe, and APAC.", icon: "target" },
-      { description: "Guides solution packaging for Infobell’s AI and modernization kits.", icon: "workflow" },
+      { description: "Guides solution packaging for Infobell IT’s AI and modernization kits.", icon: "workflow" },
       { description: "Supports board-level storytelling around ROI, governance, and resilience.", icon: "building" },
     ],
     socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/sharada-bose/" }],

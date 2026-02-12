@@ -34,7 +34,7 @@ export default function LocationsPage() {
                 <div className="rounded-2xl border border-border bg-muted/40 p-3">
                   <Image
                     src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1762617079/infobellitbuilding_eawzmk.webp"
-                    alt="Infobell corporate headquarters exterior"
+                    alt="Infobell IT corporate headquarters exterior"
                     width={1920}
                     height={1080}
                     sizes="(max-width: 1024px) 100vw, 40vw"

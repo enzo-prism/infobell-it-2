@@ -11,7 +11,7 @@ if (!productDetail) {
 const product = productDetail
 
 export const metadata: Metadata = {
-  title: `${product.title} | Infobell Service Product`,
+  title: `${product.title} | Infobell IT Service Product`,
   description: product.tagline,
 }
 

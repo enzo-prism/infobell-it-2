@@ -10,9 +10,9 @@ import {
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Infobell Inference Framework eXpress (IFX) | Infobell IT Solutions",
+  title: "Infobell IT Inference Framework eXpress (IFX) | Infobell IT Solutions",
   description:
-    "Discover IFX — Infobell’s open, high-performance LLM inference framework optimized for AMD Instinct GPUs and EPYC CPUs.",
+    "Discover IFX — Infobell IT’s open, high-performance LLM inference framework optimized for AMD Instinct GPUs and EPYC CPUs.",
 }
 
 const IFX_DIAGRAM_SRC =
@@ -24,7 +24,7 @@ export default function IfxPage() {
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         <header className="text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-heading sm:text-5xl">
-            Infobell Inference Framework eXpress (IFX)
+            Infobell IT Inference Framework eXpress (IFX)
           </h1>
           <p className="mt-6 text-lg leading-7 text-muted-foreground">
             High-performance open inference platform engineered for enterprise AI deployments on AMD Instinct GPUs and

@@ -86,7 +86,7 @@ export default function AiOverviewPage() {
                 Interested in AI engineering or performance benchmarking?
               </h2>
               <p className="mt-3 text-base text-muted-foreground">
-                From lab design to launch readiness, Infobell keeps your workloads fast, predictable, and auditable.
+                From lab design to launch readiness, Infobell IT keeps your workloads fast, predictable, and auditable.
               </p>
               <Button asChild className="mt-6" size="lg">
                 <Link href="/contact?subject=AI%20Solutions">Connect with performance engineering</Link>

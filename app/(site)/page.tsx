@@ -80,7 +80,7 @@ function EnterpriseAiMediaSection() {
             </header>
 
             <p className="text-sm leading-6 text-muted-foreground">
-              <span className="font-semibold text-foreground">Infobell</span> is a premier global product engineering and
+              <span className="font-semibold text-foreground">Infobell IT</span> is a premier global product engineering and
               solutions firm accelerating innovation across AI, cloud, and high-performance computing. As a specialized
               Enterprise AI implementer, our full-stack squads deliver high-impact AI programs designed for speed, scale, and
               business value. We do not just build AI; we optimize it for the AI stack and infrastructure hardware that best
@@ -105,7 +105,7 @@ function EnterpriseAiMediaSection() {
                   <span className="font-semibold text-foreground">AMD Instinct™ MI-Series GPUs and EPYC™ CPUs</span>, utilizing
                   the <span className="font-semibold text-foreground">ROCm™</span> open software stack and{" "}
                   <span className="font-semibold text-foreground">AMD’s new Enterprise AI Suite</span> and{" "}
-                  <span className="font-semibold text-foreground">Infobell’s IFX (Inference Framework eXpress)</span> to push
+                  <span className="font-semibold text-foreground">Infobell IT’s IFX (Inference Framework eXpress)</span> to push
                   performance boundaries.
                 </li>
                 <li>
@@ -175,7 +175,7 @@ function IfxHighlight() {
       <div className="mx-auto flex w-full max-w-6xl flex-col items-start gap-6 rounded-3xl px-4 py-14 md:flex-row md:items-center sm:px-6 sm:py-16 lg:px-8">
         <Image src={IFX_HIGHLIGHT.image} alt={IFX_HIGHLIGHT.title} width={200} height={120} className="h-32 w-auto" />
         <div className="space-y-4">
-          <p className="text-sm font-medium uppercase tracking-wide text-primary">Introducing Infobell IFX</p>
+          <p className="text-sm font-medium uppercase tracking-wide text-primary">Introducing Infobell IT IFX</p>
           <h3 className="text-2xl font-semibold text-heading">{IFX_HIGHLIGHT.title}</h3>
           <p className="max-w-3xl text-base text-muted-foreground">{IFX_HIGHLIGHT.description}</p>
           <Button asChild size="sm">

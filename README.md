@@ -49,7 +49,9 @@ legacy-bluebook/    # exported HTML for Blue Book reports used by scripts/genera
 
 ### Content Sources
 
-- `lib/content/home.ts`, `team.ts`, `company.ts` – hero copy, expertise blurbs, leadership, and logos
+- `lib/content/home.ts` – homepage H1/hero paragraph, Centers of Excellence slider text, and tech stack logos
+- `lib/content/company.ts` – client and affiliation logos plus outbound URLs used on `/` and `/clients`
+- `lib/content/team.ts` – leadership and executive profile content
 - `lib/content/ai.ts` – AI overview, IFX details, and partner-specific copy
 - `lib/content/careers.ts` – job listings and detailed responsibilities
 - `lib/content/bluebook.ts` – Blue Book category metadata and report summaries (used by `/bluebook` and `/bluebook/[slug]`)
@@ -57,6 +59,13 @@ legacy-bluebook/    # exported HTML for Blue Book reports used by scripts/genera
 - `lib/content/privacy.ts`, `press.ts`, `site.ts` – legal policy copy, press release, and navigation data
 
 Update these modules when copy or product offerings change; page components automatically reflect the edits.
+
+### Brand & Link Governance
+
+- Use `Infobell IT` in all user-facing copy, metadata, and UI labels. Avoid standalone `Infobell` in active site content.
+- Exception: do not rename remote asset filenames/URLs unless the underlying file is also updated at the source.
+- Client cards are data-driven from `lib/content/company.ts`; set `href` on each `CLIENT_LOGOS` entry that should open externally.
+- After link updates, run a quick repository search to confirm no outdated domain remains.
 
 ### Assets
 

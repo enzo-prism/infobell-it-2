@@ -5,7 +5,7 @@ type HeroVideoFrameProps = {
   title?: string
 }
 
-export function HeroVideoFrame({ className, title = "Infobell brand reel" }: HeroVideoFrameProps) {
+export function HeroVideoFrame({ className, title = "Infobell IT brand reel" }: HeroVideoFrameProps) {
   return (
     <div
       className={clsx(

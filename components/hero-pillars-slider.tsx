@@ -163,10 +163,10 @@ export function HeroPillarsSlider() {
                 className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-l from-slate-950/80 via-slate-950/45 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transition-none"
               />
 
-              <h3 className="relative z-20 w-full text-right text-2xl font-semibold tracking-tight text-heading transition-colors duration-300 group-hover:text-white group-focus-visible:text-white sm:text-3xl">
+              <h3 className="relative z-20 w-full text-left text-2xl font-semibold tracking-tight text-heading transition-colors duration-300 group-hover:text-white group-focus-visible:text-white sm:text-3xl">
                 {slide.title}
               </h3>
-              <div className="relative z-20 w-full self-end text-right sm:max-w-lg lg:max-w-md">
+              <div className="relative z-20 w-full self-start text-left sm:max-w-lg lg:max-w-md">
                 <p className="text-sm font-semibold text-foreground transition-colors duration-300 group-hover:text-white/90 group-focus-visible:text-white/90">
                   {slide.tagline}
                 </p>

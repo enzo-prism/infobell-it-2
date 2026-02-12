@@ -7,9 +7,9 @@ import {
 } from "./capabilities"
 
 export const HERO_CONTENT = {
-  heading: "Empowering the future through innovative IT solutions for AI Era.",
+  heading: "Empowering the Future Through Innovative IT Solutions for the AI Era",
   description:
-    "Infobell IT is a company dedicated to product development and advanced services, specializing in artificial intelligence, high-performance computing, modernization and cloud migration, and performance benchmarking and optimization. We offer a dozen customizable product frameworks for end-to-end automation, AI recommendation engines, and pricing and sustainability analysis.",
+    "Infobell IT is a technology company dedicated to product development and advanced services, specializing in artificial intelligence, high-performance computing, modernization and cloud migration, and performance benchmarking and optimization. We offer a portfolio of customizable product frameworks for end-to-end automation, AI-powered recommendation engines, and advanced pricing and sustainability analytics.",
   video: {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_RZ2IuXf5KJySpZYoJ79PRYLLui8A/7yZSHesO25omcOT0E7bwkb/public/media/Infobell-at-AMD-AI-Day-2025.mp4",
     title: "Infobell IT at AMD Advancing AI 2025",
@@ -19,7 +19,7 @@ export const HERO_CONTENT = {
 
 export const IFX_HIGHLIGHT = {
   image: "/images/products/IFX.png",
-  title: "Introducing Infobell Inference Framework eXpress (IFX)",
+  title: "Introducing Infobell IT Inference Framework eXpress (IFX)",
   description:
     "Inference Framework eXpress is a scalable, open-source LLM inference stack engineered for performance, transparency, and enterprise readiness.",
   href: "/ai/ifx",
@@ -67,15 +67,40 @@ export type HeroCenterSlide = {
   hoverImageSrc: string
 }
 
-const AI_HERO_TAGLINE = "Identify. Implement. Optimize enterprise AI."
+const AI_HERO_TAGLINE = "Identify. Implement. Optimize Enterprise AI"
+const PERFORMANCE_HERO_TAGLINE = "Every release. Benchmark-proven"
+const HPC_HERO_TAGLINE = "Benchmark. Optimize. Scale with Confidence."
+const CLOUD_NATIVE_HERO_TAGLINE = "Ship Faster with Resilient, Observable Platforms."
+const COMPLIANCE_HERO_TAGLINE = "Secure by Design, Auditable by Default."
+const SUSTAINABILITY_HERO_TAGLINE = "Make every workload measurable—and accountable."
+
+const HERO_CENTER_TITLE_OVERRIDES: Partial<Record<CapabilitySlug, string>> = {
+  hpc: "High-Performance Computing Services",
+  performance: "Enterprise Performance Engineering",
+  "cloud-native": "Cloud-Native Development and Migration Services",
+  compliance: "Compliance and Confidential Computing Solutions",
+  sustainability: "Carbon Footprint and Sustainability Services",
+}
+
+const HERO_CENTER_SUMMARY_OVERRIDES: Partial<Record<CapabilitySlug, string>> = {
+  ai: "Building enterprise-ready AI solutions that drive automation, intelligence, and scalability.",
+  hpc: "Optimizing workloads for faster, more efficient computation across clusters and cloud platforms.",
+  "cloud-native": "Designing full-stack platforms, modernizing monoliths, and automating delivery pipelines.",
+  compliance:
+    "Protecting sensitive data, workloads, and regulated workflows through confidential computing architectures.",
+  sustainability:
+    "Enabling low-carbon operations and reducing emissions through automated observability, tailored FinOps, and energy-aware architectures.",
+  performance:
+    "Optimizing software stacks through benchmarking, debugging, and tuning to deliver repeatable, production-grade results.",
+}
 
 const HERO_CENTER_TAGLINES: Record<CapabilitySlug, string> = {
   ai: AI_HERO_TAGLINE,
-  hpc: CAPABILITY_DETAILS.hpc.heroTagline,
-  sustainability: CAPABILITY_DETAILS.sustainability.heroTagline,
-  performance: CAPABILITY_DETAILS.performance.heroTagline,
-  "cloud-native": CAPABILITY_DETAILS["cloud-native"].heroTagline,
-  compliance: CAPABILITY_DETAILS.compliance.heroTagline,
+  hpc: HPC_HERO_TAGLINE,
+  sustainability: SUSTAINABILITY_HERO_TAGLINE,
+  performance: PERFORMANCE_HERO_TAGLINE,
+  "cloud-native": CLOUD_NATIVE_HERO_TAGLINE,
+  compliance: COMPLIANCE_HERO_TAGLINE,
 }
 
 const HERO_CENTER_HOVER_IMAGES: Record<CapabilitySlug, string> = {
@@ -96,9 +121,9 @@ export const HERO_CENTER_SLIDES: HeroCenterSlide[] = HOME_CAPABILITY_ORDER.map((
 
   return {
     slug,
-    title: `${capability.title} Services`,
+    title: HERO_CENTER_TITLE_OVERRIDES[slug] ?? `${capability.title} Services`,
     tagline: HERO_CENTER_TAGLINES[slug],
-    summary: capability.summary,
+    summary: HERO_CENTER_SUMMARY_OVERRIDES[slug] ?? capability.summary,
     href: capability.href,
     hoverImageSrc: HERO_CENTER_HOVER_IMAGES[slug],
   }
@@ -180,7 +205,7 @@ export type TechStackItem = {
 
 export const TECH_STACK: TechStackItem[] = [
   { label: "React JS", logo: "/images/tech/react.png", href: "https://react.dev" },
-  { label: "Angular JS", logo: "/images/tech/angular.png", href: "https://angularjs.org" },
+  { label: "Angular JS", logo: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1770906549/Angular_nvgq6j.webp", href: "https://angularjs.org" },
   { label: "Vue JS", logo: "/images/tech/vuejs.png", href: "https://vuejs.org" },
   { label: "Node.js", logo: "/images/tech/nodejs.png", href: "https://nodejs.org" },
   { label: "Java", logo: "/images/tech/java.png", href: "https://www.java.com" },

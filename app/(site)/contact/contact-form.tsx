@@ -39,7 +39,7 @@ export function ContactForm({ fields }: ContactFormProps) {
 
     const { name, email, phone = "", subject, description } = formData
 
-    const mailSubject = subject ? `[Infobell Inquiry] ${subject}` : "Infobell Inquiry"
+    const mailSubject = subject ? `[Infobell IT Inquiry] ${subject}` : "Infobell IT Inquiry"
     const bodyLines = [
       `Name: ${name ?? ""}`,
       `Email: ${email ?? ""}`,

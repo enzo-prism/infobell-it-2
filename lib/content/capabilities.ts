@@ -129,7 +129,7 @@ export const CAPABILITY_DETAILS: Record<CapabilityPageSlug, CapabilityDetail> = 
     heroTagline: "Benchmark. Optimize. Scale fearless compute.",
     heroBackground: "from-indigo-600/20 via-background to-background",
     overview: [
-      "Infobell’s HPC engineering teams combine benchmark rigor with real-world deployment expertise. We help silicon vendors, OEMs, hyperscalers, and enterprise labs squeeze every ounce of performance from their CPU, GPU, and accelerator investments.",
+      "Infobell IT’s HPC engineering teams combine benchmark rigor with real-world deployment expertise. We help silicon vendors, OEMs, hyperscalers, and enterprise labs squeeze every ounce of performance from their CPU, GPU, and accelerator investments.",
       "From compiler customization to scaled cluster orchestration, we translate proof points into sustained production gains. Each engagement includes reproducible configurations, automation playbooks, and knowledge transfer for your internal teams.",
     ],
     sections: [
@@ -165,7 +165,7 @@ export const CAPABILITY_DETAILS: Record<CapabilityPageSlug, CapabilityDetail> = 
     ],
     cta: {
       heading: "Need to benchmark or modernize your HPC estate?",
-      body: "Infobell’s performance guild delivers turnkey assessments, automation, and knowledge transfer so your teams can move faster with confidence.",
+      body: "Infobell IT’s performance guild delivers turnkey assessments, automation, and knowledge transfer so your teams can move faster with confidence.",
       action: "Talk to our HPC team",
     },
   },
@@ -176,7 +176,7 @@ export const CAPABILITY_DETAILS: Record<CapabilityPageSlug, CapabilityDetail> = 
     heroTagline: "Make every workload measurable—and accountable.",
     heroBackground: "from-emerald-500/15 via-background to-background",
     overview: [
-      "Sustainability is now a board-level metric. Infobell connects engineering telemetry, FinOps data, and compliance workflows so you can measure, report, and reduce emissions without disrupting delivery velocity.",
+      "Sustainability is now a board-level metric. Infobell IT connects engineering telemetry, FinOps data, and compliance workflows so you can measure, report, and reduce emissions without disrupting delivery velocity.",
       "We blend custom automation with off-the-shelf tooling, integrating the output into executive scorecards and regulatory templates for effortless audits.",
     ],
     sections: [
@@ -212,7 +212,7 @@ export const CAPABILITY_DETAILS: Record<CapabilityPageSlug, CapabilityDetail> = 
     ],
     cta: {
       heading: "Ready to operationalize sustainability?",
-      body: "Bring engineering, finance, and ESG teams around a single source of truth powered by Infobell’s carbon intelligence playbooks.",
+      body: "Bring engineering, finance, and ESG teams around a single source of truth powered by Infobell IT’s carbon intelligence playbooks.",
       action: "Schedule a sustainability review",
     },
   },
@@ -259,7 +259,7 @@ export const CAPABILITY_DETAILS: Record<CapabilityPageSlug, CapabilityDetail> = 
     ],
     cta: {
       heading: "Interested in AI engineering or performance benchmarking?",
-      body: "From lab design to launch readiness, Infobell keeps your workloads fast, predictable, and auditable.",
+      body: "From lab design to launch readiness, Infobell IT keeps your workloads fast, predictable, and auditable.",
       action: "Connect with performance engineering",
     },
   },
@@ -270,7 +270,7 @@ export const CAPABILITY_DETAILS: Record<CapabilityPageSlug, CapabilityDetail> = 
     heroTagline: "Ship faster with resilient, observable platforms.",
     heroBackground: "from-sky-500/15 via-background to-background",
     overview: [
-      "Infobell designs and operates cloud-native platforms that balance speed with governance. Whether you need a turnkey developer platform or a roadmap for gradual modernization, we bring repeatable patterns informed by dozens of production launches.",
+      "Infobell IT designs and operates cloud-native platforms that balance speed with governance. Whether you need a turnkey developer platform or a roadmap for gradual modernization, we bring repeatable patterns informed by dozens of production launches.",
       "Our squads pair application engineers with platform SREs so product roadmaps and operational excellence evolve together.",
     ],
     sections: [
@@ -306,7 +306,7 @@ export const CAPABILITY_DETAILS: Record<CapabilityPageSlug, CapabilityDetail> = 
     ],
     cta: {
       heading: "Need to accelerate your cloud-native roadmap?",
-      body: "Infobell’s platform, application, and SRE specialists deliver production-ready outcomes with governance included.",
+      body: "Infobell IT’s platform, application, and SRE specialists deliver production-ready outcomes with governance included.",
       action: "Discuss your cloud-native goals",
     },
   },
@@ -317,7 +317,7 @@ export const CAPABILITY_DETAILS: Record<CapabilityPageSlug, CapabilityDetail> = 
     heroTagline: "Secure by design, auditable by default.",
     heroBackground: "from-purple-600/20 via-background to-background",
     overview: [
-      "Regulated workloads demand more than checklists. Infobell layers confidential computing, automated evidence capture, and policy-driven pipelines so teams can innovate without waiting on manual reviews.",
+      "Regulated workloads demand more than checklists. Infobell IT layers confidential computing, automated evidence capture, and policy-driven pipelines so teams can innovate without waiting on manual reviews.",
       "We work closely with legal, risk, and product stakeholders to codify controls into tooling—reducing approval cycles and audit fatigue.",
     ],
     sections: [
@@ -353,7 +353,7 @@ export const CAPABILITY_DETAILS: Record<CapabilityPageSlug, CapabilityDetail> = 
     ],
     cta: {
       heading: "Need to prove security and compliance without slowing delivery?",
-      body: "Infobell embeds compliance automation and confidential computing patterns directly into your platforms.",
+      body: "Infobell IT embeds compliance automation and confidential computing patterns directly into your platforms.",
       action: "Engage our security & compliance team",
     },
   },

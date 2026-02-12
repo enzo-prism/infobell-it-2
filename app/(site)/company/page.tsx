@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 export default function CompanyPage() {
-  const aboutInfobell = PRESS_RELEASE_AMD.sections.find((section) => section.heading === "About Infobell")
+  const aboutInfobell = PRESS_RELEASE_AMD.sections.find((section) => section.heading === "About Infobell IT")
   const aboutParagraphs = aboutInfobell?.paragraphs ?? []
 
   return (

@@ -18,7 +18,7 @@ export default function CareersPage() {
           <div className="relative h-56 w-full overflow-hidden rounded-3xl border border-border bg-muted sm:h-72">
             <Image
               src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1762617675/infobell-team_dimbqx.webp"
-              alt="Infobell team collaborating"
+              alt="Infobell IT team collaborating"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"

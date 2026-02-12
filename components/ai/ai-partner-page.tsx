@@ -219,7 +219,7 @@ export function AiPartnerPage({ content }: AiPartnerPageProps) {
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-2xl">Partnership</CardTitle>
-                    <CardDescription>Why teams choose Infobell to deliver with {content.partner.name}.</CardDescription>
+                    <CardDescription>Why teams choose Infobell IT to deliver with {content.partner.name}.</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Accordion type="multiple" className="w-full">
@@ -277,7 +277,7 @@ function ExpertiseCard({ partnerName, expertise }: { partnerName: string; expert
     <Card>
       <CardHeader>
         <CardTitle className="text-2xl">Our expertise</CardTitle>
-        <CardDescription>Engineering capabilities Infobell brings to {partnerName} programs.</CardDescription>
+        <CardDescription>Engineering capabilities Infobell IT brings to {partnerName} programs.</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex flex-wrap gap-2">

@@ -35,7 +35,7 @@ export const PRODUCT_DETAILS: ProductDetail[] = [
     title: "ConvoGene",
     tagline: "Customizable enterprise chatbot for regulated industries.",
     description:
-      "ConvoGene accelerates the launch of conversational copilots with reusable intents, domain adapters, and governance built in. Deploy it inside your environment or as a managed service, and bring your own LLM or connect to Infobell IFX.",
+      "ConvoGene accelerates the launch of conversational copilots with reusable intents, domain adapters, and governance built in. Deploy it inside your environment or as a managed service, and bring your own LLM or connect to Infobell IT IFX.",
     image: "/images/products/ConvoGene.jpeg",
     features: [
       "Pre-built blueprints for IT ops, HR, support, and commerce use cases.",
@@ -57,7 +57,7 @@ export const PRODUCT_DETAILS: ProductDetail[] = [
       "Real-time and batch transcription across dozens of languages.",
       "Domain dictionaries to boost accuracy for technical jargon.",
       "Redaction, sentiment, and action-item extraction out of the box.",
-      "Secure deployments in customer VPCs or Infobell-managed cloud.",
+      "Secure deployments in customer VPCs or Infobell IT-managed cloud.",
     ],
     cta: { label: "Contact us", href: "/contact?subject=Transcribe" },
   },
@@ -81,7 +81,7 @@ export const PRODUCT_DETAILS: ProductDetail[] = [
     title: "Carbon Calculator",
     tagline: "Continuous carbon intelligence for hybrid cloud.",
     description:
-      "Infobell’s Carbon Calculator unifies telemetry, emission factors, and FinOps data so engineering, finance, and ESG leaders can see the footprint of every workload and make greener choices without guesswork.",
+      "Infobell IT’s Carbon Calculator unifies telemetry, emission factors, and FinOps data so engineering, finance, and ESG leaders can see the footprint of every workload and make greener choices without guesswork.",
     image: "/images/products/CarbonFootprint.png",
     features: [
       "Granular carbon scoring for clusters, regions, and applications.",
@@ -111,7 +111,7 @@ export const PRODUCT_DETAILS: ProductDetail[] = [
     title: "EchoSwift",
     tagline: "LLM benchmarking engineered for fairness and speed.",
     description:
-      "EchoSwift is Infobell’s benchmark harness for Large Language Models. It measures latency, throughput, and cost under realistic prompts across CPUs, GPUs, and accelerators, helping teams prove enterprise readiness.",
+      "EchoSwift is Infobell IT’s benchmark harness for Large Language Models. It measures latency, throughput, and cost under realistic prompts across CPUs, GPUs, and accelerators, helping teams prove enterprise readiness.",
     image: "/images/products/EchoSwift.png",
     features: [
       "Supports open-source and proprietary models, including IFX and Triton baselines.",

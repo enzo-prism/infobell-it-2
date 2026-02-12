@@ -72,9 +72,9 @@ export const CLIENT_LOGOS: LogoEntry[] = [
     href: "https://datagamz.com/",
   },
   {
-    image: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765995457/Upturn_sds3na.webp",
+    image: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1770906678/Upturn_1_ztfwsr.webp",
     alt: "Upturn",
-    href: "https://upturn.org/",
+    href: "https://www.upturn.io/",
   },
   {
     image: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765995455/AIF_Metrics_wlpnhl.webp",
@@ -84,6 +84,7 @@ export const CLIENT_LOGOS: LogoEntry[] = [
   {
     image: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765995455/government_pbgkfs.webp",
     alt: "Government",
+    href: "https://www.telangana.gov.in/",
   },
   {
     image: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765995455/hatics_n2ehsd.webp",
@@ -93,6 +94,7 @@ export const CLIENT_LOGOS: LogoEntry[] = [
   {
     image: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765995456/melbourne_xbelrn.webp",
     alt: "Melbourne",
+    href: "https://www.unimelb.edu.au/",
   },
   {
     image: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1765995456/mobility_kaqhus.webp",

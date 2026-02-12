@@ -54,7 +54,7 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
   {
     heading: "Email Management",
     body: [
-      "You will receive an email from Infobell only in response to a prior request for information, expression of interest, or similar outreach. All Infobell emails will include a link in the footer, where you can select your communication preferences or unsubscribe altogether.",
+      "You will receive an email from Infobell IT only in response to a prior request for information, expression of interest, or similar outreach. All Infobell IT emails will include a link in the footer, where you can select your communication preferences or unsubscribe altogether.",
     ],
   },
   {
