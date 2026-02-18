@@ -10,7 +10,10 @@ export const size = {
 export const contentType = "image/png"
 
 const OPEN_GRAPH_LOGO =
-  "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1771445821/nav-bar-logo_1_d8dvg9.webp"
+  "https://res.cloudinary.com/dhqpqfw6w/image/upload/f_png/v1771445821/nav-bar-logo_1_d8dvg9.webp"
+
+const OG_LOGO_WIDTH = 880
+const OG_LOGO_HEIGHT = 255
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -29,10 +32,12 @@ export default function OpenGraphImage() {
           src={OPEN_GRAPH_LOGO}
           alt="Infobell IT Advanced Technology Solutions"
           style={{
-            width: 900,
-            height: "auto",
+            width: OG_LOGO_WIDTH,
+            height: OG_LOGO_HEIGHT,
             objectFit: "contain",
           }}
+          width={OG_LOGO_WIDTH}
+          height={OG_LOGO_HEIGHT}
         />
       </div>
     ),
