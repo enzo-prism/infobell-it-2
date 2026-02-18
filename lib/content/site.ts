@@ -23,8 +23,8 @@ export const SITE_URL = "https://www.infobellit.com" as const
 
 export const SITE_LOGO = {
   alt: "Infobell IT logo",
-  lightSrc: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1771445599/nav-bar-logo_kykevk.webp",
-  darkSrc: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1771445599/nav-bar-logo_kykevk.webp",
+  lightSrc: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1771445821/nav-bar-logo_1_d8dvg9.webp",
+  darkSrc: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1771445821/nav-bar-logo_1_d8dvg9.webp",
   width: 160,
   height: 41,
 } as const
