@@ -7,6 +7,7 @@ import { SITE_URL } from "@/lib/content/site"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
+const ICON_VERSION = "20260218b"
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -41,12 +42,23 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon-light-48x48.png", sizes: "48x48", type: "image/png" },
-      { url: "/icon-light-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon-dark-32x32.png", sizes: "32x32", type: "image/png", media: "(prefers-color-scheme: dark)" },
-      { url: "/icon-dark-48x48.png", sizes: "48x48", type: "image/png", media: "(prefers-color-scheme: dark)" },
+      { url: `/icon-light-48x48.png?v=${ICON_VERSION}`, sizes: "48x48", type: "image/png" },
+      { url: `/icon-light-32x32.png?v=${ICON_VERSION}`, sizes: "32x32", type: "image/png" },
+      {
+        url: `/icon-dark-32x32.png?v=${ICON_VERSION}`,
+        sizes: "32x32",
+        type: "image/png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: `/icon-dark-48x48.png?v=${ICON_VERSION}`,
+        sizes: "48x48",
+        type: "image/png",
+        media: "(prefers-color-scheme: dark)",
+      },
     ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: [{ url: `/favicon.ico?v=${ICON_VERSION}` }],
+    apple: [{ url: `/apple-icon.png?v=${ICON_VERSION}`, sizes: "180x180", type: "image/png" }],
   },
   generator: "v0.app",
 }
