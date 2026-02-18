@@ -205,10 +205,22 @@ export type TechStackItem = {
 
 export const TECH_STACK: TechStackItem[] = [
   { label: "React JS", logo: "/images/tech/react.png", href: "https://react.dev" },
-  { label: "Angular JS", logo: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1770906549/Angular_nvgq6j.webp", href: "https://angularjs.org" },
+  {
+    label: "Angular JS",
+    logo: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1771444517/Angular_nvgq6j_1_v8ifcg.webp",
+    href: "https://angularjs.org",
+  },
   { label: "Vue JS", logo: "/images/tech/vuejs.png", href: "https://vuejs.org" },
-  { label: "Node.js", logo: "/images/tech/nodejs.png", href: "https://nodejs.org" },
-  { label: "Java", logo: "/images/tech/java.png", href: "https://www.java.com" },
+  {
+    label: "Node.js",
+    logo: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1771444517/nodejs_1_wns5yc.webp",
+    href: "https://nodejs.org",
+  },
+  {
+    label: "Java",
+    logo: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1771444517/java_1_f5hgpy.webp",
+    href: "https://www.java.com",
+  },
   { label: "Golang", logo: "/images/tech/golang.png", href: "https://go.dev" },
   { label: "Python", logo: "/images/tech/python.png", href: "https://www.python.org" },
   { label: "C Language", logo: "/images/tech/c.png", href: "https://en.cppreference.com/w/c" },
@@ -220,7 +232,7 @@ export const TECH_STACK: TechStackItem[] = [
   { label: "VMware", logo: "/images/tech/vmware.png", href: "https://www.vmware.com" },
   {
     label: "OpenShift",
-    logo: "/images/tech/openshift.png",
+    logo: "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1771444628/openshift_1_i1lp3i.webp",
     href: "https://www.redhat.com/en/technologies/cloud-computing/openshift",
   },
 ]
