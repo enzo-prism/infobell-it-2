@@ -163,7 +163,7 @@ export function SiteHeader() {
             alt={SITE_LOGO.alt}
             width={SITE_LOGO.width}
             height={SITE_LOGO.height}
-            className="hidden h-10 w-auto dark:block md:h-12"
+            className="hidden h-10 w-auto brightness-0 invert dark:block md:h-12"
             priority={true}
           />
           <span className="sr-only">Infobell IT</span>
@@ -263,7 +263,7 @@ export function SiteHeader() {
                       alt={SITE_LOGO.alt}
                       width={SITE_LOGO.width}
                       height={SITE_LOGO.height}
-                      className="hidden h-10 w-auto dark:block"
+                      className="hidden h-10 w-auto brightness-0 invert dark:block"
                       priority={true}
                     />
                     <span className="sr-only">Infobell IT</span>
