@@ -276,7 +276,7 @@ function ClientsSection() {
           <AutoHighlightLogoGrid
             logos={AFFILIATION_LOGOS}
             containerClassName="mt-6 flex flex-wrap items-center justify-center gap-6"
-            cardClassName="card-glow flex h-20 w-44 items-center justify-center overflow-hidden rounded-lg border border-border bg-card/80 transition hover:-translate-y-1 hover:shadow-lg sm:h-24 sm:w-48"
+            cardClassName="card-glow flex h-20 w-44 items-center justify-center overflow-hidden rounded-lg border border-slate-200/80 bg-white transition hover:-translate-y-1 hover:shadow-lg sm:h-24 sm:w-48"
             logoFrameClassName="h-10 w-full"
             autoHighlight={false}
             sizes="(max-width: 640px) 50vw, 12rem"
