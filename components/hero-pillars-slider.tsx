@@ -99,6 +99,8 @@ export function HeroPillarsSlider() {
     const container = scrollContainerRef.current
     if (!container) return
 
+    // Initial state can only be measured after mount; update once outside of subscription handlers.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     updateActiveIndex()
 
     container.addEventListener("scroll", scheduleActiveIndexUpdate, { passive: true })
@@ -120,8 +122,6 @@ export function HeroPillarsSlider() {
 
   return (
     <div className="mt-8 sm:mt-10">
-      <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Centers of Excellence</h2>
-
       <div
         ref={scrollContainerRef}
         tabIndex={0}
@@ -142,35 +142,35 @@ export function HeroPillarsSlider() {
           >
             <article
               className={cn(
-                "card-glow relative flex min-h-[170px] flex-col justify-between gap-6 rounded-3xl border border-border bg-gradient-to-br from-primary/20 via-background to-background p-6 shadow-sm transition-shadow duration-300 ease-out group-hover:border-white/25 group-hover:shadow-lg group-focus-visible:border-white/25 group-focus-visible:shadow-lg sm:min-h-[190px] sm:p-8 motion-reduce:transition-none",
+                "card-glow relative flex min-h-[186px] flex-col justify-between gap-6 rounded-3xl border border-border bg-gradient-to-br from-[color:var(--surface-2)] via-[color:var(--surface)] to-[color:var(--surface)] p-7 shadow-sm transition-all duration-300 ease-out group-hover:border-[color:var(--brand)] group-hover:shadow-[0_20px_48px_-28px_rgba(59,130,246,0.38)] group-focus-visible:border-[color:var(--brand)] group-focus-visible:shadow-[0_20px_48px_-28px_rgba(59,130,246,0.38)] sm:min-h-[210px] sm:p-8 motion-reduce:transition-none",
                 index === activeIndex && "border-primary/40"
               )}
             >
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transition-none"
+                className="pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-250 ease-out group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transition-none"
               >
                 <Image
                   src={slide.hoverImageSrc}
                   alt=""
                   fill
                   sizes="(max-width: 640px) 100vw, 1024px"
-                  className="object-cover object-center scale-105 opacity-100 blur-sm transition-transform duration-700 ease-out group-hover:scale-100 group-focus-visible:scale-100 dark:brightness-75 dark:contrast-125 dark:saturate-125 motion-reduce:transform-none motion-reduce:transition-none"
+                  className="object-cover object-center scale-105 opacity-90 blur-[1px] transition-all duration-700 ease-out group-hover:scale-100 group-focus-visible:scale-100 group-hover:opacity-100 group-focus-visible:opacity-100 dark:brightness-90 dark:contrast-110 dark:saturate-110 motion-reduce:transform-none motion-reduce:transition-none"
                 />
               </div>
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-l from-slate-950/80 via-slate-950/45 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transition-none"
+                className="pointer-events-none absolute inset-0 z-10 bg-[color:var(--overlay-hover)] opacity-0 transition-opacity duration-250 ease-out group-hover:opacity-[0.78] group-focus-visible:opacity-[0.78] motion-reduce:transition-none"
               />
 
               <h3 className="relative z-20 w-full text-left text-2xl font-semibold tracking-tight text-heading transition-colors duration-300 group-hover:text-white group-focus-visible:text-white sm:text-3xl">
                 {slide.title}
               </h3>
               <div className="relative z-20 w-full self-start text-left sm:max-w-lg lg:max-w-md">
-                <p className="text-sm font-semibold text-foreground transition-colors duration-300 group-hover:text-white/90 group-focus-visible:text-white/90">
+                <p className="text-base font-semibold text-foreground transition-colors duration-300 group-hover:text-white/90 group-focus-visible:text-white/90">
                   {slide.tagline}
                 </p>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground transition-colors duration-300 group-hover:text-white/75 group-focus-visible:text-white/75 sm:text-base sm:leading-7">
+                <p className="mt-2 text-base leading-7 text-muted-foreground transition-colors duration-300 group-hover:text-white/75 group-focus-visible:text-white/75">
                   {slide.summary}
                 </p>
               </div>

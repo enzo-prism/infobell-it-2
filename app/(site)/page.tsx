@@ -1,9 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import clsx from "clsx"
 import { HERO_CONTENT, SERVICE_PRODUCTS, TECH_STACK, IFX_HIGHLIGHT } from "@/lib/content/home"
-import { LEADERSHIP_TEAM, TEAM_INTRO } from "@/lib/content/team"
+import { TEAM_INTRO } from "@/lib/content/team"
 import { CLIENT_LOGOS, AFFILIATION_LOGOS } from "@/lib/content/company"
 import { AutoHighlightLogoGrid } from "@/components/auto-highlight-logo-grid"
 import { CoreExpertiseCarousel } from "@/components/core-expertise-carousel"
@@ -48,7 +47,7 @@ function HeroSection() {
             {HERO_CONTENT.description}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4 text-sm font-medium">
-            <Button asChild variant="outline" className="group w-full sm:w-auto">
+            <Button asChild variant="primary" className="group w-full sm:w-auto">
               <Link href="/contact">
                 <span className="inline-flex items-center gap-1">
                   Connect with us
@@ -215,15 +214,15 @@ function ProductSection() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                 />
-	              </div>
-	              <h3 className="mt-6 text-xl font-semibold text-heading">{product.title}</h3>
-	              <p className="mt-3 text-sm leading-6 text-muted-foreground">{product.description}</p>
-	              <span className="mt-auto inline-flex w-fit items-center pt-4 text-sm font-semibold text-primary underline-offset-4 transition-all duration-300 group-hover:translate-x-1 group-hover:underline">
-	                Learn more
-	              </span>
-	            </Link>
-	          ))}
-	        </div>
+              </div>
+              <h3 className="mt-6 text-xl font-semibold text-heading">{product.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">{product.description}</p>
+              <span className="mt-auto inline-flex w-fit items-center pt-4 text-sm font-semibold text-primary underline-offset-4 transition-all duration-300 group-hover:translate-x-1 group-hover:underline">
+                Learn more
+              </span>
+            </Link>
+          ))}
+        </div>
 
         <div className="mt-16 rounded-2xl border border-border bg-muted/30 p-6 sm:p-8">
           <h3 className="text-xl font-semibold text-heading">Our Tech Stacks</h3>

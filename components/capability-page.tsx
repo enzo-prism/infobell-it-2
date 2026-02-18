@@ -2,6 +2,7 @@ import Link from "next/link"
 import { CAPABILITY_SUMMARIES, type CapabilityDetail } from "@/lib/content/capabilities"
 import { HeroVideoFrame } from "@/components/hero-video-frame"
 import { SolutionHeroIcon } from "@/components/solution-hero-icon"
+import { CapabilityHighlightsRotator } from "@/components/capability-highlights-rotator"
 import { Button } from "@/components/ui/button"
 
 export function CapabilityPage({ capability }: { capability: CapabilityDetail }) {
@@ -22,6 +23,12 @@ export function CapabilityPage({ capability }: { capability: CapabilityDetail })
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">{capability.heroTagline}</p>
           <p className="mt-4 text-base text-muted-foreground">{capability.summary}</p>
+          {capability.heroHighlights?.length ? (
+            <div className="mt-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary">Highlights</p>
+              <CapabilityHighlightsRotator highlights={capability.heroHighlights} className="min-h-12" />
+            </div>
+          ) : null}
         </header>
 
         <section className="mt-12 space-y-4 text-sm leading-7 text-muted-foreground">
@@ -68,7 +75,7 @@ export function CapabilityPage({ capability }: { capability: CapabilityDetail })
             <div className="text-center lg:text-left">
               <h2 className="text-2xl font-semibold text-heading">{capability.cta.heading}</h2>
               <p className="mt-3 text-base text-foreground">{capability.cta.body}</p>
-              <Button asChild className="mt-6" size="lg">
+              <Button asChild className="mt-6" size="lg" variant="primary">
                 <Link href={`/contact?subject=${encodeURIComponent(capability.title)}`}>{capability.cta.action}</Link>
               </Button>
             </div>

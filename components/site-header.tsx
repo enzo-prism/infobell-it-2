@@ -30,6 +30,7 @@ import {
   type NavItem,
 } from "@/lib/content/site"
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 type NavEntry = NavItem | NavGroup
 const NAV_ICON_MAP: Record<NavIcon, ComponentType<{ className?: string }>> = {
@@ -86,6 +87,7 @@ export function SiteHeader() {
   }, [])
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMobileOpen(false)
   }, [pathname])
 
@@ -107,6 +109,7 @@ export function SiteHeader() {
         nextValue.push(entry.label)
       }
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMobileAccordionValue(nextValue)
   }, [mobileOpen, pathname])
 
@@ -143,7 +146,9 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-4 md:h-24 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex items-center gap-3 rounded-xl border border-border bg-background px-3 py-2 shadow-sm transition hover:border-primary/50 dark:border-border/40"
+          aria-label="Infobell IT Home"
+          title="Home"
+          className="flex items-center gap-3 rounded-xl px-3 py-2 transition duration-200 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <Image
             src={SITE_LOGO.lightSrc}
@@ -220,6 +225,7 @@ export function SiteHeader() {
           )}
         </nav>
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <Dialog.Root open={mobileOpen} onOpenChange={setMobileOpen}>
             <Dialog.Trigger asChild>
               <Button
@@ -237,11 +243,13 @@ export function SiteHeader() {
               <Dialog.Content className="fixed inset-y-0 right-0 z-[70] flex w-full max-w-sm flex-col border-l border-border bg-background shadow-2xl focus:outline-none lg:hidden">
                 <Dialog.Title className="sr-only">Mobile navigation</Dialog.Title>
                 <div className="flex items-center justify-between gap-4 border-b border-border px-4 py-4 sm:px-6">
-                  <Link
-                    href="/"
-                    className="flex items-center gap-3 rounded-xl border border-border bg-background px-3 py-2 shadow-sm transition hover:border-primary/50 dark:border-border/40"
-                    onClick={() => setMobileOpen(false)}
-                  >
+                    <Link
+                      href="/"
+                      aria-label="Infobell IT Home"
+                      title="Home"
+                      className="flex items-center gap-3 rounded-xl px-3 py-2 transition duration-200 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      onClick={() => setMobileOpen(false)}
+                    >
                     <Image
                       src={SITE_LOGO.lightSrc}
                       alt={SITE_LOGO.alt}
@@ -364,15 +372,11 @@ export function SiteHeader() {
 
                 <div className="border-t border-border bg-background/80 px-4 py-4 backdrop-blur sm:px-6">
                   <div className="grid gap-3">
+                    <ThemeToggle />
                     <Button asChild className="w-full" onClick={() => setMobileOpen(false)}>
                       <Link href="/contact">Contact</Link>
                     </Button>
-                    <Button
-                      asChild
-                      variant="outline"
-                      className="w-full"
-                      onClick={() => setMobileOpen(false)}
-                    >
+                    <Button asChild className="w-full" variant="outline" onClick={() => setMobileOpen(false)}>
                       <Link href="/#products">View all service products</Link>
                     </Button>
                   </div>

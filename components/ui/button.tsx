@@ -5,35 +5,33 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--navy)] focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 motion-safe:transform-gpu dark:focus-visible:ring-white/70",
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:transform-gpu",
   {
     variants: {
       variant: {
         primary:
-          "border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)] hover:-translate-y-0.5 hover:border-[color:var(--navy)] hover:bg-[color:var(--navy)] hover:text-white hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.92),0_18px_45px_-30px_rgba(10,31,68,0.85)] active:translate-y-0 active:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.75),0_10px_25px_-20px_rgba(10,31,68,0.7)] dark:border-white/20 dark:bg-[color:var(--navy)] dark:text-white dark:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.82),0_18px_45px_-30px_rgba(0,0,0,0.7)] dark:hover:border-[color:rgba(10,31,68,0.18)] dark:hover:bg-white dark:hover:text-[color:var(--navy)] dark:hover:shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)]",
+          "border border-transparent bg-[color:var(--brand)] text-white shadow-[0_10px_25px_-20px_rgba(59,130,246,0.35)] hover:-translate-y-0.5 hover:bg-[color:var(--brand-hover)] active:translate-y-0 active:bg-[color:var(--brand-active)]",
         outline:
-          "border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)] hover:-translate-y-0.5 hover:border-[color:var(--navy)] hover:bg-[color:var(--navy)] hover:text-white hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.92),0_18px_45px_-30px_rgba(10,31,68,0.85)] active:translate-y-0 active:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.75),0_10px_25px_-20px_rgba(10,31,68,0.7)] dark:border-white/20 dark:bg-[color:var(--navy)] dark:text-white dark:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.82),0_18px_45px_-30px_rgba(0,0,0,0.7)] dark:hover:border-[color:rgba(10,31,68,0.18)] dark:hover:bg-white dark:hover:text-[color:var(--navy)] dark:hover:shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)]",
+          "border border-[color:var(--brand)]/55 bg-[color:var(--surface)] text-[color:var(--brand)] shadow-sm hover:-translate-y-0.5 hover:bg-[color:var(--brand)] hover:text-white active:translate-y-0 active:bg-[color:var(--brand-active)]",
         neutral:
-          "border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)] hover:-translate-y-0.5 hover:border-[color:var(--navy)] hover:bg-[color:var(--navy)] hover:text-white hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.92),0_18px_45px_-30px_rgba(10,31,68,0.85)] active:translate-y-0 active:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.75),0_10px_25px_-20px_rgba(10,31,68,0.7)] dark:border-white/20 dark:bg-[color:var(--navy)] dark:text-white dark:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.82),0_18px_45px_-30px_rgba(0,0,0,0.7)] dark:hover:border-[color:rgba(10,31,68,0.18)] dark:hover:bg-white dark:hover:text-[color:var(--navy)] dark:hover:shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)]",
-        cta:
-          "border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)] hover:-translate-y-0.5 hover:border-[color:var(--navy)] hover:bg-[color:var(--navy)] hover:text-white hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.92),0_18px_45px_-30px_rgba(10,31,68,0.85)] active:translate-y-0 active:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.75),0_10px_25px_-20px_rgba(10,31,68,0.7)] dark:border-white/20 dark:bg-[color:var(--navy)] dark:text-white dark:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.82),0_18px_45px_-30px_rgba(0,0,0,0.7)] dark:hover:border-[color:rgba(10,31,68,0.18)] dark:hover:bg-white dark:hover:text-[color:var(--navy)] dark:hover:shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)]",
+          "border border-[color:var(--border)] bg-[color:var(--surface-2)] text-[color:var(--text)] shadow-sm hover:-translate-y-0.5 hover:border-[color:var(--brand)] hover:text-[color:var(--brand)] active:translate-y-0",
+        cta: "border border-transparent bg-[color:var(--brand)] text-white shadow-[0_10px_25px_-20px_rgba(59,130,246,0.35)] hover:-translate-y-0.5 hover:bg-[color:var(--brand-hover)] active:translate-y-0 active:bg-[color:var(--brand-active)]",
         ghost:
-          "border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)] hover:-translate-y-0.5 hover:border-[color:var(--navy)] hover:bg-[color:var(--navy)] hover:text-white hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.92),0_18px_45px_-30px_rgba(10,31,68,0.85)] active:translate-y-0 active:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.75),0_10px_25px_-20px_rgba(10,31,68,0.7)] dark:border-white/20 dark:bg-[color:var(--navy)] dark:text-white dark:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.82),0_18px_45px_-30px_rgba(0,0,0,0.7)] dark:hover:border-[color:rgba(10,31,68,0.18)] dark:hover:bg-white dark:hover:text-[color:var(--navy)] dark:hover:shadow-[0_10px_25px_-20px_rgba(10,31,68,0.45)]",
-        icon:
-          "border border-[color:rgba(10,31,68,0.18)] bg-white text-[color:var(--navy)] shadow-sm hover:border-[color:var(--navy)] hover:bg-[color:var(--navy)] hover:text-white hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.92),0_14px_35px_-26px_rgba(10,31,68,0.8)] active:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.75),0_10px_25px_-22px_rgba(10,31,68,0.65)] dark:border-white/20 dark:bg-[color:var(--navy)] dark:text-white dark:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.82),0_14px_35px_-26px_rgba(0,0,0,0.75)] dark:hover:border-[color:rgba(10,31,68,0.18)] dark:hover:bg-white dark:hover:text-[color:var(--navy)] dark:hover:shadow-sm",
+          "border border-transparent bg-transparent text-[color:var(--text)] hover:-translate-y-0.5 hover:bg-[color:var(--surface)] active:translate-y-0",
+        icon: "h-11 w-11 p-0 border border-[color:var(--border)] bg-[color:var(--surface)] text-[color:var(--text)] shadow-sm hover:-translate-y-0.5 hover:bg-[color:var(--surface-2)] hover:text-[color:var(--brand)] active:translate-y-0",
       },
       size: {
         sm: "h-10 px-6 text-sm",
         md: "h-11 px-8 text-sm",
         lg: "h-12 px-10 text-base",
-        icon: "h-11 w-14 p-0",
+        icon: "h-11 w-11 p-0",
       },
     },
     defaultVariants: {
       variant: "primary",
       size: "md",
     },
-  }
+  },
 )
 
 export type ButtonProps = React.ComponentPropsWithoutRef<"button"> &
@@ -44,9 +42,7 @@ export type ButtonProps = React.ComponentPropsWithoutRef<"button"> &
 export const Button = React.forwardRef<React.ElementRef<"button">, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
-    return (
-      <Comp className={cn(buttonVariants({ variant, size }), className)} ref={ref} {...props} />
-    )
-  }
+    return <Comp className={cn(buttonVariants({ variant, size }), className)} ref={ref} {...props} />
+  },
 )
 Button.displayName = "Button"

@@ -29,6 +29,7 @@ export type CapabilityDetail = {
   title: string
   summary: string
   heroTagline: string
+  heroHighlights?: string[]
   overview: string[]
   sections: CapabilitySection[]
   useCases: string[]
@@ -346,10 +347,16 @@ export const CAPABILITY_DETAILS: Record<CapabilityPageSlug, CapabilityDetail> = 
         ],
       },
     ],
-    useCases: [
+  useCases: [
       "Designed a confidential AI inference environment for a healthcare provider needing HIPAA-grade assurances.",
       "Automated SOC 2 evidence gathering across 200+ controls for a SaaS scale-up.",
       "Built a regulator-observable sandbox so a financial services firm could validate performance improvements safely.",
+    ],
+    heroHighlights: [
+      "Confidential computing with policy workflows",
+      "SOC 2 and ISO evidence automation",
+      "Secure enclaves for AI analytics",
+      "One platform for security and speed",
     ],
     cta: {
       heading: "Need to prove security and compliance without slowing delivery?",

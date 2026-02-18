@@ -37,7 +37,7 @@ export default function AiOverviewPage() {
               <h2 className="text-3xl font-semibold text-heading">{IFX_HIGHLIGHT.title}</h2>
               <p className="text-sm leading-7 text-muted-foreground">{IFX_HIGHLIGHT.description}</p>
             </div>
-            <Button asChild>
+            <Button asChild variant="primary">
               <Link href={IFX_HIGHLIGHT.href}>Explore IFX</Link>
             </Button>
           </div>
@@ -91,7 +91,7 @@ export default function AiOverviewPage() {
               <p className="mt-3 text-base text-muted-foreground">
                 From lab design to launch readiness, Infobell IT keeps your workloads fast, predictable, and auditable.
               </p>
-              <Button asChild className="mt-6" size="lg">
+              <Button asChild className="mt-6" size="lg" variant="primary">
                 <Link href="/contact?subject=AI%20Solutions">Connect with performance engineering</Link>
               </Button>
             </div>

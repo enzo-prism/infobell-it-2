@@ -28,6 +28,8 @@ const companyLinks = [
 ]
 
 export function SiteFooter() {
+  const year = new Date().getFullYear()
+
   return (
     <footer className="border-t border-border bg-background/95">
       <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
@@ -40,7 +42,7 @@ export function SiteFooter() {
               engineering, and modern infrastructure programs.
             </p>
           </div>
-          <Button asChild>
+          <Button asChild variant="primary">
             <Link href="/contact">Contact the Team</Link>
           </Button>
         </div>
@@ -121,7 +123,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <p>© 2025 Infobell IT Solutions Pvt. Limited. All rights reserved.</p>
+          <p>© {year} Infobell IT Solutions Pvt. Limited. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/privacy-policy" className="transition hover:text-primary">
               Privacy Policy

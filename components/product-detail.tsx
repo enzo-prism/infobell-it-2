@@ -53,7 +53,7 @@ export function ProductDetailCard({ product }: { product: ProductDetail }) {
         </header>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-heading">What you'll get</h2>
+          <h2 className="text-2xl font-semibold text-heading">What you&apos;ll get</h2>
           <ul className="grid gap-4 sm:grid-cols-2">
             {product.features.map((feature) => (
               <li
@@ -90,7 +90,7 @@ export function ProductDetailCard({ product }: { product: ProductDetail }) {
 function PrimaryCTA({ href, children, external }: { href: string; children: React.ReactNode; external?: boolean }) {
   if (external) {
     return (
-      <Button asChild size="lg">
+      <Button asChild size="lg" variant="primary">
         <a href={href} target="_blank" rel="noopener noreferrer">
           {children}
         </a>
@@ -98,7 +98,7 @@ function PrimaryCTA({ href, children, external }: { href: string; children: Reac
     )
   }
   return (
-    <Button asChild size="lg">
+    <Button asChild size="lg" variant="primary">
       <Link href={href}>{children}</Link>
     </Button>
   )
