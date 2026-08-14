@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
+import { GA4 } from "@/components/ga4"
 import { SITE_URL } from "@/lib/content/site"
 import "./globals.css"
 
@@ -79,6 +80,7 @@ export default function RootLayout({
         >
           {children}
           <Analytics />
+          <GA4 />
         </ThemeProvider>
       </body>
     </html>
